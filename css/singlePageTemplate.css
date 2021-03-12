@@ -31,6 +31,18 @@ body {
 		display: none;
 	}
 
+	.advertisement {
+		display: none;
+	}
+
+	.about{
+		display: none;
+	}
+
+	.gallery{
+		display: none;
+	}
+
 	.opening_desc {
 		color: #717070;
 		text-align: center;
@@ -38,14 +50,15 @@ body {
 		float: center;
 		font-size: 10px;
 		font-weight: bold;
-		margin-top: 10%;
 		margin-left: auto;
 		margin-right: auto;
+		display: block;
 	}
 
-	.advertisement {
-		display: none;
+	.signup_button {
+		display: block;
 	}
+
 }
 
 /* Add a black background color to the top navigation */
@@ -60,7 +73,6 @@ body {
 	color: #717070;
 	text-align: center;	
 	padding: 30px 16px;
-	margin-top: ;
 	text-decoration: none;
 	font-size: 24px;
 	font-family: Raleway;
