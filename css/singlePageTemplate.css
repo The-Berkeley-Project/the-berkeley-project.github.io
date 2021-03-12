@@ -26,41 +26,6 @@ body {
 	width: 200px;
 }
 
-@media (max-width: 375px) {
-	.topnav {
-		display: none;
-	}
-
-	.advertisement {
-		display: none;
-	}
-
-	.about{
-		display: none;
-	}
-
-	.gallery{
-		display: none;
-	}
-
-	.opening_desc {
-		color: #717070;
-		text-align: center;
-		width: 50%;
-		float: center;
-		font-size: 10px;
-		font-weight: bold;
-		margin-left: auto;
-		margin-right: auto;
-		display: block;
-	}
-
-	.signup_button {
-		display: block;
-	}
-
-}
-
 /* Add a black background color to the top navigation */
 .topnav {
 	/* background-color: #717070; */
@@ -361,6 +326,27 @@ body {
 
 /* Mobile */
 @media (max-width: 320px) {
+
+.topnav {
+	display: none;
+}
+
+.opening_desc {
+	color: #717070;
+	text-align: center;
+	width: 50%;
+	float: center;
+	font-size: 10px;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.signup_button {
+	display: block;
+}
+
 .logo {
 	width: 100%;
 	text-align: center;
