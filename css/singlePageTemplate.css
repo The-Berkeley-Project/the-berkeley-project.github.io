@@ -331,6 +331,10 @@ body {
 	display: none;
 }
 
+.advertisement {
+	display: none;
+}
+
 .opening_desc {
 	color: #717070;
 	text-align: center;
@@ -354,16 +358,6 @@ body {
 	margin-right: 0px;
 	margin-bottom: 0px;
 	margin-left: 0px;
-}
-
-.container header nav {
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
-	width: 100%;
-	float: none;
-	display: none;
 }
 
 .text_column {
