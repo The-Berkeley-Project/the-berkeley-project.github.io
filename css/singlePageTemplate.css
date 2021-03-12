@@ -11,52 +11,6 @@ body {
 	font-weight: 200;
 }
 
-/* Sidebar Navigation */
-.sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color: #FFDDEF;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 70px;
-}
-
-.sidebar a {
-    padding: 8px 8px 24px 24px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #FCAAD2;
-    display: block;
-    transition: 0.3s;
-    font-family: Raleway;
-}
-
-.sidebar a:hover {
-    color: #C45E86;
-}
-
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 20px;
-  font-size: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
-
-.menubar {
-    position: fixed;
-    right: 0px;
-    padding: 10px;
-}
-
 /* Container */
 .container {
 	width: 100%;
@@ -66,26 +20,56 @@ body {
 	background-color: #FFFFFF;
 }
 
+#logo {
+	float: left;
+	padding: 10px 10px;
+	width: 200px;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+	/* background-color: #717070; */
+	overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+	float: left;
+	color: #717070;
+	text-align: center;	
+	padding: 30px 16px;
+	margin-top: ;
+	text-decoration: none;
+	font-size: 24px;
+	font-family: Raleway;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+	color: black;
+}
+
 /* Home Screen Section */
 .opening {
 	background-image: url("../Images/background.png");
     background-color: #FFFFFF;
-	height: 75%;
+	background-position: 0px 20px;
+	height: 80%;
 	background-attachment: scroll;
 	background-size: cover;
 	background-repeat: no-repeat;
-    
 }
 
 .opening_desc {
-    color: #64C8D0;
+    color: #717070;
     text-align: center;
-    width: 47%;
-    float: left;
-    font-size: 28px;
+    width: 50%;
+    float: center;
+    font-size: 32px;
     font-weight: bold;
-    margin-top: 42%;
-    margin-left: 19%;    
+	margin-top: 10%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .signup_button {
@@ -96,11 +80,12 @@ body {
     text-align: center;
     text-decoration: none;
     font-size: 28px;
-    margin-top: 42%;
-    margin-left: 0.5%;
     transition-duration: 0.2s;
     cursor: pointer;
     border-radius: 10px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .signup_button:hover {
@@ -340,12 +325,6 @@ body {
     margin-left: 100px; 
 }
 
-.ocf {
-    float: right;
-    margin-right: 100px;
-    margin-top: -60px;
-}
-
 /* Mobile */
 @media (max-width: 320px) {
 .logo {
@@ -356,6 +335,7 @@ body {
 	margin-bottom: 0px;
 	margin-left: 0px;
 }
+
 .container header nav {
 	margin-top: 0px;
 	margin-right: 0px;

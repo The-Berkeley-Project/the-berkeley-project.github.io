@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Berkeley Project</title>
+<title>The Berkeley Project</title>
 <link href="css/singlePageTemplate.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" type="image/jpg" href="Images/favicon.ico"/>
 <style type="text/css">
 @import url("webfonts/Raleway/stylesheet.css");
 
@@ -23,35 +24,24 @@ abbr {
 </head>
 <body>
 
-<!-- Side Navigation Bar -->
-<div id="sidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#home">HOME</a>
-    <a href="#about">ABOUT</a>
-    <a href="#contact">CONTACT</a>
-    <a href="#contact">DONATE</a>
-</div>
-
-
 <div class="container"> 
   <!-- BP Opening Section -->
     <a name="home">
       <section class="opening">
-          <span class="menubar" style="cursor:pointer" onclick="openNav()"><img src="Images/logo.png" width="150"/></span>
-          <script>
-              function openNav() {
-                  document.getElementById("sidebar").style.width = "160px";
-              }
-
-              function closeNav() {
-                  document.getElementById("sidebar").style.width = "0";
-              }
-          </script>
-
-          <p class="opening_desc">Come help bridge the gap between the students and the community of Berkeley</p>
-
-          <button class="signup_button">Sign Up</button>
-        </section>
+        <img src="Images/logo.png" id="logo" />
+        <div class="topnav">
+          <a href="#about">ABOUT</a>
+          <a href="#contact">CONTACT</a>
+          <a href="#contact">DONATE</a>
+        </div>
+        <div class="opening_desc">
+          <p>Our Virtual Berkeley Project Day is April 17, 2021! </p>
+          <p>Come help bridge the gap between the students and the community of Berkeley</p>
+        </div>  
+        <form action="https://forms.gle/hmLoFKSgMW6jzYcQ9" method="get" target="_blank">
+          <button class="signup_button" href="www.google.com">Sign Up</button>
+        </form>
+      </section>
     </a>
 
   <!-- About Section -->
@@ -145,9 +135,6 @@ abbr {
   <!-- Copyrights Section -->
   <div class="copyright">
       <p>We are a student group acting independently of the University of California. We take full responsibility for our organization and this web site.</p>
-      // <a href="https://www.ocf.berkeley.edu" class="ocf">
-        // <img src="https://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg" alt="Hosted by the OCF" style="border: 0;" />
-      // </a>
   </div>
 </div>
 <!-- Main Container Ends -->
