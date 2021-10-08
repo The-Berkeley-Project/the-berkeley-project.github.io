@@ -421,17 +421,17 @@
 
 .feature-image-left {
   width: 100%;
-  margin-right:300px;
+  margin-right:150px;
 }
 
 .feature-image-right{
   width:100%;
-  margin-left:300px;
+  margin-left:150px;
 }
 
 .feature-image-mask{
    width: 100%;
-   margin-right: 300px;
+   margin-right: 150px;
 }
 
 .feature-image {
