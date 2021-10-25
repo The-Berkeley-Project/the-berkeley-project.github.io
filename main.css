@@ -225,8 +225,8 @@
   flex: 0 auto;
   border: 1px none #000;
   border-radius: 12px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5)));
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  /* background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5)));
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
   opacity: 1;
   -webkit-transition: opacity 200ms ease;
   transition: opacity 200ms ease;
@@ -254,7 +254,7 @@
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  /* background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(0, 0, 0, 0.28), transparent), url("img/fa21_background.png"); */
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(0, 0, 0, 0.28), transparent), url("img/fa21_background.png"); 
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
