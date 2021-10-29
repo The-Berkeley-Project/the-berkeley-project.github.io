@@ -450,6 +450,8 @@
   padding: 10px 0;
   box-sizing: border-box;
   background: rgba(255,196,51,0.6)
+  cursor: default;
+  pointer-events: none;
 }
 
 .inner-footer{
@@ -458,9 +460,7 @@
   width: 1100px;
   height: 100%;
   text-align: center;
-  opacity: 1;
-  cursor: default;
-  pointer-events: none;   
+  opacity: 1; 
   text-decoration: underline;
   font-family:Raleway;
 }
