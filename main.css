@@ -459,7 +459,9 @@
   height: 100%;
   text-align: center;
   opacity: 1;
-  text-decoration: underline ;
+  cursor: default;
+  pointer-events: none;   
+  text-decoration: underline;
   font-family:Raleway;
 }
 .logo1-container{
