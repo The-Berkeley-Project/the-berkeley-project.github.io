@@ -444,14 +444,16 @@
 }
 
 .footer{
-  width: 100vw;
-  display: block;
-  overflow: hidden;
-  padding: 10px 0;
-  box-sizing: border-box;
-  background: rgba(255,196,51,0.7);
-  cursor: default;
-  pointer-events: none;
+   width: 100vw;
+   display: block;
+   overflow: hidden;
+   padding: 10px 0;
+   box-sizing: border-box;
+   background: rgba(255,196,51,0.7);
+   -o-object-fit: contain;
+   object-fit: contain;
+   -o-object-position: 50% 50%;\
+   object-position: 50% 50%;
 }
 
 .inner-footer{
