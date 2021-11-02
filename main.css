@@ -452,71 +452,38 @@
    background: rgba(255,196,51,0.7);
    -o-object-fit: contain;
    object-fit: contain;
-   -o-object-position: 50% 50%;\
+   -o-object-position: 50% 50%;
    object-position: 50% 50%;
 }
 
 .inner-footer{
   display: block;
-  margin: 0 auto;
-  width: 1100px;
-  height: 100%;
   text-align: center;
-  opacity: 1; 
   text-decoration: underline;
-  font-family:Raleway;
+  font-family: Helvetica;
 }
-.logo1-container{
+
+.sponsors{
+  margin: 3%;
   float: left;
-  width: 33.33%;
-  height: 33.33%;
-  padding: 5px;
-  margin-left: 30px;
-  object-fit: cover;
+  text-align: center;
+  vertical-align: middle;
+  text-align:center;
 }
-.logo2-container{
+
+table {
+  table-layout: fixed;
+  width: 70% ;
+  border-collapse: collapse;
   float: left;
-  width: 33.33%;
-  height: 33.33%;
-  padding: 5px;
-  margin-top: 25px;
-  object-fit: cover;
+  margin-left: 15%;
+  margin-top: -4%;
+  margin-bottom: -3%;
 }
-.logo3-container{
-  float: left;
-  width: 19%;
-  height: 19%;
-  padding: 5px;
-  margin-left: 30px;
-  padding-bottom: 30px;
-  object-fit: cover;
-}
-.logo4-container{
-  float: left;
-  width: 20%;
-  height: 20%;
-  padding: 5px;
-  margin-left: 100px;
-  object-fit: cover;
-}
-.logo5-container{
-  float: left;
-  width: 25%;
-  height: 25%;
-  padding: 5px;
-  margin-left: 110px;
-  margin-top: -25px;
-  object-fit: cover;
-}
-.logo6-container{
-  float: left;
-  width: 15%;
-  height: 15%;
-  padding: 5px;
-  margin-left: 110px;
-  margin-top: -15px;
-  object-fit: cover;
-}
+
+td {
+    padding: 0 30px;
+  }
 
 .div-block-2 {
   display: block;
