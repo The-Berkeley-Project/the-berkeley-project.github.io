@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/jacklyngee.github.io/static/css/main.87dcc0ed.css",
+    "main.js": "/jacklyngee.github.io/static/js/main.2d153261.js",
+    "static/js/787.c2955fc6.chunk.js": "/jacklyngee.github.io/static/js/787.c2955fc6.chunk.js",
+    "static/media/Raleway-Italic-VariableFont_wght.ttf": "/jacklyngee.github.io/static/media/Raleway-Italic-VariableFont_wght.87701616ad47257e5b00.ttf",
+    "static/media/Raleway-VariableFont_wght.ttf": "/jacklyngee.github.io/static/media/Raleway-VariableFont_wght.3fefe681f4c62116679b.ttf",
+    "static/media/LoginImage.png": "/jacklyngee.github.io/static/media/LoginImage.8b0dc746e052ed8a3f10.png",
+    "static/media/EventPlanningImg.jpg": "/jacklyngee.github.io/static/media/EventPlanningImg.5e32a8d2db796541f9ba.jpg",
+    "static/media/SitePlanningImg.jpg": "/jacklyngee.github.io/static/media/SitePlanningImg.6f959745f80e2d6af96a.jpg",
+    "static/media/FinancialAffairsImg.jpg": "/jacklyngee.github.io/static/media/FinancialAffairsImg.eff9f34a0bcc2384d77c.jpg",
+    "static/media/WebImg.jpg": "/jacklyngee.github.io/static/media/WebImg.e709eefd5b2f6bd8bd2a.jpg",
+    "static/media/VolunteerCoordinationImg.jpg": "/jacklyngee.github.io/static/media/VolunteerCoordinationImg.d495cc166de90dbb1518.jpg",
+    "static/media/MarketingImg.jpg": "/jacklyngee.github.io/static/media/MarketingImg.88675bc9b553a4005020.jpg",
+    "static/media/volunteer.svg": "/jacklyngee.github.io/static/media/volunteer.48040b85bf52f9bf43d0d338c022fa7c.svg",
+    "static/media/berkeleyprojectlogo.png": "/jacklyngee.github.io/static/media/berkeleyprojectlogo.8202a062df85e2396e85.png",
+    "static/media/site.svg": "/jacklyngee.github.io/static/media/site.cbf10fa9d15af7af7fe5d97526505810.svg",
+    "static/media/HandsOnImpact.svg": "/jacklyngee.github.io/static/media/HandsOnImpact.1ef64a7e94c0ba7a316c6279f1d168c9.svg",
+    "static/media/CommunityService.svg": "/jacklyngee.github.io/static/media/CommunityService.84a528ee775f0857d6edf624feee1c7e.svg",
+    "static/media/PositiveChange.svg": "/jacklyngee.github.io/static/media/PositiveChange.056151a1c815e3ecdfe04fdb0327243c.svg",
+    "index.html": "/jacklyngee.github.io/index.html",
+    "main.87dcc0ed.css.map": "/jacklyngee.github.io/static/css/main.87dcc0ed.css.map",
+    "main.2d153261.js.map": "/jacklyngee.github.io/static/js/main.2d153261.js.map",
+    "787.c2955fc6.chunk.js.map": "/jacklyngee.github.io/static/js/787.c2955fc6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.87dcc0ed.css",
+    "static/js/main.2d153261.js"
+  ]
+}
