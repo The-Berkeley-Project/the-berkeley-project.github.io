@@ -19,7 +19,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build -o test",
+    "deploy": "gh-pages -b gh-pages -d build -o origin",
     "start": "CI=false react-scripts start",
     "build": "CI=false react-scripts build",
     "test": "react-scripts test",
