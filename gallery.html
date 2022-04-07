@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+</head>
+
+<body>
+  <header id="nav" class="sticky-nav-2">
+      <nav class="w-container">
+          <ul role="list" class="nav-grid-3 w-list-unstyled">
+              <li id="w-node-_959f9846-8268-8f85-2783-ffcb6b4f68be-669a8247"><a href="#hero-overlay"
+                      class="nav-logo-link w-inline-block"><img
+                          src="img/fa21_logo.png"
+                          width="626.5" id="logo" sizes="(max-width: 479px) 158px, 160px"
+                          alt="" class="nav-logo-2" /></a></li>
+              <li><a href="#about-section" class="nav-link-6">About</a></li>
+              <li><a href="committee.html" class="nav-link-6">Committees</a></li>
+              <li><a href="gallery.html" class="nav-link-6">Gallery</a></li>
+              <li><a href="#contact-section" class="nav-link-6">Contact</a></li>
+              <li><a href="http://www.asuc.org/donate" target="_blank" class="nav-link-6">Donate</a></li>
+          </ul>
+      </nav>
+  </header>
+  <div class="contain">
+
+    <h1>BP Day Fall 2021</h1>
+
+      <div class="image-container">
+        <div class="image"><img src="gallery-pics/gal1.png"></div>
+        <div class="image"><img src="gallery-pics/gal2.png"></div>
+        <div class="image"><img src="gallery-pics/gal3.png"></div>
+        <div class="image"><img src="gallery-pics/gal4.png"></div>
+        <div class="image"><img src="gallery-pics/gal5.png"></div>
+        <div class="image"><img src="gallery-pics/gal6.png"></div>
+        <div class="image"><img src="gallery-pics/gal7.png"></div>
+        <div class="image"><img src="gallery-pics/gal8.png"></div>
+        <div class="image"><img src="gallery-pics/gal9.png"></div>
+        <div class="image"><img src="gallery-pics/gal10.png"></div>
+        <div class="image"><img src="gallery-pics/gal11.png"></div>
+        <div class="image"><img src="gallery-pics/gal12.png"></div>
+        <div class="image"><img src="gallery-pics/gal13.png"></div>
+        <div class="image"><img src="gallery-pics/gal14.png"></div>
+        <div class="image"><img src="gallery-pics/gal15.png"></div>
+      </div>
+
+      <div class="popup-image">
+        <span>&times;</span>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/img1.png"></div>
+            <div class="swiper-slide"><img src="images/img2.png"></div>
+            <div class="swiper-slide"><img src="images/img3.png"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+    document.querySelectorAll('.image-container img').forEach(image =>{
+      image.onclick = () =>{
+        document.querySelector('.popup-image').style.display = 'block';
+        document.querySelector('.popup-image img').src = image.getAttribute('src');
+      }
+    });
+
+    document.querySelector('.popup-image span').onclick = () =>{
+      document.querySelector('.popup-image').style.display = 'none';
+    }
+    </script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true;
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+    </script>
+  </body>
+</html>
