@@ -500,7 +500,7 @@ td {
   -o-object-fit: fill;
   object-fit: fill;
   padding: 15px
-  background-color: #4086b7
+  bgColor: #4086b7
 }
 
 .heading-3 {
@@ -669,7 +669,7 @@ td {
 
   .div-block-2 {
     margin-right: 20px;
-    background-color: #4086b7
+    bgColor: #4086b7
   }
 
   .contact-list-item {
@@ -913,7 +913,7 @@ td {
     -ms-flex: 0 auto;
     flex: 0 auto;
     text-align: center;
-    background-color: #4086b7
+    bgColor: #4086b7
   }
 
   .contact-list-item {
@@ -925,8 +925,9 @@ td {
     display: inline;
     margin-right: auto;
     margin-left: auto;
-    padding-left: 0px;
+    padding: 15px;
     font-size: 8px;
+    color: white;
     line-height: 10px;
     -o-object-fit: fill;
     object-fit: fill;
