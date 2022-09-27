@@ -426,7 +426,6 @@
 
 .feature-image-mid {
   width: 100%;
-  margin-right:25px;
 }
 
 .feature-image-right{
@@ -501,6 +500,7 @@ td {
   object-fit: fill;
   padding: 15px
   bgColor: #4086b7
+  margin: 15px
 }
 
 .heading-3 {
@@ -668,7 +668,6 @@ td {
   }
 
   .div-block-2 {
-    margin-right: 20px;
     bgColor: #4086b7
   }
 
@@ -902,8 +901,8 @@ td {
   .div-block-2 {
     display: block;
     width: 100%;
-    margin-right: auto;
-    margin-left: auto;
+    margin-right: 20px;
+    margin-left: 20px;
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     -ms-grid-row-align: auto;
