@@ -565,6 +565,12 @@ td {
   text-align: center;
 }
 
+.image-column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
 .cards-grid-container {
   display: -ms-grid;
   display: grid;
