@@ -495,7 +495,7 @@ td {
 
 .div-block-2 {
   display: block;
-  width: 60%;
+  width: 33%;
   -o-object-fit: fill;
   object-fit: fill;
   padding: 15px
@@ -902,7 +902,7 @@ td {
 
   .div-block-2 {
     display: block;
-    width: 60%;
+    width: 33%;
     margin-right: 15px;
     margin-left: 15px;
     -webkit-align-self: auto;
