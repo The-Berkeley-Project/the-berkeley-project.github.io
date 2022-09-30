@@ -2,15 +2,21 @@
   "name": "img-compression",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "process.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node process.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "glob": "^8.0.3",
-    "sharp": "^0.31.1"
+    "progress": "^2.0.3",
+    "sharp": "^0.31.1",
+    "supports-color": "^9.2.3"
+  },
+  "devDependencies": {
+    "@types/progress": "^2.0.5"
   }
 }
