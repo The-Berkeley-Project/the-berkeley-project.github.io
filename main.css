@@ -203,7 +203,7 @@
 
 .button-2 {
   width: auto;
-  height: 50px;
+  height: 10%;
   -webkit-box-flex: 0;
   -webkit-flex: 0 auto;
   -ms-flex: 0 auto;
@@ -216,7 +216,7 @@
 }
 
 .button-2.sign-up {
-  height: 42px;
+  height: 40%;
   margin-right: auto;
   margin-left: auto;
   -webkit-box-flex: 0;
@@ -557,8 +557,8 @@ td {
 }
 
 .cards-section {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .centered-container-2 {
@@ -660,7 +660,7 @@ td {
 }
 
 .about-cards {
-  text-align: center;
+  text-align: center
 }
 
 .about-paragraph {
@@ -750,7 +750,7 @@ td {
   }
 
   .cards-section {
-    padding: 40px 20px;
+    padding: 20px 20px;
   }
 
   .cards-grid-container {
