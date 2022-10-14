@@ -1137,10 +1137,10 @@ td {
     background-color: #f09b29;
 
 }
-.btn-default:active .filter-button:active
+.filter-button:active
 {
-    background-color: black;
-    color: white;
+    color: #ffffff;
+    background-color: #f09b29;
 }
 .gallery-grid
 {
