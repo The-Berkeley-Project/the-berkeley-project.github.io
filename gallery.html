@@ -49,12 +49,13 @@
 
       <div class="popup-image">
         <span>&times;</span>
+        <img/>
         <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="images/img1.png"></div>
-            <div class="swiper-slide"><img src="images/img2.png"></div>
-            <div class="swiper-slide"><img src="images/img3.png"></div>
-          </div>
+<!--          <div class="swiper-wrapper">-->
+<!--            <div class="swiper-slide"><img src="images/img1.png"></div>-->
+<!--            <div class="swiper-slide"><img src="images/img2.png"></div>-->
+<!--            <div class="swiper-slide"><img src="images/img3.png"></div>-->
+<!--          </div>-->
           <div class="swiper-pagination"></div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
@@ -74,22 +75,45 @@
     document.querySelector('.popup-image span').onclick = () =>{
       document.querySelector('.popup-image').style.display = 'none';
     }
-    </script>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script>
-    const swiper = new Swiper('.swiper', {
-      loop: true,
 
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true;
-      },
+    document.querySelector(".swiper-button-prev").onclick = () => {
+        showNextImage(document.querySelector(".popup-image img"), false)
+    }
 
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
+    document.querySelector(".swiper-button-next").onclick = () => {
+        showNextImage(document.querySelector(".popup-image img"), true)
+    }
+
+    function showNextImage(imageElement, forward = true) {
+        const imagesContainer = document.querySelector(".image-container");
+        const src = imageElement.src;
+        const srcPath = src.split("//")[1].split("/").filter((_, idx) => idx > 0).join("/") // only gets the path
+        const correspondingImageEl = imagesContainer.querySelector(`img[src\$='${srcPath}']`)
+        const imageContainer = correspondingImageEl.closest(".image")
+        let nextImageContainer = forward ? imageContainer.nextElementSibling : imageContainer.previousElementSibling
+        if (!nextImageContainer) {
+            nextImageContainer = forward ? imagesContainer.firstElementChild : imagesContainer.lastElementChild
+        }
+        const nextImage = nextImageContainer.querySelector("img")
+        imageElement.src = nextImage.src
+    }
+
     </script>
+<!--    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>-->
+<!--    <script>-->
+<!--    const swiper = new Swiper('.swiper', {-->
+<!--      loop: true,-->
+
+<!--      pagination: {-->
+<!--        el: '.swiper-pagination',-->
+<!--        clickable: true;-->
+<!--      },-->
+
+<!--      navigation: {-->
+<!--        nextEl: '.swiper-button-next',-->
+<!--        prevEl: '.swiper-button-prev',-->
+<!--      },-->
+<!--    });-->
+<!--    </script>-->
   </body>
 </html>

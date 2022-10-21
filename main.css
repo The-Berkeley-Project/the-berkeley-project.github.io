@@ -1068,12 +1068,12 @@ td {
 
 .contain .popup-image img{
   position: absolute;
-  top: 12%; left: 25%;
-  transition: translate(-50%, -50%);
   border: 5px solid #fff;
   border-radius: 5px;
-  width: 750px;
-  max-height: 500px;
+  inset: 0;
+  margin: auto;
+  width: 70vw;
+  user-select: none;
   object-fit: cover;
 }
 
@@ -1093,6 +1093,17 @@ td {
   padding-left: 100px;
   padding-right: 80px;
   color: #fff;
+}
+
+@media only screen and (max-width: 900px) {
+  .contain .popup-image img{
+    width: 60vw;
+  }
+
+  .contain .popup-image .swiper .swiper-button-prev, .contain .popup-image .swiper .swiper-button-next {
+    padding-left: 45px;
+    padding-right: 10px;
+  }
 }
 
 #w-node-_959f9846-8268-8f85-2783-ffcb6b4f68be-669a8247 {
