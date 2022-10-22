@@ -1152,7 +1152,9 @@ td {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(100px, auto);
   gap: 0.1vh;
-  margin-top: 75px
+  margin-top: 75px;
+  margin-left: 26vh;
+  margin-right: 21vh;
 }
 .gallery_product
 {
