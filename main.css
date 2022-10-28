@@ -475,7 +475,7 @@
   text-align:center;
 }
 
-.three-table {
+.four-table {
   table-layout: fixed;
   width: 70% ;
   border-collapse: collapse;
@@ -483,14 +483,6 @@
   margin-left: 15%;
   margin-top: -4%;
   margin-bottom: -3%;
-}
-.two-table{
-  table-layout: fixed;
-  width: 70% ;
-  border-collapse: collapse;
-  float: left;
-  margin-left: 15%;
-  margin-top: 20px;
 }
 
 td {
