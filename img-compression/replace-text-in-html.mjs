@@ -29,9 +29,7 @@ if (path.sep !== '/') {
         await prevPromise
 
         const findTemplate = `<img src="img/gallery-pics/([^/.]+).(png|PNG|jpg|JPG)" class="img-responsive" style="width:350px;height:250px;">`
-        const template =
-            `      <img src="img/gallery-pics/[NAME].[OG_FORMAT]" sizes="350px" srcset="img-compressed/gallery-pics/[NAME]-350.png 350w, img-compressed/gallery-pics/[NAME]-700.png 700w"
-              class="img-responsive" style="width:350px;height:250px;">`
+        const template = `      <img src="img-compressed/gallery-pics/[NAME]-2400.png" data-original-src="img/gallery-pics/[NAME].[OG_FORMAT]" sizes="350px" srcset="img-compressed/gallery-pics/[NAME]-350.png 350w, img-compressed/gallery-pics/[NAME]-700.png 700w" class="img-responsive" style="width:350px;height:250px;">`
 
         const match = line.match(findTemplate)
         if (!match) {
