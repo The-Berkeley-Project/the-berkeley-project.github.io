@@ -13,6 +13,7 @@
   "dependencies": {
     "glob": "^8.0.3",
     "progress": "^2.0.3",
+    "prompts": "^2.4.2",
     "sharp": "^0.31.1",
     "supports-color": "^9.2.3"
   },

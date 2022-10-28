@@ -15,7 +15,7 @@ if (path.sep !== '/') {
 }
 
 ;(async () => {
-    const imgPath = "img/**/*.{png,jpg}"
+    const imgPath = "img/**/*.{png,jpg,JPG,PNG}"
 
     // remove existing compressed images
     const _compressedPath = `${path.join(__dirname, "..", imgPath.split("/")[0])}-compressed`
@@ -45,7 +45,7 @@ if (path.sep !== '/') {
         await mkdir(destFolder, { recursive: true }).catch(() => {
         })
 
-        const sizes = [330, 700, 1400]
+        const sizes = [350, 700, 1500, 2400]
         await Promise.all(sizes.map(size =>
             sharp(file)
                 .resize(size)
