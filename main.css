@@ -159,6 +159,54 @@
   background-clip: border-box;
 }
 
+.header{
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.hamburger {
+  display: none;
+}
+
+.closeIcon {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: black;
+  color: white;
+  list-style: none;
+  padding-top: 4rem;
+}
+
+.showMenu {
+  transform: translateY(0);
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
 .list-item {
   font-size: 1px;
 }
@@ -669,7 +717,7 @@ td {
   }
 
   .div-block-2 {
-    bgColor: #4086b7
+    bgColor: #4086b7;
     margin-right: 25px;
     padding: 25px;
   }
@@ -777,6 +825,28 @@ td {
   .sticky-nav {
     padding: 0px;
   }
+
+  .nav-item {
+      margin: 2.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+  }
+
 
   .nav-grid {
     grid-auto-flow: row;
@@ -892,13 +962,33 @@ td {
     grid-template-columns: 1fr;
     -ms-grid-rows: 100px;
     grid-template-rows: 100px;
+    position: fixed;
+    top: -100%;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow:
+        0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-grid-3.active {
+    top: 0;
   }
 
   .nav-link-6 {
-    display: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-top: 1px solid #c4c4c4;
+    display: block;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 0px 0px;
+    font-family: Raleway, sans-serif;
+    color: #444;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+    text-decoration: none;
   }
 
   .div-block-2 {

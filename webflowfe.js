@@ -7786,6 +7786,25 @@
 			}(a))), M(n, r)
 		}
 
+		const hamburger = document.querySelector(".hamburger");
+		const navgrid = document.querySelector(".nav-grid-3");
+		
+		hamburger.addEventListener("click", mobileMenu);
+		
+		function mobileMenu() {
+			hamburger.classList.toggle("active");
+			navgrid.classList.toggle("active");
+		}
+
+		const navLink = document.querySelectorAll(".nav-link-6");
+
+		navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+		function closeMenu() {
+			hamburger.classList.remove("active");
+			navMenu.classList.remove("active");
+		}
+
 		function w(e, n) {
 			var r = t.data(n, E);
 			r && (R(r), t.removeData(n, E))
