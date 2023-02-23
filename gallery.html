@@ -8,6 +8,53 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
     <script type="text/javascript">WebFont.load({ google: { families: ["Raleway:regular,700"] } });</script>
+    <script>
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("filter");
+            if (c == "all") c = "";
+            // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+        // Show filtered elements
+        function w3AddClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {
+              element.className += " " + arr2[i];
+            }
+          }
+        }
+
+        // Hide elements that are not selected
+        function w3RemoveClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+              arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+          }
+          element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current control button (highlight it)
+        var btnContainer = document.getElementById("gallery-buttons");
+        var btns = btnContainer.getElementsByClassName("btn btn-default filter-button");
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+          });
+        }
+    </script>
 </head>
 
 <body>
@@ -36,85 +83,153 @@
 
     <div class="image-container">
 
-      <div align="center" class="gallery-buttons">
-        <button class="btn btn-default filter-button" data-filter="all">All</button>
-        <button class="btn btn-default filter-button" data-filter="fa21">Fall 2021</button>
-        <button class="btn btn-default filter-button" data-filter="sp22">Spring 2022</button>
-      </div>
-      <br/>
-
     <div class="gallery-grid">
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter consumer">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal1.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal2.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal3.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal4.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal5.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal6.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal7.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal8.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal9.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal10.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal11.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal12.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal13.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal14.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa22">
+        <img src="img/gallery-pics/fa22gal15.png" class="img-responsive" style="width:350px;height:250px;">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal1.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter tech">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal2.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter tech">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal3.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter consumer">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal4.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter consumer">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal5.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter consumer">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal6.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter consumer">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal7.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter consumer">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal8.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter consumer">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal9.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter consumer">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal10.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter other">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal11.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter tech">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal12.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter tech">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal13.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter tech">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal14.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
 
-      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter tech">
+      <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sp22">
         <img src="img/gallery-pics/sp22gal15.JPG" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
@@ -148,7 +263,6 @@
         <img src="img/gallery-pics/gal6.png" class="img-responsive" style="width:350px;height:250px;">
         <div class="image-overlay"></div>
       </div>
-
 
       <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fa21">
         <img src="img/gallery-pics/gal7.png" class="img-responsive" style="width:350px;height:250px;">
