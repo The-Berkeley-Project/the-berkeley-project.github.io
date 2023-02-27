@@ -22,8 +22,8 @@ while not done:
         print("can't find inputs")
         pass
 
-email_input.send_keys("theberkeleyproject")         # CHANGE this value
-password_input.send_keys("bp2021")                  # CHANGE this value
+email_input.send_keys("username")                       # CHANGE this value
+password_input.send_keys("password")                    # CHANGE this value
 password_input.send_keys(Keys.ENTER)
 
 done = False
