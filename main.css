@@ -303,7 +303,7 @@
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(0, 0, 0, 0.10), transparent), url("img/sp22_background.png");
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(0, 0, 0, 0.10), transparent), url("img/sp23_background.jpg");
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
@@ -322,6 +322,7 @@
 .heading-2 {
   font-family: Raleway, sans-serif;
   font-size: 42px;
+  text-shadow: #999 1px 0 2px;
 }
 
 .sticky-nav-2 {
@@ -393,6 +394,7 @@
 .bold-text-2 {
   font-family: Raleway, sans-serif;
   font-size: 24px;
+  text-shadow: #999 1px 0 2px;
 }
 
 .nav-grid-3 {
