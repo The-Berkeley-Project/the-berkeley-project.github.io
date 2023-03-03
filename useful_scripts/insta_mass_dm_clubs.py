@@ -22,8 +22,8 @@ while not done:
         print("can't find inputs")
         pass
 
-email_input.send_keys("username")                       # CHANGE this value
-password_input.send_keys("password")                    # CHANGE this value
+email_input.send_keys("theberkeleyproject")                       # CHANGE this value
+password_input.send_keys("bpsp23!")                    # CHANGE this value
 password_input.send_keys(Keys.ENTER)
 
 done = False
@@ -62,29 +62,40 @@ club_insta_handles = club_insta_urls.apply(lambda url: re.sub('/', '', re.findal
 
 ### Perform clicks and form inputs needed to dm each club ###
 for i, account_handle in enumerate(club_insta_handles):
-    done = False
-    while not done:
-        try:
-            account_input_field = driver.find_element(by="name", value='queryBox')
-            done = True
-        except NoSuchElementException:
-            print("can't find handle input for dm")
-            pass
+    first_loop = True
+    while driver.current_url == "https://www.instagram.com/direct/new/" or first_loop:
+        if not first_loop:
+            time.sleep(3600)
+        first_loop = False
+        driver.get("https://www.instagram.com/direct/new/")
+       
+        done = False
+        while not done:
+            try:
+                account_input_field = driver.find_element(by="name", value='queryBox')
+                done = True
+            except NoSuchElementException:
+                print("can't find handle input for dm")
+                pass
 
-    account_input_field.send_keys(account_handle)
-    time.sleep(1)
-    account_input_field.send_keys(Keys.TAB)
-    driver.switch_to.active_element.click()
+        account_input_field.send_keys(account_handle)
+        time.sleep(2)
+        account_input_field.send_keys(Keys.TAB)
+        driver.switch_to.active_element.click()
 
-    ### Tabbing over to and clicking the next button ###
-    driver.switch_to.active_element.send_keys(Keys.SHIFT + Keys.TAB)
-    driver.switch_to.active_element.send_keys(Keys.SHIFT + Keys.TAB)
-    driver.switch_to.active_element.send_keys(Keys.SHIFT + Keys.TAB)
-    driver.switch_to.active_element.click()
+        ### Tabbing over to and clicking the 'Next' button ###
+        driver.switch_to.active_element.send_keys(Keys.SHIFT + Keys.TAB)
+        driver.switch_to.active_element.send_keys(Keys.SHIFT + Keys.TAB)
+        driver.switch_to.active_element.send_keys(Keys.SHIFT + Keys.TAB)
+        driver.switch_to.active_element.click()
 
-    while driver.current_url == "https://www.instagram.com/direct/new/":
-        pass
 
+        print("waiting for redirect to new message")
+        time.sleep(5)
+        
+
+
+    print("typing message to {}".format(club_names.iloc[i]))
     for paragraph in message:
         club_paragraph = paragraph
 
@@ -96,7 +107,8 @@ for i, account_handle in enumerate(club_insta_handles):
         driver.switch_to.active_element.send_keys(Keys.SHIFT, Keys.ENTER)
         driver.switch_to.active_element.send_keys(Keys.SHIFT, Keys.ENTER)
 
-    #  driver.switch_to.active_element.send_keys(Keys.ENTER)
+    driver.switch_to.active_element.send_keys(Keys.ENTER)
+    print("message sent to {}".format(club_names.iloc[i]))
 
-    driver.get("https://www.instagram.com/direct")
+    time.sleep(150)
             
