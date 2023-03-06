@@ -441,11 +441,6 @@
   text-decoration: underline;
 }
 
-.feature-section {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
 .flex-container {
   display: -webkit-box;
   display: -webkit-flex;
