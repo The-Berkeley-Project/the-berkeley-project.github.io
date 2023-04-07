@@ -522,6 +522,16 @@
   text-align:center;
 }
 
+.three-table {
+  table-layout: fixed;
+  width: 50% ;
+  border-collapse: collapse;
+  float: left;
+  margin-left: 25%;
+  margin-top: 4%;
+  margin-bottom: -3%;
+}
+
 .four-table {
   table-layout: fixed;
   width: 70% ;

@@ -2,7 +2,7 @@ window.addEventListener('load', adjustElement);
 
 function adjustElement() {
     const sponsorTable = document.getElementById('sponsors');
-    const sponsorBuffer = document.getElementById('sponsors-buffer');
+    const sponsorTable2 = document.getElementById('sponsors-3-per-row');
 
     if (isMobileDevice()) {
         const tds = document.getElementsByTagName("td");
@@ -21,7 +21,7 @@ function adjustElement() {
         }
     } else {
         sponsorTable.classList.add("four-table");
-        sponsorBuffer.innerHTML = "&nbsp;&nbsp;";
+        sponsorTable2.classList.add("three-table");
         const tds = document.getElementsByTagName("td");
         for (let i = 0; i < tds.length; i++) {
             tds[i].style.maxWidth = "250px";
