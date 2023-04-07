@@ -264,7 +264,7 @@
 }
 
 .button-2.sign-up {
-  height: 40%;
+  height: auto;
   margin-right: auto;
   margin-left: auto;
   -webkit-box-flex: 0;
@@ -608,6 +608,7 @@ td {
 .paragraph-4 {
   font-family: Raleway, sans-serif;
   text-align: left;
+  line-height: 170%;
 }
 
 .cards-section {
@@ -736,6 +737,49 @@ td {
   right: 16px;
 }
 
+.committee-section {
+  display: flex; 
+  flex-direction: row; 
+  flex: 0 4;
+  margin: 6% 15% 12%;
+}
+
+.col-1 {
+  max-width: 45%;
+}
+
+.apply-section {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  background-color: #0082f3;
+  width: 100%;
+  height: 30vh;
+  padding: 3% 10% 8%;
+}
+
+.apply-col {
+  width: 33%;
+}
+
+.date-box {
+  display: inline-block;
+  color: white;
+  font-size: 1.2em;
+  background-color: #101010;
+  box-shadow: inset 0 0 0 0em;
+  margin-bottom: 1.2em;
+  padding: 0.25em 1em 0.2em 1em;
+  border-radius: 0.75em;
+  font-family: Raleway, sans-serif;
+}
+
+.paragraph-5 {
+  font-family: Raleway, sans-serif;
+  color: aliceblue;
+  font-size: 1.1em;
+}
+
 @media screen and (max-width: 991px) {
   .feature-image {
     width: 90%;
@@ -765,6 +809,10 @@ td {
 
   .nav-grid {
     text-align: center;
+  }
+
+  .committee-col {
+    max-width: 100%;
   }
 
   .hero-overlay {
@@ -847,6 +895,7 @@ td {
     -ms-flex-pack: center;
     justify-content: center;
   }
+
 }
 
 @media screen and (max-width: 479px) {
@@ -875,6 +924,9 @@ td {
       transform: translateY(-8px) rotate(-45deg);
   }
 
+  .committee-col {
+    max-width: 100%;
+  }
 
   .nav-grid {
     grid-auto-flow: row;
@@ -1135,13 +1187,9 @@ td {
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
-<<<<<<< HEAD
-  padding: 10px 10px 140px;
-=======
   padding: 10px;
   margin-left: 10vh;
   margin-right: 10vh;
->>>>>>> new-gallery
 }
 
 .contain .image-container .image{
@@ -1408,5 +1456,27 @@ td {
     grid-column-start: span 1;
     -ms-grid-column-span: 1;
     grid-column-end: span 1;
+  }
+  
+  .committee-section {
+    display: flex; 
+    flex-direction: column-reverse; 
+    margin: 10% 15%;
+  }
+  
+  .committee-col {
+    max-width: 100%;
+  }
+
+  .apply-col {
+    width: max-content;
+    height: auto;
+    margin: 2vh 4vh;
+  }
+  
+  .apply-section {
+    width: 275%;
+    max-width: 100%;
+    height: auto;
   }
 }
