@@ -45,6 +45,18 @@ const BUILD_DIR = "build";
                 // don't care about external images basically
                 return
             }
+
+            const originalSizes = img.getAttribute("sizes") || ""
+            const hasSizes = originalSizes.trim().length !== 0
+            const originalSrcSet = img.getAttribute("srcset") || ""
+            const hasSrcSet = originalSrcSet.trim().length !== 0
+
+            if (hasSizes || hasSrcSet) {
+                // don't mess with image bc it might mess up the UI
+                return
+            }
+
+
             const imagePathAndName = imgSrc.split(/\.[^.]+$/, 1)[0];
             const pathToFile = path.join(_fileDir, imgSrc)
             const sizes = [350, 700, 1500, 2400]
@@ -81,16 +93,18 @@ const BUILD_DIR = "build";
                 ;
             }))
 
-
             const sizesToUse = sizes.map(size => `(min-width: ${size}px) ${size}px`)
 
             const sourceElement = parse("<source>").querySelector("source")
+
             sourceElement.setAttribute("sizes", sizesToUse.join(", "))
+            img.setAttribute("sizes", sizesToUse.join(", "))
+
             sourceElement.setAttribute("srcset", compressedImageSources.map(([size, src]) => `${src} ${size}w`).join(", "))
+            img.setAttribute("srcset", resizedImageSources.map(([size, src]) => `${src} ${size}w`).join(", "))
+
             sourceElement.setAttribute("type", "image/webp")
 
-            img.setAttribute("sizes", sizesToUse.join(", "))
-            img.setAttribute("srcset", resizedImageSources.map(([size, src]) => `${src} ${size}w`).join(", "))
             img.replaceWith(`<picture>${sourceElement.outerHTML}${img.outerHTML}</picture>`)
         }))
 
