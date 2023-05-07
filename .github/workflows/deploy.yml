@@ -54,7 +54,7 @@ jobs:
           cd gh-built
           git rm -rf .
           git clean -fxd
-          rsync -av --exclude 'gh-built' ../build .
+          rsync -av --exclude 'gh-built' ../build/ .
           git add .
           git config --local user.email "${{ env.git_email }}"
           git config --local user.name "${{ env.git_name }}"
