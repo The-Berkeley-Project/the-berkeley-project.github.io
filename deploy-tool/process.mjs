@@ -6,11 +6,13 @@ import sharp from "sharp";
 import { cp, writeFile, readFile, rm } from "fs/promises";
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+console.debug("This file is in directory", __dirname)
 
 const BUILD_DIR = "build";
 ;(async () => {
-    // remove build dir
-    await rm(path.join(__dirname, "..", BUILD_DIR), {
+    const buildDirPath = path.join(__dirname, "..", BUILD_DIR);
+    console.debug("Removing the build directory", buildDirPath)
+    await rm(buildDirPath, {
         recursive: true,
         force: true
     })
@@ -33,10 +35,15 @@ const BUILD_DIR = "build";
         objectMode: true
     })
     const htmlFiles = _htmlFiles.map(entry => entry.path)
+    console.debug("Looking for images to compress in these HTML files", htmlFiles)
     await Promise.all(htmlFiles.map(async filePath => {
         const _filePath = path.join(__dirname, "..", filePath)
+        console.debug("--> Absolute path of HTML file being parsed", _filePath)
         const _fileDir = path.dirname(_filePath)
+        console.debug("--> The directory of the HTML file is", _fileDir)
         const _fileDirAfterRoot = _fileDir.replace(path.join(__dirname, ".."), "")
+        console.debug("--> The relative directory of the HTML file is", _fileDirAfterRoot)
+
         const file = await readFile(_filePath)
         const root = parse(file.toString())
         await Promise.all(root.querySelectorAll("img").map(async img => {
@@ -108,7 +115,7 @@ const BUILD_DIR = "build";
             img.replaceWith(`<picture>${sourceElement.outerHTML}${img.outerHTML}</picture>`)
         }))
 
-        console.debug("writing to: ", path.join(__dirname, "..", BUILD_DIR, filePath), "because", filePath)
+        console.debug("writing to: ", path.join(__dirname, "..", BUILD_DIR, filePath), "because we finished parsing", filePath)
 
         await writeFile(path.join(__dirname, "..", BUILD_DIR, filePath), root.toString())
     }))
