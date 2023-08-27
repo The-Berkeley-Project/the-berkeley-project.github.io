@@ -161,6 +161,7 @@
 
 .header{
   border-bottom: 1px solid #E2E8F0;
+
 }
 
 .navbar {
@@ -168,6 +169,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
+}
+
+.recruitment-banner {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  background-color: rgba(255,196,51,0.7);
+  padding: 10px 0;
+  justify-content: center;
 }
 
 .hamburger {
@@ -330,7 +340,6 @@
   position: sticky;
   top: 0px;
   z-index: 10;
-  padding: 20px;
   background-color: #fff;
 }
 
@@ -785,7 +794,7 @@ td {
   display: flex;
   flex-direction: row;
   flex: 0 4;
-  margin: 6% 15% 12%;
+  margin: 6% 15% 6%;
 }
 
 .col-1 {
@@ -796,10 +805,11 @@ td {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  background-color: #0082f3;
+  background-color: #98CDDE;
   width: 100%;
   height: 30vh;
-  padding: 3% 10% 8%;
+  padding: 3% 10%;
+  justify-content: center;
 }
 
 .apply-col {
@@ -816,6 +826,7 @@ td {
   padding: 0.25em 1em 0.2em 1em;
   border-radius: 0.75em;
   font-family: Raleway, sans-serif;
+  opacity: 0.8;
 }
 
 .paragraph-5 {
@@ -938,6 +949,10 @@ td {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+  }
+
+  .apply-section {
+    flex-direction: column;
   }
 
 }
