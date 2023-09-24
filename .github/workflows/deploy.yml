@@ -34,15 +34,13 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Install Deploy Tool Packages
+      - name: Install Build Dependencies
         run: |
-          cd deploy-tool
           npm ci
 
-      - name: Run Deploy Tool Script (really just image compression ATM)
+      - name: Run Build Script (just the gallery app for now)
         run: |
-          cd deploy-tool
-          npm run start
+          npm run build
 
       - uses: actions/checkout@v2
         with:
@@ -54,7 +52,7 @@ jobs:
           cd gh-built
           git rm -rf .
           git clean -fxd
-          rsync -av --exclude 'gh-built' ../build/ .
+          rsync -av --exclude 'gh-built' ../dist/ .
           git add .
           git config --local user.email "${{ env.git_email }}"
           git config --local user.name "${{ env.git_name }}"

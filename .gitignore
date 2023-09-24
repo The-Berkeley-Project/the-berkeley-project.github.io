@@ -4,4 +4,8 @@
 # Intellij
 .idea
 
+node_modules
+
 build
+dist
+public
