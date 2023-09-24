@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { Gallery } from "react-grid-gallery";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
+import Lightbox from "react-18-image-lightbox";
+import "react-18-image-lightbox/style.css";
 import { useState } from "react";
 import { useMediaQuery } from 'react-responsive'
 import { LazyLoadImage } from 'react-lazy-load-image-component';

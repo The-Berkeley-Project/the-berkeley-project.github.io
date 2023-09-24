@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
-    "build": "rm -rf public && mkdir -p public/js && cp js/*.js public/js && vite build",
+    "build": "bash build.sh && vite build",
     "preview": "vite preview"
   },
   "keywords": [],
@@ -17,9 +17,9 @@
     "@vitejs/plugin-react": "^4.0.4",
     "glob": "^10.3.6",
     "react": "^18.2.0",
+    "react-18-image-lightbox": "~5.1.4",
     "react-dom": "^18.2.0",
     "react-grid-gallery": "^1.0.0",
-    "react-image-lightbox": "^5.1.4",
     "react-lazy-load-image-component": "^1.6.0",
     "react-responsive": "^9.0.2",
     "sharp": "^0.32.6",
