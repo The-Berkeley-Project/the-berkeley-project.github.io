@@ -677,6 +677,14 @@ td {
   text-align: center;
 }
 
+.centered-container-3 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+}
+
 .image-column {
   float: left;
   width: 33%;
