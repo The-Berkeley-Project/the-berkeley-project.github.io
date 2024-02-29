@@ -506,10 +506,26 @@
    width: 75%;
 }
 
-.feature-image-quad{
-  width:100%;
-  height: 100%;
-  text-align: center;
+.feature-image-quad {
+  text-align: center; 
+}
+
+.image-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+  gap: 20px; 
+}
+
+.image-column {
+  flex: 0 1 calc(33.33% - 20px); 
+  max-width: calc(33.33% - 20px); 
+  box-sizing: border-box; 
+}
+
+.image-column img {
+  width: 100%; 
+  height: auto; 
 }
 
 .feature-image {
