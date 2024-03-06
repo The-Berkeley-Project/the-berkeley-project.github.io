@@ -15,6 +15,7 @@
             ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
     <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 </head>
 
 <body class="body">
@@ -37,7 +38,7 @@
                     community of Berkeley</strong><br /></p><a
                 href="http://tinyurl.com/bpsp2024" target="_blank" class="button-2 sign-up w-button">Sign Up</a>
         </div>
-    </header>s
+    </header>
     <section id="about-section" class="cards-section">
         <div id="about_container" class="centered-container-2 w-container">
             <h2 id="about_header" class="heading-4">What is Berkeley Project?</h2>
@@ -48,11 +49,82 @@
                 total of 12,000+ hours and save the City of Berkeley over $400,000 every year. Fully student run and not for profit, The Berkeley Project
                 aims to strengthen the community we live in and foster a spirit of service that will inspire generations of participants. Join us for
                 Berkeley Project Day as a site leader or as a volunteer!</p>
+              </div> 
+              <div class="countdown-timer">
+                <div class="days">0</div>
+                <div class="hours">0</div>
+                <div class="minutes">0</div>
+                <div class="seconds">0</div>
+            </div>
+        </div>
+    </section>
+    <style>
+      .countdown-timer {
+          text-align: center;
+          padding: 1rem;
+          font-size: 1.5rem;
+          margin-bottom: 0px; 
+      }
+
+      .countdown-timer > div {
+          display: inline-block;
+          padding-right: 0.5rem;
+          margin-right: 0.5rem;
+          font-size: 2rem;
+          font-weight: bold;
+          border-radius: 10px; 
+          background-color: #a3ddef; 
+          padding: 0.5rem 1rem;
+      }
+  
+      .countdown-timer > div:after {
+          color: #2e2b2b;
+          display: block;
+          font-size: 0.75rem;
+          font-weight: normal;
+      }
+  
+      .countdown-timer > .days:after {
+          content: 'days';
+      }
+  
+      .countdown-timer > .hours:after {
+          content: 'hours';
+      }
+  
+      .countdown-timer > .minutes:after {
+          content: 'minutes';
+      }
+  
+      .countdown-timer > .seconds:after {
+          content: 'seconds';
+      }
+  </style>  
+    <script>
+        let endDate = new Date('April 6, 2024 00:00:00').getTime();
+        let timer = setInterval(function () {
+            let now = new Date().getTime();
+            let distance = endDate - now;
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            $(".days").html(("0" + days).slice(-2));
+            $(".hours").html(("0" + hours).slice(-2));
+            $(".minutes").html(("0" + minutes).slice(-2));
+            $(".seconds").html(("0" + seconds).slice(-2));
+
+            if (distance < 0) {
+                clearInterval(timer);
+                $(".countdown-timer").html("<h2 class='heading-4' style='text-align: center'>Berkeley Project Day is live!</h2>");
+            }
+        }, 1000);
+    </script>   
                 <div class="centered-container-2 w-container">
                     <a href="https://www.berkeleyproject.org/committee.html"
                         target="_self"
-                        class="button-2 sign-up w-button">Learn More!</a>
-                </div>        
+                        class="button-2 sign-up w-button">Learn More!</a>           
             <br>
             <br>
             <h2 id="about_header" class="heading-4" style="text-align: center">Our Exec Board</h2>
