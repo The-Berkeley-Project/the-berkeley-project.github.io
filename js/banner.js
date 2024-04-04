@@ -7,7 +7,6 @@ class Header extends HTMLElement {
                 <li id="w-node-_959f9846-8268-8f85-2783-ffcb6b4f68be-669a8247"><a href="index.html"
                         class="nav-logo-link w-inline-block"><img src="img/fa21_logo.png" width="626.5" id="logo"
                             sizes="(max-width: 479px) 158px, 160px" alt="" class="nav-logo-2" /></a></li>
-                <li class="nav-item"><a href="index.html" class="nav-link-6">About</a></li>
                 <li class="nav-item"><a href="impact.html" class="nav-link-6">Impact</a></li>
                 <li class="nav-item"><a href="committee.html" class="nav-link-6">Committees</a></li>
                 <li class="nav-item"><a href="gallery.html" class="nav-link-6">Gallery</a></li>
@@ -49,54 +48,36 @@ class Sponsors extends HTMLElement {
                         <h2 id="sponsors-buffer"></h2>
                         <table id="sponsors">
                             <tr>
-                                <td><a href="https://www.redbull.com/us-en/" target="_blank">
-                                    <img src="img/sponsorlogos/redbull.png"></a>
+                                <td><a href="https://ashateahouse.com/" target="_blank">
+                                    <img src="img/sponsorlogos/asha.png"></a>
                                 </td>
-                                <td><a href="https://www.celsius.com/" target="_blank">
-                                    <img src="img/sponsorlogos/celsiuslogo.jpeg"></a>
+                                <td><a href="https://www.berkeleybowl.com/" target="_blank">
+                                    <img src="img/sponsorlogos/berkeleybowl.webp"></a>
                                 </td>
-                                <td><a href="https://www.bobaguys.com/" target="_blank">
-                                    <img src="img/sponsorlogos/bobaguyslogo.png"></a>
+                                <td><a href="https://www.target.com/" target="_blank">
+                                    <img src="img/sponsorlogos/target.png"></a>
                                 </td>
-                                <td><a href="http://acmebread.com/" target="_blank">
-                                    <img src="img/sponsorlogos/acmelogo.png"></a>
-                                </td>
-                                <td><a href="https://www.noahs.com/" target="_blank">
-                                    <img src="img/sponsorlogos/noahslogo.png"></a>
+                                <td><a href="https://www.thehiddencafe.life/" target="_blank">
+                                    <img src="img/sponsorlogos/hiddencafe.png"></a>
                                 </td>
                             </tr>
                             <tr>
-                                <td><a href="https://www.quokkabrew.com/" target="_blank">
-                                    <img src="img/sponsorlogos/quokkalogo.png"></a>
+                                <td><a href="http://chipotle.com/" target="_blank">
+                                    <img src="img/sponsorlogos/chipotle.png"></a>
                                 </td>
-                                <td><a href="https://cheeseboardcollective.coop/" target="_blank">
-                                    <img src="img/sponsorlogos/cheeseboardlogo.jpeg"></a>
-                                </td>
-                                <td><a href="https://gldbeancafe.com/" target="_blank">
-                                    <img src="img/sponsorlogos/goldbeancafelogo.png"></a>
-                                </td>
-                                <td><a href="https://www.ujitimedessert.com/" target="_blank">
-                                    <img src="img/sponsorlogos/ujitimelogo.webp"></a>
+                                <td><a href="https://snapdragonfood.com/" target="_blank">
+                                    <img src="img/sponsorlogos/snapdragon.svg"></a>
                                 </td>
                                 <td><a href="https://www.semifreddis.com/" target="_blank">
                                     <img src="img/sponsorlogos/semifreddislogo.png"></a>
-                                </td>
-                            </tr>
-                        </table>
-                        <h2 id="sponsors-buffer-2"></h2>
-                        <table id="sponsors-3-per-row">
-                            <tr>
-                                <td><a href="https://elfuegosf.com/menu" target="_blank">
-                                    <img src="img/sponsorlogos/elfuegologo.png"></a>
-                                </td>
-                                <td><a href="https://www.themindcoffee.com/" target="_blank">
-                                    <img src="img/sponsorlogos/mindcoffeelogo.png"></a>
                                 </td>
                                 <td><a href="https://gtslivingfoods.com/collections/synergy-raw-kombucha" target="_blank">
                                     <img src="img/sponsorlogos/gtsynergycircular.png"></a>
                                 </td>
                             </tr>
                         </table>
+                        <h2 id="sponsors-buffer-2"></h2>
+                        <br>
                     </div>
                 </div>
             </div>
