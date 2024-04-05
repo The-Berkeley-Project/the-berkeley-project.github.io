@@ -60,6 +60,9 @@ class Sponsors extends HTMLElement {
                                 <td><a href="https://www.thehiddencafe.life/" target="_blank">
                                     <img src="img/sponsorlogos/hiddencafe.png"></a>
                                 </td>
+                                <td><a href="https://acmebread.com/" target="_blank">
+                                    <img src="img/sponsorlogos/acmelogo.png"></a>
+                                </td>
                             </tr>
                             <tr>
                                 <td><a href="http://chipotle.com/" target="_blank">
