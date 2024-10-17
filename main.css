@@ -35,7 +35,7 @@
 }
 
 .container {
-  background-image: url("img/sp22_background.png");
+  background-image: url("img/fa24_bg.jpg");
   background-position: 0px 0px;
   background-size: 2048px;
   color: #fff;
@@ -313,7 +313,7 @@
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(0, 0, 0, 0.10), transparent), url("img/sp23_background.jpg");
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(0, 0, 0, 0.10), transparent), url("img/fa24_bg.jpg");
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
