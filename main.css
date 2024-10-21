@@ -35,7 +35,7 @@
 }
 
 .container {
-  background-image: url("img/fa24_bg.jpg");
+  background-image: url("img/sp22_background.png");
   background-position: 0px 0px;
   background-size: 2048px;
   color: #fff;
@@ -313,9 +313,9 @@
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(0, 0, 0, 0.10), transparent), url("img/fa24_bg.jpg");
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(0, 0, 0, 0.10), transparent), url("img/fa24-bg4.png");
   background-position: 0px 0px, 50% 50%;
-  background-size: auto, cover;
+  background-size: 95%, cover;
   background-repeat: repeat, no-repeat;
   background-attachment: scroll, scroll;
   color: #fff;
@@ -1580,3 +1580,62 @@ td {
     height: auto;
   }
 }
+
+/* Styling the container */
+.newsletter-container {
+  position: fixed;
+  bottom: 20px; /* Adjusted for better spacing */
+  left: 20px; /* Adjusted for better spacing */
+  width: 225px;
+  background-color: white;
+  border: 2px solid rgba(255,196,51,0.7);
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  z-index: 9999; /* Ensure it stays on top */
+}
+
+/* Initially collapsed (only header visible) */
+.newsletter-container.collapsed {
+  height: 40px;
+  padding: 10px 20px;
+  overflow: hidden;
+}
+
+.newsletter-header {
+  font-size: 16px; 
+  font-weight: bold;
+  font-family: Raleway, sans-serif;
+  color: #0073e6;
+  cursor: pointer;
+}
+
+.newsletter-content {
+  margin-top: 10px;
+}
+
+.newsletter-content p {
+  font-size: 14px;
+  font-family: Raleway, sans-serif;
+  color: #333;
+}
+
+.newsletter-content a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #0073e6;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Raleway, sans-serif;
+  border-radius: 5px;
+}
+
+.newsletter-content a:hover {
+  background-color: #005bb5;
+}
+     
+
+
+
