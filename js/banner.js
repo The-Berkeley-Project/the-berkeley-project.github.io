@@ -77,6 +77,9 @@ class Sponsors extends HTMLElement {
                                 <td><a href="https://gtslivingfoods.com/collections/synergy-raw-kombucha" target="_blank">
                                     <img src="img/sponsorlogos/gtsynergycircular.png"></a>
                                 </td>
+                                <td><a href="https://pepsi.com" target="_blank"></a>
+                                    <img src="img/sponsorlogos/pepsi.png"></a>
+                                </td>
                             </tr>
                         </table>
                         <h2 id="sponsors-buffer-2"></h2>
