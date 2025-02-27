@@ -78,7 +78,7 @@ class Sponsors extends HTMLElement {
                                     <img src="img/sponsorlogos/gtsynergycircular.png"></a>
                                 </td>
                                 <td><a href="https://pepsi.com" target="_blank"></a>
-                                    <img src="img/sponsorlogos/pepsi.png"></a>
+                                    <img src="img/sponsorlogos/Pepsi.png"></a>
                                 </td>
                             </tr>
                         </table>
