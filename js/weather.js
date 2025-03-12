@@ -16,10 +16,11 @@ function displayWeather(data) {
     const weatherContainer = document.getElementById('weather-container');
     const current = data.current;
 
+    // convert temp from C to F
+    const tempF = (current.temperature_2m * 9/5) + 32;
+
     weatherContainer.innerHTML = `
-        <div>Temperature: ${current.temperature_2m}°C</div>
-        <div>Wind Speed: ${current.wind_speed_10m} km/h</div>
-    `;
+        <div> (${temperatureF.toFixed(1)}°F</div>    `;
 }
 
 document.addEventListener('DOMContentLoaded', fetchWeather);
