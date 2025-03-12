@@ -29,9 +29,9 @@ class Banner extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <div class="recruitment-banner">
-            <b class="paragraph-4">Now Accepting Applications for our Committees!</b>
-            <a class="paragraph-4" href="https://tinyurl.com/spring2025app"
-            target="_self">Apply here →</a>
+            <b class="paragraph-4">Berkeley Project BIG GIVE 2025!</b>
+            <a class="paragraph-4" href="https://givingday.berkeley.edu/giving-day/90821/donate?dept=102171&fbclid=PAZXh0bgNhZW0CMTEAAaZNApfSPYeTCluhzL9xEFjA27ltdL6IW_VFO8T2LLaC8vjzlLzj6gQFEMM_aem_cK4ilo7C6Bq0U2mMFx70NQ"
+            target="_self">Donate here →</a>
         </div>
         `;
     }
