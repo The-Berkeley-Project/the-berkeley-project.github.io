@@ -20,7 +20,8 @@ function displayWeather(data) {
     const tempF = (current.temperature_2m * 9/5) + 32;
 
     weatherContainer.innerHTML = `
-        <div> (${temperatureF.toFixed(1)}°F</div>    `;
+        <div> (${tempF.toFixed(1)}°F</div>    
+        `;
 }
 
 document.addEventListener('DOMContentLoaded', fetchWeather);
