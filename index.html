@@ -116,27 +116,45 @@
       .countdown-timer > .seconds:after {
           content: 'seconds';
       }
+        
+      .weather-forecast {
+          position: absolute;
+          bottom: 0;            
+          right: 0;
+          padding: 1rem;
+          background-color: #f0f0f0;
+          border-radius: 10px;
+          margin: 1rem;
+          font-size: 1rem;
+          text-align: right;
+      }
   </style>  
     <script>
-        let endDate = new Date('April 12, 2025 00:00:00').getTime();
-        let timer = setInterval(function () {
-            let now = new Date().getTime();
-            let distance = endDate - now;
-            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        <div class = "countdown-timer">
+            let endDate = new Date('April 12, 2025 00:00:00').getTime();
+            let timer = setInterval(function () {
+                let now = new Date().getTime();
+                let distance = endDate - now;
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+                $(".days").html(("0" + days).slice(-2));
+                $(".hours").html(("0" + hours).slice(-2));
+                $(".minutes").html(("0" + minutes).slice(-2));
+                $(".seconds").html(("0" + seconds).slice(-2));
+    
+                if (distance < 0) {
+                    clearInterval(timer);
+                    $(".countdown-timer").html("<h2 class='heading-4' style='text-align: center'>Berkeley Project Day is live!</h2>");
+                }
+            }, 1000);
+        </div>
+        <div id = "weather-container" class = "weather = forecast"></div>
 
-            $(".days").html(("0" + days).slice(-2));
-            $(".hours").html(("0" + hours).slice(-2));
-            $(".minutes").html(("0" + minutes).slice(-2));
-            $(".seconds").html(("0" + seconds).slice(-2));
-
-            if (distance < 0) {
-                clearInterval(timer);
-                $(".countdown-timer").html("<h2 class='heading-4' style='text-align: center'>Berkeley Project Day is live!</h2>");
-            }
-        }, 1000);
+        <script src = "js/weather.js"></script>
+        
     </script>          
             <div id="about_container" class="centered-container-2 w-container">
             <h2 id="about_header" class="heading-4">What to expect on BP Day</h2>
