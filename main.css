@@ -1,4 +1,4 @@
-/* Generated on: Fri Mar 12 2021 21:21:35 GMT+0000 (Coordinated Universal Time) */
+ated on: Fri Mar 12 2021 21:21:35 GMT+0000 (Coordinated Universal Time) */
 /* ==========================================================================
    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
    ========================================================================== */
@@ -645,27 +645,61 @@ td {
   padding-left: 0px;
   list-style-type: none;
 }
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between icons */
+  margin-top: 20px;
+}
 
-.fa {
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  text-decoration: none;
+.footer-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Increase circle size */
+  height: 60px; /* Increase circle size */
   border-radius: 50%;
+  background: #f09b29; /* Consistent background */
+  color: white;
+  text-align: center;
+  font-size: 32px; /* Increase icon size */
+  transition: transform 0.2s ease;
+  text-decoration: none;
 }
 
-.fa-facebook {
-  background: #f09b29;
-  color: white;
-  padding-top: 10px;
+.footer-icons a:hover {
+  transform: scale(1.1);
+  background: #ffaf40; /* Slightly lighter on hover */
+}
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between icons */
+  margin-top: 20px;
 }
 
-/* Twitter */
-.fa-instagram {
-  background: #f09b29;
+.footer-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Increase circle size */
+  height: 60px; /* Increase circle size */
+  border-radius: 50%;
+  background: #f09b29; /* Consistent background */
   color: white;
-  padding-top: 10px;
+  text-align: center;
+  font-size: 32px; /* Increase icon size */
+  transition: transform 0.2s ease;
+  text-decoration: none;
 }
+
+.footer-icons a:hover {
+  transform: scale(1.1);
+  background: #ffaf40; /* Slightly lighter on hover */
+}
+
 
 .contact-list-item {
   margin-top: 0px;
