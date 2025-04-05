@@ -1670,6 +1670,56 @@ td {
   background-color: #005bb5;
 }
      
+/* *Pie Chart* */
 
+/*
 
+.wrapper{
+   display: flex;
+   align-item: center;
+   justify-content: center; 
+}
 
+.pie-wrap{
+   border: 2px solid lightgrey;
+   width: 400px;
+   height: 400px;
+   margin: 10% 50px;
+   position: relative;
+   border-radius: 50%;
+   color: black;
+}
+
+.pie-wrap .entry{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   
+}
+
+.sky-blue{
+   background-coolor: lightskyblue;
+   height:50%;
+   width: 50%;
+   display: block;
+}
+
+.orange{
+   background-color: chocolate;
+   height:50%
+   width:50%
+}
+
+.green{
+   background-color: darkgreen;
+   height:50%;
+   width:50%;
+}
+
+.gray{
+   background: silver;
+   height: 50%;
+   width:50%;
+}
+*/
