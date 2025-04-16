@@ -24,7 +24,7 @@ class Header extends HTMLElement {
         `;
     }
 }
-
+/* BANNER 
 class Banner extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -36,6 +36,7 @@ class Banner extends HTMLElement {
         `;
     }
 }
+*/
 
 class Sponsors extends HTMLElement {
     connectedCallback() {
