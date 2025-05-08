@@ -29,12 +29,12 @@ class Banner extends HTMLElement {
         this.innerHTML = `
         <div class="recruitment-banner">
             <b class="paragraph-4">Check back beginning of Fall 2025 for Committee Member Apps!</b>
-            /**
-            <a class="paragraph-4" href="https://givingday.berkeley.edu/giving-day/90821/donate?dept=102171&fbclid=PAZXh0bgNhZW0CMTEAAaZNApfSPYeTCluhzL9xEFjA27ltdL6IW_VFO8T2LLaC8vjzlLzj6gQFEMM_aem_cK4ilo7C6Bq0U2mMFx70NQ"
-            target="_self">Donate here →</a>
-            */
         </div>
         `;
+        /* LINK & move down ';
+        <a class="paragraph-4" href="https://givingday.berkeley.edu/giving-day/90821/donate?dept=102171&fbclid=PAZXh0bgNhZW0CMTEAAaZNApfSPYeTCluhzL9xEFjA27ltdL6IW_VFO8T2LLaC8vjzlLzj6gQFEMM_aem_cK4ilo7C6Bq0U2mMFx70NQ"
+            target="_self">Donate here →</a>
+        */
     }
 }
 
