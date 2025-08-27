@@ -313,7 +313,7 @@ ated on: Fri Mar 12 2021 21:21:35 GMT+0000 (Coordinated Universal Time) */
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(0, 0, 0, 0.10), transparent), url("img/sp23_background.png"); 
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(0, 0, 0, 0.10), transparent), url("img/sp23_background.jpg"); 
   background-position: 0px 0px, 50% 50%;
   background-size: 95%, cover;
   background-repeat: repeat, no-repeat;
