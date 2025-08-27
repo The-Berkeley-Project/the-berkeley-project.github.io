@@ -35,7 +35,7 @@ ated on: Fri Mar 12 2021 21:21:35 GMT+0000 (Coordinated Universal Time) */
 }
 
 .container {
-  background-image: url("img/sp22_background.png");
+  background-image: url("img/sp23_background.png"); /* to update banner */
   background-position: 0px 0px;
   background-size: 2048px;
   color: #fff;
