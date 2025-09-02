@@ -12,8 +12,7 @@ var data = google.visualization.arrayToDataTable([
 ]);
 
 var options = {
-  title: 'Types of Volunteering'
-  // Although gardening is the most common type of voluteering happening on BP day, the Berkeley Project had all kinds of volunteering happening in Spring 2025.
+  title: 'Although gardening is the most common type of voluteering happening on BP day, the Berkeley Project had all kinds of volunteering happening in Spring 2025.'
 };
 
 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
