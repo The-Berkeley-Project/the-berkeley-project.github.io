@@ -4,7 +4,7 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 
 var data = google.visualization.arrayToDataTable([
-  ['Task', 'Sites'],
+  ['Sites', 'Percent'],
   ['Landscaping', 24],
   ['Cleaning', 20],
   ['Gardening', 48],
