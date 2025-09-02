@@ -45,8 +45,32 @@
     
     <!-- PIE CHART -->
     <h1 class="heading-3">Types of Volunteering</h1>
-    <script src="js/piechart.js"></script>
-        <div id="piechart" style="width: 900px; height: 500px;"></div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Sites', 'Percent'],
+          ['Landscaping', 24],
+          ['Cleaning', 20],
+          ['Gardening', 48],
+          ['Litter/Trash Pickup', 8],
+        ]);
+    
+        var options = {
+          title: 'Although gardening is the most common type of voluteering happening on BP day, the Berkeley Project had all kinds of volunteering happening in Spring 2025.'
+        };
+    
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        
+        chart.draw(data, options);
+        }
+
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+
     
     <br>
 
@@ -62,13 +86,13 @@
         </div>
         <div class="flex-container w-container">
             <div class="feature-image-left">
-                <img src="/assets/sus_site1-ab1b1331.jpg" class="framed-image" />
+                <img src="img/impact-pics/sus_site1.jpg" class="framed-image" />
             </div>
             <div class="feature-image-mid">
-                <img src="/assets/sus_site2-e4e99040.JPG" class="framed-image" />
+                <img src="img/impact-pics/sus_site2.JPG" class="framed-image" />
             </div>
             <div class="feature-image-right">
-                <img src="/assets/sus_site3-4128bad3.JPG" class="framed-image" />
+                <img src="img/impact-pics/sus_site3.JPG" class="framed-image" />
             </div>
         </div>
     </section>
@@ -78,7 +102,7 @@
         <div class="flex-container w-container">
             <table style="border: 10px;">
                 <tr>
-                    <td width="353.5"><img src="/assets/instagram-f92adab2.png" width="353.5" class="just-border-image" />
+                    <td width="353.5"><img src="img/impact-pics/instagram.png" width="353.5" class="just-border-image" />
                         <p style="padding-top: 6%;" class="paragraph-2"> "Rain or shine, Berkeley Bears are always down to volunteer!
                             Today, over 1,300 Cal students and local residents came together to volunteer for
                             The Berkeley Project — a student-led community impact initiative!"
@@ -88,7 +112,7 @@
                             <button class="read-more-button">Read More</button></a>
                           </div>
                     </td>
-                    <td width="353.5" ><img src="/assets/northhill-d78feeda.png" width="353.5" height="340" class="just-border-image" />
+                    <td width="353.5" ><img src="img/impact-pics/northhill.png" width="353.5" height="340" class="just-border-image" />
                         <p style="padding-top: 6%;" class="paragraph-2"> "On a beautiful sunny day, Saturday, March 12, about
                             20 UC Berkeley volunteers helped with weeding in the Demonstration Garden on Old Tunnel Road.
                             The North Hills community Association garden committee, led by Celine Gyger, organized the event."
