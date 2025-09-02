@@ -45,6 +45,8 @@
     
     <!-- PIE CHART -->
     <h1 class="heading-3">Types of Volunteering</h1>
+    
+    <p class="paragraph-2"> Although gardening is the most common type of voluteering happening on BP day, the Berkeley Project had all kinds of volunteering happening in Spring 2025. </p>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load('current', {'packages':['corechart']});
@@ -53,16 +55,12 @@
     function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Sites', 'Percent'],
-          ['Landscaping', 24],
-          ['Cleaning', 20],
-          ['Gardening', 48],
-          ['Litter/Trash Pickup', 8],
+          ['Sites', 'Number'],
+          ['Landscaping', 7],
+          ['Cleaning', 6],
+          ['Gardening', 14],
+          ['Litter/Trash Pickup', 3],
         ]);
-    
-        var options = {
-          title: 'Although gardening is the most common type of voluteering happening on BP day, the Berkeley Project had all kinds of volunteering happening in Spring 2025.'
-        };
     
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
         
