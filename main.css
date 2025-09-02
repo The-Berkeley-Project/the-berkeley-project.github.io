@@ -1669,10 +1669,9 @@ td {
 .newsletter-content a:hover {
   background-color: #005bb5;
 }
-     
-/* *Pie Chart* */
 
-/*
+
+/* *Pie Chart* */
 
 .wrapper{
    display: flex;
@@ -1699,7 +1698,7 @@ td {
 }
 
 .sky-blue{
-   background-coolor: lightskyblue;
+   background-color: lightskyblue;
    height:50%;
    width: 50%;
    display: block;
@@ -1722,4 +1721,3 @@ td {
    height: 50%;
    width:50%;
 }
-*/
