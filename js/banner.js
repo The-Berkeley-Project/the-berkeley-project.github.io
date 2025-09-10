@@ -10,7 +10,7 @@ class Header extends HTMLElement {
                 <li class="nav-item"><a href="impact.html" class="nav-link-6">Impact</a></li>
                 <li class="nav-item"><a href="committee.html" class="nav-link-6">Committees</a></li>
                 <li class="nav-item"><a href="gallery.html" class="nav-link-6">Gallery</a></li>
-                <li class="nav-item"><a href="https://ifqd9bno9ap.typeform.com/to/YHdEcTXR" target="_blank"
+                <li class="nav-item"><a href="https://3smvlc5hjy8.typeform.com/to/LHxG3Orl" target="_blank"
                         class="nav-link-6">Contact</a></li>
                 <li class="nav-item"><a href="http://www.asuc.org/donate" target="_blank" class="nav-link-6">Donate</a>
                 </li>
