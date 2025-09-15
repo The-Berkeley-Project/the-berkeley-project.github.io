@@ -501,6 +501,14 @@ Updated on: Fri Mar 12 2021 21:21:35 GMT+0000 (Coordinated Universal Time) */
 
 }
 
+.feature-image-thirds{
+  width: 33%;
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: top;
+}
+
+
 .feature-image-right{
   width:100%;
 }
