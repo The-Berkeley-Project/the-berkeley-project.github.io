@@ -851,6 +851,9 @@ td {
 
 .flex-photos {
   display: flex;
+  flex: 1;
+  min-width: 300px; 
+  justify-content: center;
   flex-direction: row;
   flex-wrap: nowrap;
 }
@@ -968,6 +971,8 @@ td {
     -ms-flex-direction: row;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex start;
   }
 
   .feature-image-mask {
@@ -1213,7 +1218,8 @@ td {
     -webkit-box-flex: 0;
     -webkit-flex: 0 auto;
     -ms-flex: 0 auto;
-    flex: 0 auto;
+    flex: 1;
+    min-width: 300px;
     text-align: center;
     bgColor: #4086b7
   }
