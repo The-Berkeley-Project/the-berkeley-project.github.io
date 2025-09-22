@@ -494,9 +494,7 @@ Updated on: Fri Mar 12 2021 21:21:35 GMT+0000 (Coordinated Universal Time) */
 }
 
 .feature-image-mid {
-  width: 45%;
   display: inline-block;
-  margin-right: 25px;
   vertical-align: top;
 
 }
