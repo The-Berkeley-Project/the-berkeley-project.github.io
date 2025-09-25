@@ -28,8 +28,8 @@ class Banner extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <div class="recruitment-banner">
-            <a class="paragraph-4" href="https://forms.gle/dUiwxpGY7kmFftvcA"
-                target="_self">Apply to be a Committee Member for Fall 2025 by Sept 12!</a>
+            <a class="paragraph-4" href="https://docs.google.com/forms/d/e/1FAIpQLSfk7CG6e4sjkSmHZ572JPYSEVJGLHiCSxfZ3NXOO_CbzLS9dA/viewform"
+                target="_self">Sign up to volunteer for BP Day Fall 2025 by Oct 15!</a>
         </div>
         `;
         /* LINK & move down ';
