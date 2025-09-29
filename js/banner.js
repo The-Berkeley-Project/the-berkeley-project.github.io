@@ -10,7 +10,7 @@ class Header extends HTMLElement {
                 <li class="nav-item"><a href="impact.html" class="nav-link-6">Impact</a></li>
                 <li class="nav-item"><a href="committee.html" class="nav-link-6">Committees</a></li>
                 <li class="nav-item"><a href="gallery.html" class="nav-link-6">Gallery</a></li>
-                <li class="nav-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSf0dxdbN7IdpmqaJOQnCBitmYG9CyxVWj2LlAEtBkdECLmB-w/viewform?usp=header" target="_blank"
+                <li class="nav-item"><a href="https://3smvlc5hjy8.typeform.com/to/LHxG3Orl" target="_blank"
                         class="nav-link-6">Contact</a></li>
                 <li class="nav-item"><a href="http://www.asuc.org/donate" target="_blank" class="nav-link-6">Donate</a>
                 </li>
@@ -28,7 +28,7 @@ class Banner extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <div class="recruitment-banner">
-            <a class="paragraph-4" href="https://3smvlc5hjy8.typeform.com/to/LHxG3Orl"
+            <a class="paragraph-4" href="https://docs.google.com/forms/d/e/1FAIpQLSfk7CG6e4sjkSmHZ572JPYSEVJGLHiCSxfZ3NXOO_CbzLS9dA/viewform"
                 target="_self">Sign up to volunteer for BP Day by Oct 15!</a>
         </div>
         `;
