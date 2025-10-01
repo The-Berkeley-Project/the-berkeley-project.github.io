@@ -1,570 +1,569 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
-    <link href="main.css"
-        rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-
-    <link rel="prefetch" as="image" href="img/loading_icon.gif">
-    <script src="js/banner.js"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Berkeley Project</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico" />
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <link rel="prefetch" as="image" href="img/loading_icon.gif" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-    <script type="text/javascript">WebFont.load({ google: { families: ["Raleway:regular,700"] } });</script>
+    <script type="text/javascript">WebFont.load({ google: { families: ["Raleway:400,600,700"] } });</script>
+    <script src="js/banner.js" defer></script>
+    <script src="js/scroll-animations.js" defer></script>
 </head>
+<body class="site">
+    <header class="site-header">
+        <top-banner></top-banner>
+        <nav-bar></nav-bar>
+    </header>
 
-<body>
-    <top-banner></top-banner>
-    <nav-bar></nav-bar>
+    <main class="site-main">
+        <section class="section">
+            <div class="container gallery-wrapper">
+                <div class="card card--soft pokedex-card" data-reveal="fade-up">
+                    <h1 class="section-title">BP Day Gallery</h1>
+                    <p class="section-lead">Check out some of the past BP Days!</p>
+                </div>
+                <div id="gallery-root" data-reveal="fade-up" data-reveal-delay=".1s"></div>
+            </div>
+        </section>
+        <sponsor-banner></sponsor-banner>
+    </main>
 
-  <div class="contain">
-    <div id="about_container" class="centered-container-2 w-container">
-      <h1 class="heading-3">BP Day Gallery</h1>
-      <p class="paragraph-2"> Check out some of the past BP Days!</p>
-    </div>
-
-    <div id="gallery-root"></div>
-  </div>
-  <script>
-      /**
-       * @typedef {Object} Tag
-       * @property {string} title The title displayed
-       * @property {string} value Not used ATM
-       */
-
-      /**
-       * @typedef {Object} GalleryImage
-       * @property {string} src The image src
-       * @property {string} [original=src] Optional specific original image
-       * @property {number} [width] The image display width (will be guessed from img name if not provided, randomized otherwise)
-       * @property {number} [height] The image display height (will be guessed from img name if not provided, randomized otherwise)
-       * @property {(string|Tag)} tags Tags to show with image
-       */
-
-      /**
-       * These images will be rendered in a React component
-       * @type {GalleryImage[]}
-       */
-      window.imagesToShow = [
-          {
-              src: "img/gallery-pics/sp25gal1.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp25"],
-          }
-          , {
-              src: "img/gallery-pics/sp25gal2.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp25"],
-          }
-          , {
-              src: "img/gallery-pics/sp25gal3.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp25"],
-          }
-          , {
-              src: "img/gallery-pics/sp25gal4.JPG",
-              width: 3000,
-              height: 4000,
-              tags: ["sp25"],
-          }
-          , {
-              src: "img/gallery-pics/sp25gal5.JPG",
-              width: 3000,
-              height: 4000,
-              tags: ["sp25"],
-          }
-          , {
-              src: "img/gallery-pics/sp25gal6.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp25"],
-          }
-          , {
-              src: "img/gallery-pics/sp25gal7.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp25"],
-          }
-          , {
-              src: "img/gallery-pics/sp25gal8.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp25"],
-          }
-          , {
-              src: "img/gallery-pics/sp25gal9.JPG",
-              width: 3000,
-              height: 4000,
-              tags: ["sp25"],
-          }
-          , {
-              src: "img/gallery-pics/sp25gal10.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp25"],
-          }
-          , {
-              src: "img/gallery-pics/fa24gal1.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["fa24"],
-          }
-          , {
-              src: "img/gallery-pics/fa24gal2.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["fa24"],
-          }
-          , {
-              src: "img/gallery-pics/fa24gal3.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["fa24"],
-          }
-          , {
-              src: "img/gallery-pics/fa24gal4.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["fa24"],
-          }
-          , {
-              src: "img/gallery-pics/fa24gal5.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["fa24"],
-          }
-          , {
-              src: "img/gallery-pics/fa24gal6.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["fa24"],
-          }
-          , {
-              src: "img/gallery-pics/fa24gal7.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["fa24"],
-          }
-          , {
-              src: "img/gallery-pics/fa24gal8.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["fa24"],
-          }
-          , {
-              src: "img/gallery-pics/fa23gal1-1182x665.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["fa23"],
-          }
-          ,{
-              src: "img/gallery-pics/fa23gal2-5456x3632.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["fa23"],
-          }
-          ,{
-              src: "img/gallery-pics/fa23gal3-1182x665.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["fa23"],
-          }
-          ,{
-              src: "img/gallery-pics/fa23gal4-1182x665.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["fa23"],
-          }
-          ,{
-              src: "img/gallery-pics/fa23gal5-1182x665.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["fa23"],
-          }
-          ,{
-              src: "img/gallery-pics/fa23gal6-5456x3632.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["fa23"],
-          }
-          ,{
-              src: "img/gallery-pics/fa23gal7-5456x3632.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["fa23"],
-          }
-          ,{
-              src: "img/gallery-pics/fa23gal8-5456x3632.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["fa23"],
-          }
-          ,{
-              src: "img/gallery-pics/fa23gal9-5456x3632.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["fa23"],
-          }
-          ,{
-              src: "img/gallery-pics/fa23gal10-1182x665.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["fa23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal1-4992x3328.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal2-4992x2808.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal3-4992x3328.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal5-4992x2808.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal6-4992x2808.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal7-3328x4992.jpeg",
-              width: 3000,
-              height: 4000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal8-5456x3064.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal4-4992x2808.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal9-5456x3064.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal10-5456x3064.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal12-5456x3064.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal13-6000x4000.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal11-5456x3064.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/sp23gal14-6000x4000.jpeg",
-              width: 4000,
-              height: 3000,
-              tags: ["sp23"],
-          }
-          ,{
-              src: "img/gallery-pics/fa22gal15-1530x1212.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal14-1466x1224.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal13-1058x906.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal12-1376x1106.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal11-2030x1382.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal10-2096x1386.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal9-1372x1064.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal8-1558x1176.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal7-1554x1228.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal6-1814x1374.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal5-1498x1174.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal4-1038x854.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal3-1000x814.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal2-1042x808.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/fa22gal1-1790x1378.png",
-              width: 4000,
-              height: 3000,
-              tags: ["fa22"],
-          }
-          , {
-              src: "img/gallery-pics/gal1-6000x4000.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal2-6000x4000.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal3-6000x4000.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal4-6000x4000.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal5-6000x4000.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal6-8192x5464.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal7-8192x5464.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal8-8192x5464.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal9-8192x5464.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal10-6000x4000.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal11-6000x4000.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal12-6000x4000.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal13-6000x4000.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal14-6000x4000.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/gal15-6000x4000.png",
-              width: 4000,
-              height: 3000,
-          }
-          , {
-              src: "img/gallery-pics/sp22gal1-6000x4000.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal2-6000x4000.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal3-6000x4000.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal4-6000x4000.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal5-6000x4000.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal6-6000x4000.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal7-6000x4000.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal8-6000x4000.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal9-6000x4000.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal10-6000x4000.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal11-4032x3024.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal12-4032x3024.JPG",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal13-4032x3024.jpg",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal14-4032x3024.jpg",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-          , {
-              src: "img/gallery-pics/sp22gal15-4032x3024.jpg",
-              width: 4000,
-              height: 3000,
-              tags: ["sp22"],
-          }
-      ]
-  </script>
-  <script>
-      if (global === undefined) {
-          var global = window;
-      }
-  </script>
-  <script type="module" src="js/gallery.jsx"></script>
-  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=604af0ee269431b7d69a8246"
-          type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-          crossorigin="anonymous"></script>
-  <script src="js/webflowfe.js"
-          type="text/javascript"></script>
+    <script>
+        /**
+         * @typedef {Object} Tag
+         * @property {string} title The title displayed
+         * @property {string} value Not used ATM
+         */
+        /**
+         * @typedef {Object} GalleryImage
+         * @property {string} src The image src
+         * @property {string} [original=src] Optional specific original image
+         * @property {number} [width] The image display width (will be guessed from img name if not provided, randomized otherwise)
+         * @property {number} [height] The image display height (will be guessed from img name if not provided, randomized otherwise)
+         * @property {(string|Tag)} tags Tags to show with image
+         */
+        /**
+         * These images will be rendered in a React component
+         * @type {GalleryImage[]}
+         */
+        window.imagesToShow = [
+            {
+                src: "img/gallery-pics/sp25gal1.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp25"],
+            }
+            , {
+                src: "img/gallery-pics/sp25gal2.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp25"],
+            }
+            , {
+                src: "img/gallery-pics/sp25gal3.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp25"],
+            }
+            , {
+                src: "img/gallery-pics/sp25gal4.JPG",
+                width: 3000,
+                height: 4000,
+                tags: ["sp25"],
+            }
+            , {
+                src: "img/gallery-pics/sp25gal5.JPG",
+                width: 3000,
+                height: 4000,
+                tags: ["sp25"],
+            }
+            , {
+                src: "img/gallery-pics/sp25gal6.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp25"],
+            }
+            , {
+                src: "img/gallery-pics/sp25gal7.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp25"],
+            }
+            , {
+                src: "img/gallery-pics/sp25gal8.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp25"],
+            }
+            , {
+                src: "img/gallery-pics/sp25gal9.JPG",
+                width: 3000,
+                height: 4000,
+                tags: ["sp25"],
+            }
+            , {
+                src: "img/gallery-pics/sp25gal10.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp25"],
+            }
+            , {
+                src: "img/gallery-pics/fa24gal1.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["fa24"],
+            }
+            , {
+                src: "img/gallery-pics/fa24gal2.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["fa24"],
+            }
+            , {
+                src: "img/gallery-pics/fa24gal3.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["fa24"],
+            }
+            , {
+                src: "img/gallery-pics/fa24gal4.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["fa24"],
+            }
+            , {
+                src: "img/gallery-pics/fa24gal5.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["fa24"],
+            }
+            , {
+                src: "img/gallery-pics/fa24gal6.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["fa24"],
+            }
+            , {
+                src: "img/gallery-pics/fa24gal7.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["fa24"],
+            }
+            , {
+                src: "img/gallery-pics/fa24gal8.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["fa24"],
+            }
+            , {
+                src: "img/gallery-pics/fa23gal1-1182x665.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["fa23"],
+            }
+            ,{
+                src: "img/gallery-pics/fa23gal2-5456x3632.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["fa23"],
+            }
+            ,{
+                src: "img/gallery-pics/fa23gal3-1182x665.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["fa23"],
+            }
+            ,{
+                src: "img/gallery-pics/fa23gal4-1182x665.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["fa23"],
+            }
+            ,{
+                src: "img/gallery-pics/fa23gal5-1182x665.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["fa23"],
+            }
+            ,{
+                src: "img/gallery-pics/fa23gal6-5456x3632.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["fa23"],
+            }
+            ,{
+                src: "img/gallery-pics/fa23gal7-5456x3632.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["fa23"],
+            }
+            ,{
+                src: "img/gallery-pics/fa23gal8-5456x3632.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["fa23"],
+            }
+            ,{
+                src: "img/gallery-pics/fa23gal9-5456x3632.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["fa23"],
+            }
+            ,{
+                src: "img/gallery-pics/fa23gal10-1182x665.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["fa23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal1-4992x3328.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal2-4992x2808.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal3-4992x3328.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal5-4992x2808.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal6-4992x2808.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal7-3328x4992.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal8-5456x3064.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal4-4992x2808.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal9-5456x3064.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal10-5456x3064.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal12-5456x3064.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal13-6000x4000.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal11-5456x3064.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/sp23gal14-6000x4000.jpeg",
+                width: 4000,
+                height: 3000,
+                tags: ["sp23"],
+            }
+            ,{
+                src: "img/gallery-pics/fa22gal15-1530x1212.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal14-1466x1224.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal13-1058x906.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal12-1376x1106.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal11-2030x1382.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal10-2096x1386.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal9-1372x1064.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal8-1558x1176.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal7-1554x1228.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal6-1814x1374.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal5-1498x1174.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal4-1038x854.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal3-1000x814.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal2-1042x808.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/fa22gal1-1790x1378.png",
+                width: 4000,
+                height: 3000,
+                tags: ["fa22"],
+            }
+            , {
+                src: "img/gallery-pics/gal1-6000x4000.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal2-6000x4000.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal3-6000x4000.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal4-6000x4000.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal5-6000x4000.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal6-8192x5464.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal7-8192x5464.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal8-8192x5464.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal9-8192x5464.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal10-6000x4000.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal11-6000x4000.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal12-6000x4000.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal13-6000x4000.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal14-6000x4000.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/gal15-6000x4000.png",
+                width: 4000,
+                height: 3000,
+            }
+            , {
+                src: "img/gallery-pics/sp22gal1-6000x4000.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal2-6000x4000.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal3-6000x4000.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal4-6000x4000.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal5-6000x4000.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal6-6000x4000.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal7-6000x4000.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal8-6000x4000.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal9-6000x4000.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal10-6000x4000.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal11-4032x3024.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal12-4032x3024.JPG",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal13-4032x3024.jpg",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal14-4032x3024.jpg",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+            , {
+                src: "img/gallery-pics/sp22gal15-4032x3024.jpg",
+                width: 4000,
+                height: 3000,
+                tags: ["sp22"],
+            }
+        ];
+    </script>
+    <script>
+        if (typeof global === 'undefined') {
+            var global = window;
+        }
+    </script>
+    <script type="module" src="js/gallery.jsx"></script>
 </body>
 </html>
