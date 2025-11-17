@@ -172,20 +172,37 @@ export default function CommitteesPage() {
               return (
                 <div
                   key={committee.id}
-                  className="space-y-6 md:space-y-0 md:grid md:grid-cols-[minmax(0,45%)_minmax(0,55%)] md:items-center md:gap-10"
+                  className="space-y-6 md:grid md:grid-cols-[minmax(0,45%)_minmax(0,55%)] md:items-center md:gap-10 md:space-y-0"
                 >
                   {/* Left Text Area */}
-                  <div className="text-left space-y-3 md:space-y-4">
+                  <div className="space-y-3 text-left md:space-y-4">
                     <h3 className="text-xl font-bold text-[#0875DF]">
                       {committee.title}
                     </h3>
-                    <p className="text-[15px] text-gray-700 leading-relaxed">
+                    <p className="text-[15px] leading-relaxed text-gray-700">
                       {committee.description}
                     </p>
                   </div>
 
                   {/* Right Cards Area */}
-                  <div className="w-full flex justify-center md:justify-end">
+                  <div className="md:hidden">
+                    <div className="flex flex-col items-center gap-4">
+                      {committee.members.map((member) => (
+                        <FramedCard
+                          key={member.name}
+                          frameUrl="/Frame1.png"
+                          imageUrl={member.image}
+                          bgColor={committee.color}
+                          title={`${committee.title} ${roleTitle}`}
+                          bottomText={member.name}
+                          width="230px"
+                          height="320px"
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="hidden w-full justify-center md:flex md:justify-end">
                     <CardFan
                       count={fanCount}
                       cards={cards}

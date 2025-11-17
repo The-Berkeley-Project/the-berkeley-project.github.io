@@ -49,12 +49,12 @@ export default function ImageGrid({ images, onClickImage }: ImageGridProps) {
   return (
     <>
       {/* GRID */}
-      <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-5 p-6">
+      <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 sm:gap-5 sm:p-6 md:grid-cols-3">
         <AnimatePresence>
           {images.map((item, index) => (
             <motion.div
               key={item.img}
-              className="relative overflow-hidden rounded-md cursor-pointer group shadow-sm hover:shadow-lg bg-gray-50"
+              className="group relative cursor-pointer overflow-hidden rounded-xl bg-gray-50 shadow-sm transition hover:shadow-lg"
               onClick={() => openLightbox(index)}
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -64,15 +64,17 @@ export default function ImageGrid({ images, onClickImage }: ImageGridProps) {
                 damping: 13,
                 delay: index * 0.04,
               }}
-              whileHover={{ scale: 1.10 }} // gentle lift on hover
+              whileHover={{ scale: 1.05 }}
             >
-              <img
-                src={item.img}
-                alt=""
-                className="w-full h-56 object-cover transform transition-all duration-400 ease-out group-hover:scale-105 group-hover:brightness-110"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-300" />
+              <div className="relative aspect-[4/3] w-full">
+                <img
+                  src={item.img}
+                  alt=""
+                  className="h-full w-full object-cover transition duration-300 ease-out group-hover:scale-105 group-hover:brightness-110"
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/15" />
             </motion.div>
           ))}
         </AnimatePresence>

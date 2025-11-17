@@ -21,8 +21,8 @@ export function Navbar() {
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   return (
-    <div className="fixed top-6 left-1/2 z-50 w-[90vw] max-w-6xl -translate-x-1/2">
-      <nav className="relative rounded-full bg-white px-6 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.2)]">
+    <div className="fixed left-1/2 top-6 z-50 w-full max-w-6xl -translate-x-1/2 px-4 sm:px-6">
+      <nav className="relative w-full rounded-full bg-white px-6 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.2)]">
         <div className="flex items-center justify-between md:gap-6 md:justify-between">
           <Link href="/" className="flex items-center">
             <Image

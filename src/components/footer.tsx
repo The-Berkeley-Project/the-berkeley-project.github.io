@@ -47,46 +47,50 @@ const sponsors = [
 
 export function Footer() {
   return (
-    <footer className="mt-0 bg-[#0f1a2a] text-white">
-      <div className="mx-auto w-[90vw] max-w-6xl px-6 py-12">
-        <div className="flex flex-wrap items-center justify-center gap-6">
-          {socialLinks.map((social) => (
-            <a
-              key={social.href}
-              href={social.href}
-              aria-label={social.label}
-              className="rounded-full border border-white/30 p-3 transition-transform hover:scale-110"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {social.icon}
-            </a>
-          ))}
-        </div>
+    <footer className="mt-24 text-white">
+      <div className="relative">
+        <div className="w-full rounded-t-[3rem] bg-blue-400 px-4 py-12 text-white sm:px-6 sm:py-16">
+          <div className="mx-auto flex w-full max-w-6xl flex-col items-center text-center">
+            <div className="mt-6 flex w-full flex-wrap items-center justify-center gap-5">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.href}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="rounded-full border border-white/40 bg-white/10 p-3 transition-transform hover:scale-110"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
 
-        <div className="mt-12">
-          <h2 className="text-center text-lg font-semibold uppercase tracking-wide text-[#FDB515]">
-            Sponsors & Partners
-          </h2>
-          <p className="mt-4 text-center text-sm text-white/70">
-            We’re grateful for the organizations that power Berkeley Project.
-          </p>
+            <div className="mt-10 w-full">
+              <h2 className="text-center text-lg font-semibold uppercase tracking-wide text-[#FFE08A]">
+                Sponsors & Partners
+              </h2>
+              <p className="mt-4 text-center text-sm text-white/80">
+                We’re grateful for the organizations that power Berkeley Project.
+              </p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-            {sponsors.map((sponsor) => (
-              <div
-                key={sponsor.name}
-                className="flex h-36 items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-6"
-              >
-                <Image
-                  src={sponsor.logo}
-                  alt={`${sponsor.name} logo`}
-                  width={200}
-                  height={120}
-                  className="h-auto max-h-20 w-auto max-w-full object-contain"
-                />
+              <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+                {sponsors.map((sponsor) => (
+                  <div
+                    key={sponsor.name}
+                    className="flex h-36 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur"
+                  >
+                    <Image
+                      src={sponsor.logo}
+                      alt={`${sponsor.name} logo`}
+                      width={200}
+                      height={120}
+                      className="h-auto max-h-20 w-auto max-w-full object-contain"
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>

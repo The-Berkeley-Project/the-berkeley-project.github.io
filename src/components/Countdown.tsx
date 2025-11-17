@@ -108,14 +108,14 @@ export function Countdown({
   }
 
   return (
-    <div className={`countdown flex items-center justify-center gap-4 relative ${className}`}>
+    <div className={`countdown relative flex flex-wrap items-center justify-center gap-3 sm:flex-nowrap sm:gap-4 ${className}`}>
       {timeUnits.map((unit, index) => (
         <React.Fragment key={unit.label}>
-          <div className="countdown-unit flex items-baseline gap-2">
-            <span className="countdown-value text-white font-bold text-5xl md:text-6xl lg:text-7xl">
+          <div className="countdown-unit flex w-1/2 items-baseline justify-center gap-1 px-1 sm:w-auto sm:justify-start sm:px-0 sm:gap-2">
+            <span className="countdown-value text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
               {formatNumber(unit.value)}
             </span>
-            <span className="countdown-label text-white text-lg md:text-xl lg:text-2xl font-normal capitalize">
+            <span className="countdown-label text-sm font-normal capitalize text-white sm:text-base md:text-xl lg:text-2xl">
               {unit.label}
             </span>
           </div>
@@ -124,4 +124,3 @@ export function Countdown({
     </div>
   );
 }
-
