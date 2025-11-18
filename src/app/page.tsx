@@ -300,8 +300,8 @@ export default function Home() {
       </section>
 
       {/* Blue Banner with Countdown */}
-      <section className="mt-16 px-4">
-        <div className="mx-auto max-w-5xl rounded-t-[3rem] bg-blue-400 px-4 py-12 text-center text-white sm:px-6">
+      <section className="mt-16">
+        <div className="w-full rounded-t-[3rem] bg-blue-400 py-12 text-center text-white sm:px-6">
           <h2 className="text-2xl font-semibold text-white/95 sm:text-3xl">
             Berkeley Project Day Countdown!
           </h2>

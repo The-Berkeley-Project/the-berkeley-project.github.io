@@ -34,22 +34,21 @@ export default function ImpactPage() {
       </section>
 
       {/* blue banner with big numbers */}
-      <section className="relative mt-16">
-        <div className="w-full h-48 bg-blue-400 rounded-t-[3rem]"></div>
-
-        {/* big numbers */}
-        <div className="absolute inset-0 flex flex-col sm:flex-row items-center justify-center gap-12 text-white text-center">
-          <div>
-            <h2 className="text-5xl font-extrabold">298</h2>
-            <p className="mt-2 text-lg uppercase tracking-wide">Sustained Sites</p>
-          </div>
-          <div>
-            <h2 className="text-5xl font-extrabold">1,741</h2>
-            <p className="mt-2 text-lg uppercase tracking-wide">Current Volunteers</p>
-          </div>
-          <div>
-            <h2 className="text-5xl font-extrabold">36</h2>
-            <p className="mt-2 text-lg uppercase tracking-wide">Semesters</p>
+      <section className="mt-16">
+        <div className="w-full rounded-t-[3rem] bg-blue-400 px-6 py-12 text-white shadow-md">
+          <div className="grid gap-10 text-center sm:grid-cols-3">
+            <div>
+              <h2 className="text-5xl font-extrabold">298</h2>
+              <p className="mt-2 text-lg uppercase tracking-wide">Sustained Sites</p>
+            </div>
+            <div>
+              <h2 className="text-5xl font-extrabold">1,741</h2>
+              <p className="mt-2 text-lg uppercase tracking-wide">Current Volunteers</p>
+            </div>
+            <div>
+              <h2 className="text-5xl font-extrabold">36</h2>
+              <p className="mt-2 text-lg uppercase tracking-wide">Semesters</p>
+            </div>
           </div>
         </div>
       </section>

@@ -47,11 +47,11 @@ const sponsors = [
 
 export function Footer() {
   return (
-    <footer className="mt-24 text-white">
+    <footer className="pt-12 bg-white text-white">
       <div className="relative">
         <div className="w-full rounded-t-[3rem] bg-blue-400 px-4 py-12 text-white sm:px-6 sm:py-16">
           <div className="mx-auto flex w-full max-w-6xl flex-col items-center text-center">
-            <div className="mt-6 flex w-full flex-wrap items-center justify-center gap-5">
+            <div className="mt-2 flex w-full flex-wrap items-center justify-center gap-5">
               {socialLinks.map((social) => (
                 <a
                   key={social.href}
