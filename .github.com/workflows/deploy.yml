@@ -10,38 +10,46 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: Save Original Git Author and Git Email
         run: |
           echo "git_email=$(git log --format='%ae' HEAD^!)" >> $GITHUB_ENV
           echo "git_name=$(git log --format='%an' HEAD^!)" >> $GITHUB_ENV
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v2.4.1
+
+      - name: Cache Node Modules
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-node-modules
         with:
-          node-version: 20
-          cache: 'npm'
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
 
       - name: Install Build Dependencies
         run: npm ci
 
       - name: Run Build Script (Next static export)
-        run: npm run build   # ensure this produces ./out
+        run: npm run build  
 
-      - uses: actions/checkout@v4
-        with:
-          ref: 'gh-pages'
-          path: 'gh-built'
-
-      - name: Push to gh-pages Branch
+      - name: Copy build into docs/ on main
         run: |
-          cd gh-built
-          git rm -rf .
-          git clean -fxd
-          rsync -av --exclude 'gh-built' ../out/ .
-          git add .
+          # delete old docs content
+          rm -rf docs
+          mkdir -p docs
+          # copy static export (from ./out) into docs
+          cp -r out/* docs/
+
           git config --local user.email "${{ env.git_email }}"
           git config --local user.name "${{ env.git_name }}"
+          git add docs
+
           git diff --cached --quiet --exit-code && echo "no changes to website, exiting early" && exit 0
-          git commit -m "corresponding commit: $GITHUB_SHA"
+
+          git commit -m "Deploy site for $GITHUB_SHA"
           git push
