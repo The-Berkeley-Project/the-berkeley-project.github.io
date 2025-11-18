@@ -3,8 +3,6 @@ name: Deploy Website CI
 on:
   push:
     branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
@@ -12,37 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Save Original Git Author and Git Email
         run: |
           echo "git_email=$(git log --format='%ae' HEAD^!)" >> $GITHUB_ENV
           echo "git_name=$(git log --format='%an' HEAD^!)" >> $GITHUB_ENV
 
-      - uses: actions/setup-node@v2.4.1
-
-      - name: Cache Node Modules
-        uses: actions/cache@v4
-        env:
-          cache-name: cache-node-modules
+      - uses: actions/setup-node@v4
         with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          node-version: 20
+          cache: 'npm'
 
       - name: Install Build Dependencies
-        run: |
-          npm ci
+        run: npm ci
 
-      - name: Run Build Script (just the gallery app for now)
-        run: |
-          npm run build
+      - name: Run Build Script (Next static export)
+        run: npm run build   # ensure this produces ./out
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: 'gh-pages'
           path: 'gh-built'
@@ -52,10 +38,10 @@ jobs:
           cd gh-built
           git rm -rf .
           git clean -fxd
-          rsync -av --exclude 'gh-built' ../dist/ .
+          rsync -av --exclude 'gh-built' ../out/ .
           git add .
           git config --local user.email "${{ env.git_email }}"
           git config --local user.name "${{ env.git_name }}"
           git diff --cached --quiet --exit-code && echo "no changes to website, exiting early" && exit 0
-          git commit -m "corresponding commit: The-Berkeley-Project/the-berkeley-project.github.io@$GITHUB_SHA"
+          git commit -m "corresponding commit: $GITHUB_SHA"
           git push
