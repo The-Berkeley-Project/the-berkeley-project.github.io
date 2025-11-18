@@ -10,13 +10,13 @@ export default function CommitteesPage() {
   const execBoard = [
     {
       title: "Operations president",
-      imageUrl: "Calvin.JPG",
+      imageUrl: "/Calvin.JPG",
       bgColor: "#E9F2FA",
       bottomText: "Calvin Kang (he/him)",
     },
     {
       title: "Internal President",
-      imageUrl: "Jennie.JPG",
+      imageUrl: "/Jennie.JPG",
       bgColor: "#E9F2FA",
       bottomText: "Jennie Son (she/her)",
     },
