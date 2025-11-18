@@ -10,13 +10,13 @@ export default function CommitteesPage() {
   const execBoard = [
     {
       title: "Operations president",
-      imageUrl: "/Calvin.JPG",
+      imageUrl: "/Calvin.jpg",
       bgColor: "#E9F2FA",
       bottomText: "Calvin Kang (he/him)",
     },
     {
       title: "Internal President",
-      imageUrl: "/Jennie.JPG",
+      imageUrl: "/Jennie.jpg",
       bgColor: "#E9F2FA",
       bottomText: "Jennie Son (she/her)",
     },
@@ -72,7 +72,7 @@ export default function CommitteesPage() {
       members: [
         { name: "Abhinav Vanteru Reddy (he/him)", image: "/abhinav.png" },
         { name: "Cole Yap (he/him)", image: "/Cole.jpeg" },
-        { name: "Amber Cui (she/her)", image: "/amber.JPG" },
+        { name: "Amber Cui (she/her)", image: "/amber.jpg" },
       ],
     },
     {
@@ -83,8 +83,8 @@ export default function CommitteesPage() {
       color: "#E9F2FA",
       members: [
         { name: "Evelyn Kim (she/her)", image: "/evelyn.jpg" },
-        { name: "Kelly Cheng (she/her)", image: "/kelly.JPG" },
-        { name: "Victoria Hong (she/her)", image: "/victoria.JPG" },
+        { name: "Kelly Cheng (she/her)", image: "/kelly.jpg" },
+        { name: "Victoria Hong (she/her)", image: "/victoria.jpg" },
       ],
     },
     {

@@ -376,14 +376,14 @@ export default function Home() {
               <CarouselContent className="-ml-2 sm:-ml-4">
                 {[
                   "/photos/fa24/fa24_1.jpeg",
-                  "/photos/fa24/fa24_2.JPG",
+                  "/photos/fa24/fa24_2.jpg",
                   "/photos/fa24/fa24_3.jpeg",
-                  "/photos/fa24/fa24_4.JPG",
-                  "/photos/fa24/fa24_5.JPG",
+                  "/photos/fa24/fa24_4.jpg",
+                  "/photos/fa24/fa24_5.jpg",
                   "/photos/fa24/fa24_6.jpeg",
-                  "/photos/fa24/fa24_7.JPG",
+                  "/photos/fa24/fa24_7.jpg",
                   "/photos/fa24/fa24_8.jpeg",
-                  "/photos/fa24/fa24_9.JPG",
+                  "/photos/fa24/fa24_9.jpg",
                   "/photos/fa24/fa24_10.jpeg",
                 ].map((image, index) => (
                   <CarouselItem 
