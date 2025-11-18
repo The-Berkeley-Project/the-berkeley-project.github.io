@@ -26,6 +26,7 @@ export default function SusSiteCard({
           alt={alt}
           fill
           className="object-cover rounded-t-3xl"
+          loading="eager"
         />
       </div>
 

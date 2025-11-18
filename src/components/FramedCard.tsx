@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 type Props = {
   frameUrl?: string;      // transparent PNG frame
@@ -35,8 +36,9 @@ const FramedCard: React.FC<Props> = ({
     >
       {/* Main image inside the frame */}
       {imageUrl && (
-        <img
+        <Image
           src={imageUrl}
+          loading="eager"
           alt="Main content"
           className="absolute object-cover rounded-lg z-30"
           style={{
@@ -51,8 +53,9 @@ const FramedCard: React.FC<Props> = ({
 
       {/* PNG frame overlay (transparent) */}
       {frameUrl && (
-        <img
+        <Image
           src={frameUrl}
+          loading="eager"
           alt="Card frame"
           className="absolute inset-0 w-full h-full object-contain pointer-events-none z-20"
         />

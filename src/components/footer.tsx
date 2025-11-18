@@ -86,6 +86,7 @@ export function Footer() {
                       width={200}
                       height={120}
                       className="h-auto max-h-20 w-auto max-w-full object-contain"
+                      loading="eager"
                     />
                   </div>
                 ))}

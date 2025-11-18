@@ -31,6 +31,7 @@ export function Navbar() {
               width={48}
               height={48}
               className="h-12 w-12 rounded-full bg-white object-contain cursor-pointer transition-opacity hover:opacity-80"
+              loading="eager"
               priority
             />
           </Link>

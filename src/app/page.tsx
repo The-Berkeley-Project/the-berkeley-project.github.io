@@ -396,6 +396,7 @@ export default function Home() {
                         alt={`Berkeley Project Day ${index + 1}`}
                         fill
                         className="object-cover"
+                        loading="eager"
                       />
                     </div>
                   </CarouselItem>

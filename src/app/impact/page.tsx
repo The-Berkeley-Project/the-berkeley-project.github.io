@@ -20,6 +20,7 @@ export default function ImpactPage() {
             alt="The Berkeley Project Team"
             fill
             className="object-cover"
+            loading="eager"
           />
         </div>
 
