@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 type Card = {
   id: number;
@@ -14,8 +15,9 @@ const longCard: React.FC<Props> = ({ card }) => {
   return (
     <div className="flex flex-col md:flex-row items-center bg-[#eaf2ff] rounded-2xl shadow-md p-6 md:p-10 w-full">
       {/* Image Section */}
-      <img
+      <Image
         src={card.imageUrl}
+        loading-="eager"
         alt="Card image"
         className="w-full md:w-1/2 rounded-xl object-cover mb-6 md:mb-0 md:mr-8"
       />
