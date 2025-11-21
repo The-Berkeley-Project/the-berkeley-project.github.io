@@ -70,15 +70,15 @@ export default function ImpactPage() {
 
         <div className="mt-16 grid gap-12 sm:grid-cols-3">
           <SusSiteCard
-            imageSrc="/impactpic.png"
-            alt="Fire Trail Gardens"
-            title="Fire Trail Gardens"
-            description="Rain or shine, Berkeley Bears are always down to volunteer! A group of 50 Cal students and local residents came together to dig up dirty roots to plant new trees!"
+            imageSrc="/bproads.JPEG"
+            alt="Berkeley Roads"
+            title="Berkeley Roads"
+            description="Rain or shine, Berkeley Bears are always down to volunteer! A group of 50 Cal students and local residents came together to paint new roads!"
             Icon={Leaf}
           />
 
           <SusSiteCard
-            imageSrc="/impactpic.png"
+            imageSrc="/bpwheelbarrow.JPEG"
             alt="Berkeley Bowl Distribution"
             title="Berkeley Bowl Distribution"
             description="On a beautiful sunny day, Saturday, March 12, about 20 UC Berkeley volunteers helped with weeding in the Demonstration Garden on Old Tunnel Road. The North Hills community Association garden committee, led by Celine Gyger, organized the event."
@@ -86,7 +86,7 @@ export default function ImpactPage() {
           />
 
           <SusSiteCard
-            imageSrc="/impactpic.png"
+            imageSrc="/bpschoolhouse.JPEG"
             alt="Schoolhouse Creek"
             title="Schoolhouse Creek"
             description="Students came together to restore the site by painting and sanding benches, as well as trimming overgrown bushes along the roads!"
