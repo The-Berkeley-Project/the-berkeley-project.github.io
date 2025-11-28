@@ -30,7 +30,7 @@ export default function CommitteesPage() {
       title: "Outreach President",
       imageUrl: "/Raveen.jpg",
       bgColor: "#E9F2FA",
-      bottomText: "Raveen Noory (he/hem)",
+      bottomText: "Raveen Noory (he/him)",
     },
     {
       title: "Community President",
