@@ -24,13 +24,13 @@ export default function CommitteesPage() {
       title: "External President",
       imageUrl: "/Javan.jpg",
       bgColor: "#E9F2FA",
-      bottomText: "Javan leong (he/him)",
+      bottomText: "Javan Leong (he/him)",
     },
     {
       title: "Outreach President",
       imageUrl: "/Raveen.jpg",
       bgColor: "#E9F2FA",
-      bottomText: "Raveen Noory (they/them)",
+      bottomText: "Raveen Noory (he/hem)",
     },
     {
       title: "Community President",
