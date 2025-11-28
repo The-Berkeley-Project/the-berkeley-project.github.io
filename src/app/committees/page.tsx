@@ -36,7 +36,7 @@ export default function CommitteesPage() {
       title: "Community President",
       imageUrl: "/Prongha.png",
       bgColor: "#E9F2FA",
-      bottomText: "Prongha Taluker (he/him)",
+      bottomText: "Prongha Talukder (he/him)",
     },
   ];
 
