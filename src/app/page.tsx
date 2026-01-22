@@ -84,7 +84,7 @@ export default function Home() {
             Berkeley Project Day Countdown!
           </h2>
           <p className="mt-2 text-sm text-white/80 sm:text-base">
-            April 11th, 2026 • Applications for committees due February 6th
+            April 11th, 2026 • Applications for committees due February 6th at 5 pm
           </p>
           <div className="mt-6 sm:mt-8">
             <Countdown
