@@ -36,14 +36,14 @@ export default function Home() {
               Established in 2006, The Berkeley Project is the largest community
               service organization at UC Berkeley. Each semester, we organize
               Berkeley Project Day, in which we recruit over{" "}
-              <strong>2,000+ volunteers</strong> to work alongside community members
+              <strong>1,500+ volunteers</strong> to work alongside community members
               in beautifying Berkeley.
             </p>
 
             <p className="mt-4 text-base leading-relaxed text-gray-700 sm:text-lg">
               Our next <strong>Berkeley Project Day</strong> is happening{" "}
               <strong>April 11th, 2026</strong>! Applications to join our mission as a
-              committee member are open now and are due <strong>February 6th</strong>
+              committee member are open now and are due <strong>February 6th at 5 pm</strong>
             </p>
 
             {/* Buttons */}
@@ -113,7 +113,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-black ml-3">Meeting Location</h3>
               </div>
               <p className="text-gray-700 text-sm">
-                Lower Sproul Plaza at 8:00 AM SHARP. Stay the whole day.
+                Upper Sproul Plaza at 8:00 AM SHARP. Stay the whole day.
               </p>
             </div>
             
@@ -153,16 +153,17 @@ export default function Home() {
             >
               <CarouselContent className="-ml-2 sm:-ml-4">
                 {[
+                  "/photos/fa25/img1.jpeg",
+                  "/photos/fa25/img11.JPEG",
+                  "/photos/fa25/img12.JPEG",
+                  "/photos/sp25/sp25_2.jpg",
+                  "/photos/sp25/sp25_4.jpg",
                   "/photos/fa24/fa24_1.jpeg",
-                  "/photos/fa24/fa24_2.jpg",
-                  "/photos/fa24/fa24_3.jpeg",
-                  "/photos/fa24/fa24_4.jpg",
-                  "/photos/fa24/fa24_5.jpg",
-                  "/photos/fa24/fa24_6.jpeg",
-                  "/photos/fa24/fa24_7.jpg",
-                  "/photos/fa24/fa24_8.jpeg",
-                  "/photos/fa24/fa24_9.jpg",
-                  "/photos/fa24/fa24_10.jpeg",
+                  "/photos/fa24/fa24_18.jpeg",
+                  "/photos/sp24/sp24_1.jpg",
+                  "/photos/sp24/sp24_12.jpg",
+                  "/photos/sp23/sp23_10.jpg",
+
                 ].map((image, index) => (
                   <CarouselItem 
                     key={index} 
