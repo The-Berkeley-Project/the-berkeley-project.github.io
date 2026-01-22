@@ -33,16 +33,14 @@ const socialLinks = [
 ];
 
 const sponsors = [
-  { name: "Asha", logo: "/asha.png" },
-  { name: "Berkeley Bowl", logo: "/berkeleybowl.webp" },
-  { name: "Target", logo: "/target.png" },
-  { name: "The Hidden Cafe", logo: "/hiddencafe.png" },
-  { name: "Acme Bread", logo: "/acmelogo.png" },
-  { name: "Chipotle", logo: "/chipotle.png" },
-  { name: "Snapdragon", logo: "/snapdragon.svg" },
-  { name: "Semifreddi's", logo: "/semifreddislogo.png" },
-  { name: "GT Synergy", logo: "/gtsynergycircular.png" },
-  { name: "Pepsi", logo: "/pepsi.png" },
+  { name: "Perfect Bar", logo: "/sponsors/PerfectBar.png" },
+  { name: "Chobani", logo: "/sponsors/Chobani.png" },
+  { name: "Olipop", logo: "/sponsors/Olipop.png" },
+  { name: "Cult Crackers", logo: "/sponsors/CultCrackers.jxl" },
+  { name: "Harmless Harvest", logo: "/sponsors/HarmlessHarvest.png" },
+  { name: "LMNT", logo: "/sponsors/LMNT.webp" },
+  { name: "Shinnyo-en Foundation", logo: "/sponsors/Shinnyo-enFoundation.webp" },
+  { name: "Boichik Bagels", logo: "/sponsors/BoichikBagels.avif" },
 ];
 
 export function Footer() {
