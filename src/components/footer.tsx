@@ -72,7 +72,7 @@ export function Footer() {
                 We’re grateful for the organizations that power Berkeley Project.
               </p>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+              <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {sponsors.map((sponsor) => (
                   <div
                     key={sponsor.name}
@@ -94,5 +94,8 @@ export function Footer() {
         </div>
       </div>
     </footer>
+
+
+
   );
 }
