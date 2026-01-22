@@ -65,7 +65,7 @@ export default function GalleryPage() {
           { img: "/photos/fa25/img14.JPG" },
           { img: "/photos/fa25/img15.JPG" },
           { img: "/photos/fa25/img16.jpg" },
-          { img: "/photos/fa25/img17.jpeg" },
+          { img: "/photos/fa25/img17.jpg" },
           { img: "/photos/fa25/img18.jpeg" },
           { img: "/photos/fa25/img19.jpeg" },
           { img: "/photos/fa25/img20.jpeg" },
