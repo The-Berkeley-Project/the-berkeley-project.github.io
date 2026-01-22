@@ -265,9 +265,8 @@ export default function Home() {
 
             <p className="mt-4 text-base leading-relaxed text-gray-700 sm:text-lg">
               Our next <strong>Berkeley Project Day</strong> is happening{" "}
-              <strong>November 8th, 2025</strong>! Applications are open now and are
-              due <strong>October 15th</strong> (October 8th for organization
-              sign-ups).
+              <strong>April 11th, 2026</strong>! Applications to join our mission as a
+              committee member are open now and are due <strong>February 6th</strong>
             </p>
 
             {/* Buttons */}
@@ -306,11 +305,11 @@ export default function Home() {
             Berkeley Project Day Countdown!
           </h2>
           <p className="mt-2 text-sm text-white/80 sm:text-base">
-            November 8th, 2025 • Applications due October 15th
+            April 11th, 2026 • Applications for committees due February 6th
           </p>
           <div className="mt-6 sm:mt-8">
             <Countdown
-              targetDate={new Date(Date.now() + 29 * 24 * 60 * 60 * 1000 + 18 * 60 * 60 * 1000 + 29 * 60 * 1000 + 5 * 1000)}
+              targetDate={new Date('2026-04-11T08:00:00')}
               format="long"
             />
           </div>
