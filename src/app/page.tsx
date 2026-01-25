@@ -49,7 +49,7 @@ export default function Home() {
             {/* Buttons */}
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
               <Button
-                href="/impact" // CHANGE TO GOOGLE FORM URL
+                href="https://tinyurl.com/bpCMapp26"
                 className="w-full text-center text-base font-semibold sm:w-auto sm:px-6 sm:py-2"
               >
                 Apply Now
