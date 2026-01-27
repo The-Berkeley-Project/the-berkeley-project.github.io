@@ -19,6 +19,22 @@ export default function Button({
 
   // If href exists → link
   if (href) {
+    // Check if it's an external link
+    const isExternal = href.startsWith('http://') || href.startsWith('https://');
+    
+    if (isExternal) {
+      return (
+        <a 
+          href={href} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={`${classes} ${className}`}
+        >
+          {children}
+        </a>
+      );
+    }
+    
     return (
       <Link href={href} className={`${classes} ${className}`}>
         {children}
