@@ -3,7 +3,7 @@ import {Popover, PopoverTrigger, PopoverContent, Button, Link} from "@heroui/rea
 
 export default function StickyNewsletterBar() {
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-6 left-6 z-50">
       <Popover placement="top" backdrop="transparent">
         <PopoverTrigger>
           <Button 
