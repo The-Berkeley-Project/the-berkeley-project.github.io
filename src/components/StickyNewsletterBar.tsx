@@ -7,13 +7,13 @@ export default function StickyNewsletterBar() {
       <Popover placement="top" backdrop="transparent">
         <PopoverTrigger>
           <Button 
-            className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-gray-100 transition-all"
+            className="bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-blue-800 transition-all"
             size="lg"
           >
             Join our Newsletter
           </Button>
-        </PopoverTrigger>
-        <PopoverContent className="bg-white rounded-xl shadow-xl p-4 max-w-sm">
+        </PopoverTrigger> 
+        <PopoverContent className="bg-[#E3F9FF] rounded-xl shadow-xl p-4 max-w-sm">
           <div className="flex flex-col gap-3">
             <div className="text-sm text-gray-700 leading-relaxed">
               Sign up to receive updates about volunteering opportunities 
@@ -24,7 +24,7 @@ export default function StickyNewsletterBar() {
               color="primary"
               href="https://docs.google.com/forms/d/e/1FAIpQLSeRAxBgF2D0hR7vx9aoeLNkEQD3yIk_i_eoZX0DGVdnTm1r4A/viewform"
               variant="solid"
-              className="font-medium bg-blue-500 rounded-lg w-full"
+              className="font-medium bg-[#61AFFC] rounded-lg w-full"
               isExternal
             >
               Sign Up
