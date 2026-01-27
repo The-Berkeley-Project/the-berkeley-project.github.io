@@ -43,7 +43,7 @@ export default function Home() {
             <p className="mt-4 text-base leading-relaxed text-gray-700 sm:text-lg">
               Our next <strong>Berkeley Project Day</strong> is happening{" "}
               <strong>April 11th, 2026</strong>! Applications to join our mission as a
-              committee member are open now and are due <strong>February 6th at 5 pm</strong>
+              committee member are open now and are due <strong>February 6th at 5 pm</strong>. Check back for applications for Site Leaders and Volunteers after committee member applications close.  
             </p>
 
             {/* Buttons */}
