@@ -1,10 +1,50 @@
 import React from "react";
+
+import {
+  Modal,
+  ModalContent,
+  ModalBody,
+  ModalFooter,
+  Button,
+  Link,
+  useDisclosure,
+
+} from "@heroui/react";
+
 export default function StickyNewsletterBar() {
-    return (
-      <div className= "hidden md:block fixed bottom-6 left-1/9 -translate-x-1/2 bg-sky-100 border-2 border-yellow-300 shadow-md rounded-xl px-6 py-3 text-blue-600 font-bold text-lg z-50">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRAxBgF2D0hR7vx9aoeLNkEQD3yIk_i_eoZX0DGVdnTm1r4A/viewform" className="text-blue-600 font-bold text-lg">
-          Join our Newsletter
-        </a>
-      </div>
-    );
-  }
+  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+
+  return (
+    <>
+      <Button onPress={onOpen}>Join our Newsletter</Button>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalBody>
+                <p>
+                  We have our mailing list to learn about volunteering opportunities and updates about The Berkeley Project!
+                </p>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+                <Button
+                  showAnchorIcon
+                  as={Link}
+                  color="primary"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeRAxBgF2D0hR7vx9aoeLNkEQD3yIk_i_eoZX0DGVdnTm1r4A/viewform"
+                  variant="solid"
+                >
+                  Click here
+                </Button>
+    
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+    </>
+  );
+}
