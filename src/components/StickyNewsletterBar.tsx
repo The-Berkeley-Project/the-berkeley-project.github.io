@@ -37,9 +37,12 @@ export default function StickyNewsletterBar() {
           {(onClose) => (
             <>
               <ModalBody className="pt-6 pb-2">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Join our Newsletter
+                </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Join our mailing list to learn about volunteering opportunities 
-                  and updates about The Berkeley Project!
+                  Sign up to receive updates about volunteering opportunities 
+                  and news about The Berkeley Project!
                 </p>
               </ModalBody>
               <ModalFooter className="pt-2 pb-4">
@@ -59,7 +62,7 @@ export default function StickyNewsletterBar() {
                   className="font-medium"
                   isExternal
                 >
-                  Click here
+                  Sign Up
                 </Button>
               </ModalFooter>
             </>
