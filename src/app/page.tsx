@@ -43,7 +43,7 @@ export default function Home() {
             <p className="mt-4 text-base leading-relaxed text-gray-700 sm:text-lg">
               Our next <strong>Berkeley Project Day</strong> is happening{" "}
               <strong>April 11th, 2026</strong>! Applications to join our mission as a
-              Volunteer or Site Leader is open now and are due <strong>March 2nd</strong>. Deadline for club organizations to sign up will be Feb 23rd.  
+              Volunteer or Site Leader are open now and are due <strong>March 2nd</strong>. Deadline for club organizations to sign up will be Feb 23rd.  
             </p>
 
             {/* Buttons */}
