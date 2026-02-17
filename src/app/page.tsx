@@ -43,13 +43,13 @@ export default function Home() {
             <p className="mt-4 text-base leading-relaxed text-gray-700 sm:text-lg">
               Our next <strong>Berkeley Project Day</strong> is happening{" "}
               <strong>April 11th, 2026</strong>! Applications to join our mission as a
-              committee member are open now and are due <strong>February 6th at 5 pm</strong>. Check back for applications for Site Leaders and Volunteers after committee member applications close.  
+              Volunteer or Site Leader is open now and are due <strong>March 2nd</strong>. Deadline for club organizations to sign up will be Feb 23rd.  
             </p>
 
             {/* Buttons */}
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
               <Button
-                href="https://tinyurl.com/bpCMapp26"
+                href="https://forms.gle/2ZQZeNPQEBo8iZBM6"
                 className="w-full text-center text-base font-semibold sm:w-auto sm:px-6 sm:py-2"
               >
                 Apply Now
