@@ -17,7 +17,7 @@ export default function GalleryPage() {
     "2025": [
       {
         title: "SPRING",
-        image: "/photos/sp25/sp25_cover.png",
+        image: "/photos/sp25/sp25.png",
         gallery: [
           { img: "/photos/sp25/sp25_1.jpg" },
           { img: "/photos/sp25/sp25_2.jpg" },
@@ -47,7 +47,7 @@ export default function GalleryPage() {
       },
       {
         title: "FALL",
-        image: "/photos/fa25/fa25_cover.png",
+        image: "/photos/fa25/fa25.png",
         gallery: [
           { img: "/photos/fa25/img1.jpeg" },
           { img: "/photos/fa25/img2.JPEG" },
@@ -78,7 +78,7 @@ export default function GalleryPage() {
     "2024": [
       {
         title: "SPRING",
-        image: "/photos/sp24/sp24_cover.png",
+        image: "/photos/sp24/sp24.png",
         gallery: [
           { img: "/photos/sp24/sp24_1.jpg" },
           { img: "/photos/sp24/sp24_2.jpg" },
@@ -105,7 +105,7 @@ export default function GalleryPage() {
       },
       {
         title: "FALL",
-        image: "/photos/fa24/fa24_cover.png",
+        image: "/photos/fa24/fa24.png",
         gallery: [
           { img: "/photos/fa24/fa24_1.jpeg" },
           { img: "/photos/fa24/fa24_2.jpg" },
@@ -130,62 +130,7 @@ export default function GalleryPage() {
         ],
       },
     ],
-    "2023": [
-      {
-        title: "SPRING",
-        image: "/photos/sp23/sp23_cover.png",
-        gallery: [
-          { img: "/photos/sp23/sp23_1.jpg" },
-          { img: "/photos/sp23/sp23_2.jpg" },
-          { img: "/photos/sp23/sp23_3.jpg" },
-          { img: "/photos/sp23/sp23_4.jpeg" },
-          { img: "/photos/sp23/sp23_5.jpeg" },
-          { img: "/photos/sp23/sp23_6.jpeg" },
-          { img: "/photos/sp23/sp23_7.jpeg" },
-          { img: "/photos/sp23/sp23_8.jpg" },
-          { img: "/photos/sp23/sp23_9.jpg" },
-          { img: "/photos/sp23/sp23_10.jpg" },
-          { img: "/photos/sp23/sp23_11.jpg" },
-          { img: "/photos/sp23/sp23_12.jpg" },
-          { img: "/photos/sp23/sp23_13.jpg" },
-          { img: "/photos/sp23/sp23_14.jpg" },
-          { img: "/photos/sp23/sp23_15.jpg" },
-          { img: "/photos/sp23/sp23_16.jpg" },
-          { img: "/photos/sp23/sp23_17.jpeg" },
-          { img: "/photos/sp23/sp23_18.jpg" },
-          { img: "/photos/sp23/sp23_19.jpeg" },
-          { img: "/photos/sp23/sp23_20.jpeg" },
-        ],
-      },
-      {
-        title: "FALL",
-        image: "/photos/fa23/fa23_cover.png",
-        gallery: [
-          { img: "/photos/fa23/fa23_1.jpg" },
-          { img: "/photos/fa23/fa23_2.jpg" },
-          { img: "/photos/fa23/fa23_3.jpg" },
-          { img: "/photos/fa23/fa23_4.jpg" },
-          { img: "/photos/fa23/fa23_5.jpg" },
-          { img: "/photos/fa23/fa23_6.jpg" },
-          { img: "/photos/fa23/fa23_7.jpg" },
-          { img: "/photos/fa23/fa23_8.jpg" },
-          { img: "/photos/fa23/fa23_9.jpg" },
-          { img: "/photos/fa23/fa23_10.jpg" },
-          { img: "/photos/fa23/fa23_11.jpg" },
-          { img: "/photos/fa23/fa23_12.jpeg" },
-          { img: "/photos/fa23/fa23_13.jpg" },
-          { img: "/photos/fa23/fa23_14.jpeg" },
-          { img: "/photos/fa23/fa23_15.jpeg" },
-          { img: "/photos/fa23/fa23_16.jpeg" },
-          { img: "/photos/fa23/fa23_17.jpeg" },
-          { img: "/photos/fa23/fa23_18.jpeg" },
-          { img: "/photos/fa23/fa23_19.jpeg" },
-          { img: "/photos/fa23/fa23_20.jpeg" },
-          { img: "/photos/fa23/fa23_21.jpeg" },
-          { img: "/photos/fa23/fa23_22.jpeg" },
-        ],
-      },
-    ],
+ 
   };
 
 
