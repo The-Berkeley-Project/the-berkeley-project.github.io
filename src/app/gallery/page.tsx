@@ -6,7 +6,7 @@ import ImageGrid from "@/components/ImageGrid";
 import { motion, AnimatePresence } from "framer-motion";
 
 type ImageItem = { img: string };
-type GallerySection = { image: string; gallery: ImageItem[] };
+type GallerySection = { title: string; image: string; gallery: ImageItem[] };
 type Galleries = Record<string, GallerySection[]>;
 type OpenGallery = { year: string; index: number } | null;
 
@@ -16,6 +16,7 @@ export default function GalleryPage() {
   const galleries: Galleries = {
     "2025": [
       {
+        title: "SPRING",
         image: "/photos/sp25/sp25.jpg",
         gallery: [
           { img: "/photos/sp25/sp25_1.jpg" },
@@ -45,6 +46,7 @@ export default function GalleryPage() {
         ],
       },
       {
+        title: "FALL",
         image: "/photos/fa25/fa25.jpg",
         gallery: [
           { img: "/photos/fa25/img1.jpeg" },
@@ -75,6 +77,7 @@ export default function GalleryPage() {
     ],
     "2024": [
       {
+        title: "SPRING",
         image: "/photos/sp24/sp24.jpg",
         gallery: [
           { img: "/photos/sp24/sp24_1.jpg" },
@@ -101,6 +104,7 @@ export default function GalleryPage() {
         ],
       },
       {
+        title: "FALL",
         image: "/photos/fa24/fa24.jpg",
         gallery: [
           { img: "/photos/fa24/fa24_1.jpeg" },
@@ -126,7 +130,7 @@ export default function GalleryPage() {
         ],
       },
     ],
- 
+  
   };
 
 
@@ -152,7 +156,7 @@ export default function GalleryPage() {
             onClick={() => handleCardClick("2025", index)}
             className="cursor-pointer"
           >
-            <BoxCard image={section.image} />
+            <BoxCard title={section.title} image={section.image} />
           </div>
         ))}
       </div>
@@ -168,7 +172,7 @@ export default function GalleryPage() {
             onClick={() => handleCardClick("2024", index)}
             className="cursor-pointer"
           >
-            <BoxCard image={section.image} />
+            <BoxCard title={section.title} image={section.image} />
           </div>
         ))}
       </div>
@@ -184,7 +188,7 @@ export default function GalleryPage() {
             onClick={() => handleCardClick("2023", index)}
             className="cursor-pointer"
           >
-            <BoxCard image={section.image} />
+            <BoxCard title={section.title} image={section.image} />
           </div>
         ))}
       </div>
@@ -219,9 +223,9 @@ export default function GalleryPage() {
             </button>
 
             {/* Title */}
-          <h2 className="text-2xl md:text-3xl font-medium uppercase tracking-wide text-center mb-6 text-[#003262]">
-            {openGallery?.year} Gallery
-          </h2>
+            <h2 className="text-2xl md:text-3xl font-medium uppercase tracking-wide text-center mb-6 text-[#003262]">
+              {selectedGallery.title} Gallery
+            </h2>
 
             {/* Scrollable ImageGrid or Coming Soon */}
             <div className="max-h-[75vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent pt-6">
