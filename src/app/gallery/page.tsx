@@ -219,9 +219,9 @@ export default function GalleryPage() {
             </button>
 
             {/* Title */}
-            <h2 className="text-2xl md:text-3xl font-medium uppercase tracking-wide text-center mb-6 text-[#003262]">
-              {selectedGallery.title} Gallery
-            </h2>
+          <h2 className="text-2xl md:text-3xl font-medium uppercase tracking-wide text-center mb-6 text-[#003262]">
+            {openGallery?.year} Gallery
+          </h2>
 
             {/* Scrollable ImageGrid or Coming Soon */}
             <div className="max-h-[75vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent pt-6">
