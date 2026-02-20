@@ -16,7 +16,6 @@ export default function GalleryPage() {
   const galleries: Galleries = {
     "2025": [
       {
-        title: "SPRING",
         image: "/photos/sp25/sp25.jpg",
         gallery: [
           { img: "/photos/sp25/sp25_1.jpg" },
@@ -46,7 +45,6 @@ export default function GalleryPage() {
         ],
       },
       {
-        title: "FALL",
         image: "/photos/fa25/fa25.jpg",
         gallery: [
           { img: "/photos/fa25/img1.jpeg" },
@@ -77,7 +75,6 @@ export default function GalleryPage() {
     ],
     "2024": [
       {
-        title: "SPRING",
         image: "/photos/sp24/sp24.jpg",
         gallery: [
           { img: "/photos/sp24/sp24_1.jpg" },
@@ -104,7 +101,6 @@ export default function GalleryPage() {
         ],
       },
       {
-        title: "FALL",
         image: "/photos/fa24/fa24.jpg",
         gallery: [
           { img: "/photos/fa24/fa24_1.jpeg" },
