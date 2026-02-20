@@ -6,7 +6,7 @@ import ImageGrid from "@/components/ImageGrid";
 import { motion, AnimatePresence } from "framer-motion";
 
 type ImageItem = { img: string };
-type GallerySection = { title: string; image: string; gallery: ImageItem[] };
+type GallerySection = { image: string; gallery: ImageItem[] };
 type Galleries = Record<string, GallerySection[]>;
 type OpenGallery = { year: string; index: number } | null;
 
