@@ -17,7 +17,7 @@ export default function GalleryPage() {
     "2025": [
       {
         title: "SPRING",
-        image: "/photos/sp25/sp25.png",
+        image: "/photos/sp25/sp25.jpg",
         gallery: [
           { img: "/photos/sp25/sp25_1.jpg" },
           { img: "/photos/sp25/sp25_2.jpg" },
@@ -47,7 +47,7 @@ export default function GalleryPage() {
       },
       {
         title: "FALL",
-        image: "/photos/fa25/fa25.png",
+        image: "/photos/fa25/fa25.jpg",
         gallery: [
           { img: "/photos/fa25/img1.jpeg" },
           { img: "/photos/fa25/img2.JPEG" },
@@ -78,7 +78,7 @@ export default function GalleryPage() {
     "2024": [
       {
         title: "SPRING",
-        image: "/photos/sp24/sp24.png",
+        image: "/photos/sp24/sp24.jpg",
         gallery: [
           { img: "/photos/sp24/sp24_1.jpg" },
           { img: "/photos/sp24/sp24_2.jpg" },
@@ -105,7 +105,7 @@ export default function GalleryPage() {
       },
       {
         title: "FALL",
-        image: "/photos/fa24/fa24.png",
+        image: "/photos/fa24/fa24.jpg",
         gallery: [
           { img: "/photos/fa24/fa24_1.jpeg" },
           { img: "/photos/fa24/fa24_2.jpg" },
