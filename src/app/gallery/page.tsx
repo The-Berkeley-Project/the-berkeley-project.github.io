@@ -152,7 +152,7 @@ export default function GalleryPage() {
             onClick={() => handleCardClick("2025", index)}
             className="cursor-pointer"
           >
-            <BoxCard title={section.title} image={section.image} />
+            <BoxCard image={section.image} />
           </div>
         ))}
       </div>
@@ -168,7 +168,7 @@ export default function GalleryPage() {
             onClick={() => handleCardClick("2024", index)}
             className="cursor-pointer"
           >
-            <BoxCard title={section.title} image={section.image} />
+            <BoxCard image={section.image} />
           </div>
         ))}
       </div>
@@ -184,7 +184,7 @@ export default function GalleryPage() {
             onClick={() => handleCardClick("2023", index)}
             className="cursor-pointer"
           >
-            <BoxCard title={section.title} image={section.image} />
+            <BoxCard image={section.image} />
           </div>
         ))}
       </div>
