@@ -177,21 +177,6 @@ export default function GalleryPage() {
         ))}
       </div>
 
-      {/* 2023 SECTION */}
-      <h2 className="text-3xl font-semibold text-gray-800 mb-10 uppercase tracking-wide">
-        2023
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl px-6 mb-24">
-        {galleries["2023"].map((section, index) => (
-          <div
-            key={`2023-${index}`}
-            onClick={() => handleCardClick("2023", index)}
-            className="cursor-pointer"
-          >
-            <BoxCard title={section.title} image={section.image} />
-          </div>
-        ))}
-      </div>
 
         
       {/* MODAL */}
