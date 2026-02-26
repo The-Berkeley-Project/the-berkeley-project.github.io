@@ -30,7 +30,7 @@ const SocialEmbeddings: React.FC<Props> = ({
   }, []);
 
   return (
-    <section className="w-full py-3 px-4 bg-white">
+    <section className="w-full py-3 px-4">
       {/* Header Section */}
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-center mb-4 text-black">

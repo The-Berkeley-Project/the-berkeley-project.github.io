@@ -16,10 +16,10 @@ import StickyNewsletterBar from "@/components/StickyNewsletterBar";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#E3F9FF] to-white text-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-[#E3F9FF] via-[#E3F9FF] via-[#E3F9FF] to-white text-gray-900">
       
       {/* Hero Section */}
-      <section className="w-full px-4 pt-24 pb-12 sm:pt-32 sm:pb-16">
+      <section className="w-full px-4 pt-24 pb-0 sm:pt-32 sm:pb-0">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-12">
           
           {/* LEFT SIDE TEXT */}
@@ -40,24 +40,18 @@ export default function Home() {
               in beautifying Berkeley.
             </p>
 
-            <p className="mt-4 text-base leading-relaxed text-gray-700 sm:text-lg">
-              Our next <strong>Berkeley Project Day</strong> is happening{" "}
-              <strong>April 11th, 2026</strong>! Applications to join our mission as a
-              Volunteer or Site Leader are open now and are due <strong>March 2nd</strong>. Deadline for club organizations to sign up will be Feb 23rd.  
-            </p>
-
             {/* Buttons */}
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:gap-6">
               <Button
                 href="https://forms.gle/2ZQZeNPQEBo8iZBM6"
-                className="w-full text-center text-base font-semibold sm:w-auto sm:px-6 sm:py-2"
+                className="w-full text-center text-lg font-bold sm:w-auto sm:px-10 sm:py-4 text-lg"
               >
                 Apply Now
               </Button>
 
               <Button
                 href="/impact"
-                className="w-full text-center text-base font-semibold sm:w-auto sm:px-6 sm:py-2"
+                className="w-full text-center text-lg font-bold sm:w-auto sm:px-10 sm:py-4 text-lg"
               >
                 Learn More 
               </Button>
@@ -69,7 +63,7 @@ export default function Home() {
           <div className="flex justify-center md:justify-end">
             <div className="relative h-56 w-56 sm:h-72 sm:w-72 md:h-[420px] md:w-[420px]">
               <img
-                src="/duck.png"
+                src="/Mascot.png"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -77,8 +71,80 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Carousel */}
+      <section className="w-full py-0">
+        <div className="w-full px-4 py-8 overflow-hidden select-none" id="carousel-container" style={{ userSelect: 'none', WebkitUserSelect: 'none' }}>
+          <div className="flex gap-4 carousel-scroll">
+            {/* First group */}
+            <div className="flex gap-4 pr-4 carousel-group">
+              {[
+                "/photos/fa25/img1.jpeg",
+                "/photos/fa25/img11.JPEG",
+                "/photos/fa25/img12.JPEG",
+                "/photos/sp25/sp25_2.jpg",
+                "/photos/sp25/sp25_4.jpg",
+                "/photos/fa24/fa24_1.jpeg",
+                "/photos/fa24/fa24_10.jpeg",
+                "/photos/fa24/fa24_18.jpeg",
+                "/photos/sp24/sp24_1.jpg",
+                "/photos/sp24/sp24_12.jpg",
+              ].map((image, index) => (
+                <div 
+                  key={`group1-${index}`}
+                  className="relative flex-shrink-0 w-[150px] sm:w-[180px] md:w-[200px] aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow select-none"
+                  style={{ userSelect: 'none', WebkitUserSelect: 'none' }}
+                  draggable={false}
+                  onDragStart={(e) => e.preventDefault()}
+                >
+                  <Image
+                    src={image}
+                    alt={`Berkeley Project Day ${index + 1}`}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    loading="eager"
+                    draggable={false}
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Duplicate group for seamless loop */}
+            <div className="flex gap-4 pr-4 carousel-group" aria-hidden="true">
+              {[
+                "/photos/fa25/img1.jpeg",
+                "/photos/fa25/img11.JPEG",
+                "/photos/fa25/img12.JPEG",
+                "/photos/sp25/sp25_2.jpg",
+                "/photos/sp25/sp25_4.jpg",
+                "/photos/fa24/fa24_1.jpeg",
+                "/photos/fa24/fa24_10.jpeg",
+                "/photos/fa24/fa24_18.jpeg",
+                "/photos/sp24/sp24_1.jpg",
+                "/photos/sp24/sp24_12.jpg",
+              ].map((image, index) => (
+                <div 
+                  key={`group2-${index}`}
+                  className="relative flex-shrink-0 w-[150px] sm:w-[180px] md:w-[200px] aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow select-none"
+                  style={{ userSelect: 'none', WebkitUserSelect: 'none' }}
+                  draggable={false}
+                  onDragStart={(e) => e.preventDefault()}
+                >
+                  <Image
+                    src={image}
+                    alt={`Berkeley Project Day ${index + 1}`}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    loading="eager"
+                    draggable={false}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Blue Banner with Countdown */}
-      <section className="mt-16">
+      <section className="mt-0">
         <div className="w-full rounded-t-[3rem] bg-blue-400 py-12 text-center text-white sm:px-6">
           <h2 className="text-2xl font-semibold text-white/95 sm:text-3xl">
             Berkeley Project Day Countdown!
@@ -96,7 +162,7 @@ export default function Home() {
       </section>
 
       {/* What to Expect on BP Day Section */}
-      <section className="w-full py-12 px-4 bg-white">
+      <section className="w-full py-12 px-4">
         <div className="mx-auto max-w-6xl">
           
           <h2 className="text-4xl font-bold text-center mb-12 text-black">
@@ -141,47 +207,17 @@ export default function Home() {
 
           </div>
 
-          {/* Carousel */}
-          <div className="w-full mb-12 sm:mb-16">
-            <Carousel
-              className="w-full"
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              autoScroll={true}
-            >
-              <CarouselContent className="-ml-2 sm:-ml-4">
-                {[
-                  "/photos/fa25/img1.jpeg",
-                  "/photos/fa25/img11.JPEG",
-                  "/photos/fa25/img12.JPEG",
-                  "/photos/sp25/sp25_2.jpg",
-                  "/photos/sp25/sp25_4.jpg",
-                  "/photos/fa24/fa24_1.jpeg",
-                  "/photos/fa24/fa24_18.jpeg",
-                  "/photos/sp24/sp24_1.jpg",
-                  "/photos/sp24/sp24_12.jpg",
-                  "/photos/sp23/sp23_10.jpg",
-
-                ].map((image, index) => (
-                  <CarouselItem 
-                    key={index} 
-                    basis="basis-1/2 md:basis-1/3 lg:basis-1/5"
-                  >
-                    <div className="relative aspect-square rounded-lg overflow-hidden ml-2 md:ml-4">
-                      <Image
-                        src={image}
-                        alt={`Berkeley Project Day ${index + 1}`}
-                        fill
-                        className="object-cover"
-                        loading="eager"
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
+          {/* Image between What to Expect and Event Schedule */}
+          <div className="w-full mt-12 mb-8 sm:mt-16 flex justify-center">
+            <div className="relative w-full max-w-4xl aspect-video rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src="/photos/fa25/img1.jpeg"
+                alt="Berkeley Project Day"
+                fill
+                className="object-cover"
+                loading="lazy"
+              />
+            </div>
           </div>
 
           {/* Event Schedule */}

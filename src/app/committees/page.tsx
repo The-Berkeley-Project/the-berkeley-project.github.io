@@ -3,6 +3,19 @@ import FramedCard from "@/components/FramedCard";
 import CardFan from "@/components/CardFan";
 import LongCard from "@/components/longCard";
 
+// Helper function to get darker border color from background color
+const getBorderColor = (bgColor: string): string => {
+  const colorMap: Record<string, string> = {
+    "#F3E8C8": "#D4B896", // External Affairs - darker beige
+    "#EDF8E2": "#B8D4A0", // Finance - darker green
+    "#E9F2FA": "#A8C5E0", // Marketing - darker blue
+    "#ECECEC": "#C0C0C0", // Site Planning - darker gray
+    "#FFF7DA": "#E6D4A0", // Volunteer - darker yellow
+    "#E9E6FA": "#C4B8E0", // Web - darker purple
+  };
+  return colorMap[bgColor] || "#FFB6C1"; // Default pastel pink
+};
+
 export default function CommitteesPage() {
 
 
@@ -133,7 +146,7 @@ export default function CommitteesPage() {
             {execBoard.map((member, i) => (
               <FramedCard
                 key={i}
-                frameUrl="/Frame1.png"
+                frameUrl="/snoopy-border.png"
                 imageUrl={member.imageUrl}
                 bgColor={member.bgColor}
                 title={member.title}
@@ -160,9 +173,10 @@ export default function CommitteesPage() {
               const fanCount = Math.min(memberCount, 3) as 1 | 2 | 3;
               const roleTitle = memberCount > 1 ? "Co-Director" : "Director";
               const cards = committee.members.slice(0, fanCount).map((member) => ({
-                frameUrl: "/Frame1.png",
+                frameUrl: undefined,
                 imageUrl: member.image,
                 bgColor: committee.color,
+                borderColor: getBorderColor(committee.color),
                 title: `${committee.title} ${roleTitle}`,
                 bottomText: member.name,
                 width: "220px",
@@ -190,9 +204,10 @@ export default function CommitteesPage() {
                       {committee.members.map((member) => (
                         <FramedCard
                           key={member.name}
-                          frameUrl="/Frame1.png"
+                          frameUrl={undefined}
                           imageUrl={member.image}
                           bgColor={committee.color}
+                          borderColor={getBorderColor(committee.color)}
                           title={`${committee.title} ${roleTitle}`}
                           bottomText={member.name}
                           width="230px"

@@ -71,8 +71,8 @@ const Carousel = React.forwardRef<
         axis: orientation === "horizontal" ? "x" : "y",
         align: opts?.align ?? "start",
         slidesToScroll: opts?.slidesToScroll ?? 1,
-        dragFree: !autoScroll, // Disable drag when auto-scrolling
-        containScroll: "trimSnaps",
+        dragFree: autoScroll ? true : false, // Enable dragFree for smooth auto-scroll
+        containScroll: autoScroll ? "keepSnaps" : "trimSnaps",
         watchDrag: !autoScroll, // Disable drag watching when auto-scrolling
       },
       plugins
@@ -139,96 +139,122 @@ const Carousel = React.forwardRef<
       }
     }, [api, onSelect])
 
-    // Auto-scroll functionality - continuous smooth scrolling
+    // Auto-scroll functionality - continuous smooth scrolling with infinite loop
     React.useEffect(() => {
       if (!api || !autoScroll) {
         return
       }
 
-      let animationFrameId: number
-      let intervalId: NodeJS.Timeout | null = null
+      let animationFrameId: number | null = null
       let isScrolling = true
-      const scrollSpeed = 0.5 // pixels per frame (adjust for speed)
+      let isPaused = false
+      const scrollSpeed = 1.5 // pixels per frame
 
       const scroll = () => {
-        if (!isScrolling) return
+        if (!isScrolling) {
+          return
+        }
 
-        // Access the viewport element from the Embla API
-        const viewport = api.containerNode()
-        if (!viewport) {
+        if (isPaused) {
           animationFrameId = requestAnimationFrame(scroll)
           return
         }
 
-        // Get the scrollable container (the viewport)
-        const currentScroll = viewport.scrollLeft
-        const maxScroll = viewport.scrollWidth - viewport.clientWidth
+        try {
+          // Access the Embla viewport directly
+          const viewport = api.containerNode()
+          if (!viewport) {
+            animationFrameId = requestAnimationFrame(scroll)
+            return
+          }
 
-        // Only scroll if there's actually scrollable content
-        if (maxScroll > 1) {
-          // Clear interval if it was set (when items didn't fit)
-          if (intervalId) {
-            clearInterval(intervalId)
-            intervalId = null
-          }
-          
-          // Continuously scroll
-          const newScroll = currentScroll + scrollSpeed
-          
-          // Reset scroll position when reaching the end (for infinite loop)
-          if (newScroll >= maxScroll) {
-            viewport.scrollLeft = 0
-          } else {
+          const currentScroll = viewport.scrollLeft
+          const scrollWidth = viewport.scrollWidth
+          const clientWidth = viewport.clientWidth
+          const maxScroll = scrollWidth - clientWidth
+
+          // Only scroll if there's scrollable content
+          if (maxScroll > 0) {
+            let newScroll = currentScroll + scrollSpeed
+            
+            // For infinite loop - reset at halfway point since we duplicated items
+            const halfPoint = maxScroll / 2
+            if (newScroll >= halfPoint) {
+              newScroll = newScroll - halfPoint
+            }
+            
+            // Ensure we don't exceed bounds
+            if (newScroll > maxScroll) {
+              newScroll = 0
+            }
+            
             viewport.scrollLeft = newScroll
+            animationFrameId = requestAnimationFrame(scroll)
+          } else {
+            // Retry if not ready yet
+            animationFrameId = requestAnimationFrame(scroll)
           }
-          
+        } catch (error) {
+          console.error('Carousel scroll error:', error)
+          // Retry on error
+          animationFrameId = requestAnimationFrame(scroll)
+        }
+      }
+
+      // Wait for carousel to be ready using Embla's ready event
+      const startAutoScroll = () => {
+        const viewport = api.containerNode()
+        if (viewport && viewport.scrollWidth > viewport.clientWidth) {
+          // Start scrolling immediately
           animationFrameId = requestAnimationFrame(scroll)
         } else {
-          // If all items fit, use Embla's scrollNext with a timer for smooth looping
-          // This ensures continuous movement even when all items are visible
-          if (!intervalId) {
-            intervalId = setInterval(() => {
-              if (isScrolling && api) {
-                api.scrollNext()
-              }
-            }, 3000) // Scroll to next item every 3 seconds when all items are visible
+          // Wait a bit more if not ready
+          setTimeout(startAutoScroll, 200)
+        }
+      }
+
+      // Listen for Embla ready event
+      const onReady = () => {
+        startAutoScroll()
+      }
+
+      api.on('reInit', onReady)
+      
+      // Also try to start after initial delay
+      const timeoutId = setTimeout(() => {
+        startAutoScroll()
+      }, 800)
+
+      // Handle hover pause
+      const container = document.getElementById('carousel-container')
+      if (container) {
+        const handleMouseEnter = () => {
+          isPaused = true
+        }
+        const handleMouseLeave = () => {
+          isPaused = false
+        }
+        
+        container.addEventListener('mouseenter', handleMouseEnter)
+        container.addEventListener('mouseleave', handleMouseLeave)
+
+        return () => {
+          isScrolling = false
+          clearTimeout(timeoutId)
+          if (animationFrameId !== null) {
+            cancelAnimationFrame(animationFrameId)
           }
-          // Continue checking in case window is resized
-          animationFrameId = requestAnimationFrame(scroll)
+          container.removeEventListener('mouseenter', handleMouseEnter)
+          container.removeEventListener('mouseleave', handleMouseLeave)
         }
-      }
-
-      // Start scrolling
-      animationFrameId = requestAnimationFrame(scroll)
-
-      // Handle window resize to re-check scroll state
-      const handleResize = () => {
-        if (intervalId) {
-          clearInterval(intervalId)
-          intervalId = null
-        }
-      }
-      window.addEventListener('resize', handleResize)
-
-      // Prevent any manual scrolling interference
-      const viewport = api.containerNode()
-      if (viewport) {
-        viewport.style.overflow = 'hidden'
-        viewport.style.pointerEvents = 'none'
       }
 
       return () => {
         isScrolling = false
-        if (animationFrameId) {
+        clearTimeout(timeoutId)
+        api.off('reInit', onReady)
+        if (animationFrameId !== null) {
           cancelAnimationFrame(animationFrameId)
-        }
-        if (intervalId) {
-          clearInterval(intervalId)
-        }
-        window.removeEventListener('resize', handleResize)
-        if (viewport) {
-          viewport.style.overflow = ''
-          viewport.style.pointerEvents = ''
         }
       }
     }, [api, autoScroll])
