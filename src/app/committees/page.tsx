@@ -2,58 +2,23 @@ import React from "react";
 import FramedCard from "@/components/FramedCard";
 import CardFan from "@/components/CardFan";
 import LongCard from "@/components/longCard";
+import Image from "next/image";
 
-// Helper function to get darker border color from background color
 const getBorderColor = (bgColor: string): string => {
   const colorMap: Record<string, string> = {
-    "#F3E8C8": "#D4B896", // External Affairs - darker beige
-    "#EDF8E2": "#B8D4A0", // Finance - darker green
-    "#E9F2FA": "#A8C5E0", // Marketing - darker blue
-    "#ECECEC": "#C0C0C0", // Site Planning - darker gray
-    "#FFF7DA": "#E6D4A0", // Volunteer - darker yellow
-    "#E9E6FA": "#C4B8E0", // Web - darker purple
+    "#F3E8C8": "#D4B896",
+    "#EDF8E2": "#B8D4A0",
+    "#E9F2FA": "#A8C5E0",
+    "#ECECEC": "#C0C0C0",
+    "#FFF7DA": "#E6D4A0",
+    "#E9E6FA": "#C4B8E0",
   };
-  return colorMap[bgColor] || "#FFB6C1"; // Default pastel pink
+  return colorMap[bgColor] || "#FFB6C1";
 };
 
 export default function CommitteesPage() {
+  const execImageURL = "/core/exec.png";
 
-
-  // Exec
-  const execBoard = [
-    {
-      title: "Operations president",
-      imageUrl: "/core/Calvin.jpg",
-      bgColor: "#E9F2FA",
-      bottomText: "Calvin Kang (he/him)",
-    },
-    {
-      title: "Internal President",
-      imageUrl: "/core/Jennie.jpg",
-      bgColor: "#E9F2FA",
-      bottomText: "Jennie Son (she/her)",
-    },
-    {
-      title: "External President",
-      imageUrl: "/core/Javan.jpg",
-      bgColor: "#E9F2FA",
-      bottomText: "Javan Leong (he/him)",
-    },
-    {
-      title: "Outreach President",
-      imageUrl: "/core/Raveen.jpg",
-      bgColor: "#E9F2FA",
-      bottomText: "Raveen Noory (he/him)",
-    },
-    {
-      title: "Community President",
-      imageUrl: "/core/Prongha.png",
-      bgColor: "#E9F2FA",
-      bottomText: "Prongha Talukder (he/him)",
-    },
-  ];
-
-  // long card intro
   const committeesIntro = [
     {
       id: 1,
@@ -63,7 +28,6 @@ export default function CommitteesPage() {
     },
   ];
 
-  // committees
   const committees = [
     {
       id: 1,
@@ -135,33 +99,28 @@ export default function CommitteesPage() {
     },
   ];
 
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#E3F9FF] to-white text-gray-900">
-      <main className="mx-auto max-w-5xl px-6 pt-40 pb-16 space-y-24">
-        {/*OUR EXEC BOARD*/}
-        <section className="text-center space-y-10">
+      <main className="mx-auto max-w-5xl px-6 pt-40 pb-16 ">
+
+        {/* OUR EXEC BOARD */}
+        <section className="text-center space-y-10 mb-16">
           <h1 className="text-3xl font-bold text-[#0875DF]">Our Exec Board</h1>
-          <div className="flex flex-wrap justify-center gap-8">
-            {execBoard.map((member, i) => (
-              <FramedCard
-                key={i}
-                frameUrl="/snoopy-border.png"
-                imageUrl={member.imageUrl}
-                bgColor={member.bgColor}
-                title={member.title}
-                bottomText={member.bottomText}
-                width="240px"
-                height="340px"
-              />
-            ))}
-          </div>
+          <Image
+            src={execImageURL}
+            alt="BP Exec Board Fall 25 - Spring 26: Jennie Son, Javan Leong, Calvin Kang, Prongha Talukder, Raveen Noory"
+            width={1920}
+            height={1080}
+            quality={100}
+            unoptimized
+            className="w-full h-auto rounded-2xl shadow-md"
+          />
         </section>
 
-        {/* COMMITTEES  */}
-        <section className="space-y-16">
-          <h2 className="text-3xl font-bold text-[#0875DF] text-center">
-            Organizing Committees
+        {/* COMMITTEES */}
+        <section className="space-y-20 mt-16">
+          <h2 className="text-3xl font-bold text-[#0875DF] text-center mb-10">
+            Organizing Committees 
           </h2>
           {committeesIntro.map((card) => (
             <LongCard key={card.id} card={card} />
@@ -198,7 +157,7 @@ export default function CommitteesPage() {
                     </p>
                   </div>
 
-                  {/* Right Cards Area */}
+                  {/* Right Cards Area - mobile */}
                   <div className="md:hidden">
                     <div className="flex flex-col items-center gap-4">
                       {committee.members.map((member) => (
@@ -217,6 +176,7 @@ export default function CommitteesPage() {
                     </div>
                   </div>
 
+                  {/* Right Cards Area - desktop */}
                   <div className="hidden w-full justify-center md:flex md:justify-end">
                     <CardFan
                       count={fanCount}
@@ -231,6 +191,5 @@ export default function CommitteesPage() {
         </section>
       </main>
     </div>
-
   );
 }
