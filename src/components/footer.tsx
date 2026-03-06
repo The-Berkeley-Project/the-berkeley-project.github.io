@@ -74,7 +74,7 @@ export function Footer() {
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {sponsors.map((sponsor) => (
-                  <div
+                  <a
                     key={sponsor.name}
                     className="flex h-36 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur"
                   >
@@ -86,7 +86,7 @@ export function Footer() {
                       className="h-auto max-h-20 w-auto max-w-full object-contain"
                       loading="eager"
                     />
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
