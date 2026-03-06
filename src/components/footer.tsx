@@ -76,6 +76,9 @@ export function Footer() {
                 {sponsors.map((sponsor) => (
                   <a
                     key={sponsor.name}
+                    href={sponsor.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex h-36 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur"
                   >
                     <Image
