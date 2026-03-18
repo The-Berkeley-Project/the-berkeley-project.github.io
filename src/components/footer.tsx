@@ -51,7 +51,7 @@ const sponsors = [
   { name: "Perfect Bar", logo: "/sponsors/PerfectBar.png", href: "https://perfectsnacks.com/?srsltid=AfmBOooe_pFUEwBwHdH1FGDQ7OBDdYY0zOIWPWrobIuVEfQF1rhg2_Iv"},
   { name: "Chobani", logo: "/sponsors/Chobani.png", href: "https://www.chobani.com/" },
   { name: "Olipop", logo: "/sponsors/Olipop.png", href: "https://drinkolipop.com/?srsltid=AfmBOoqSjQd-5w1Z-56X3uwe4ALDiEwur-L5rmCp768XR2dsYTE2ZGPf" },
-  { name: "Cult Crackers", logo: "/sponsors/CultCrackers1.png", href: "https://www.cultcrackers.com/?srsltid=AfmBOoqmXSoonCXmfPp8yPulsXcg640tGFEfA1U1zC8oRfYuS08UhUDJ" },
+  { name: "Cult Crackers", logo: "/sponsors/CultCrackers.png", href: "https://www.cultcrackers.com/?srsltid=AfmBOoqmXSoonCXmfPp8yPulsXcg640tGFEfA1U1zC8oRfYuS08UhUDJ" },
   { name: "Harmless Harvest", logo: "/sponsors/HarmlessHarvest.png", href: "https://harmlessharvest.com/?srsltid=AfmBOopSljvKQn29ZC0h60j9oqc9ATlz6qn149vCBc-AEGP5rNwOrQrD" },
   { name: "LMNT", logo: "/sponsors/LMNT.webp", href: "https://drinklmnt.com/collections/salt?utm_source=google&utm_medium=cpc&utm_campaign=evergreenmisspellcold&gad_source=1&gad_campaignid=21002967780&gbraid=0AAAAAC5L3cfOQghti1BXKnSlNQLH5FGWs&gclid=Cj0KCQiA8KTNBhD_ARIsAOvp6DKU7vjY8fYrrkrIYYryDdlfLZS8MbdUVMwhmrztpoYvNMGxiM1DQVgaAjAlEALw_wcB" },
   { name: "Shinnyo-en Foundation", logo: "/sponsors/Shinnyo-enFoundation.webp", href: "https://sef.org/"},
@@ -59,10 +59,10 @@ const sponsors = [
 ];
 
 type FooterProps = {
-  logoSrc: string;
+  logoSrc?: string;
 };
 
-export function Footer({ logoSrc = "./bpLogo.png.png" }: FooterProps) {
+export function Footer({ logoSrc = "./bpLogo.png" }: FooterProps) {
   return (
     <footer className="bg-white pt-12">
       <div className="w-full rounded-t-[3rem] bg-blue-400 px-6 py-14 text-white md:px-10 lg:px-16">
@@ -147,4 +147,3 @@ export function Footer({ logoSrc = "./bpLogo.png.png" }: FooterProps) {
     </footer>
   );
 }
-
