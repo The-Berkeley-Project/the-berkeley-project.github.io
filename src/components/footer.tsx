@@ -91,7 +91,7 @@ export function Footer({ logoSrc = "./bpLogo.png.png" }: FooterProps) {
               width={420}
               height={220}
               priority
-              className="h-auto w-[260px] md:w-[300px] lg:w-[380px] object-contain"
+              className="h-auto w-[180px] md:w-[220px] lg:w-[260px] object-contain"
             />
             <div style={{ marginTop: "1.5rem", display: "flex", gap: "1rem" }}>
               {socialLinks.map((social) => (
@@ -118,7 +118,7 @@ export function Footer({ logoSrc = "./bpLogo.png.png" }: FooterProps) {
               marginRight: "auto",
             }}
           >
-            <h2 className="mb-4 text-lg font-semibold text-black">
+            <h2 className="mb-4 text-lg font-semibold text-black ml-34">
               Special Thanks To Our Sponsors!
             </h2>
             <div className="grid w-full max-w-[560px] grid-cols-2 gap-3 sm:grid-cols-4">
@@ -128,7 +128,7 @@ export function Footer({ logoSrc = "./bpLogo.png.png" }: FooterProps) {
                   href={sponsor.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex aspect-[1.25/1] items-center justify-center bg-[#d9d9d9] p-4 transition-transform duration-200 hover:scale-[1.02]"
+                  className="flex aspect-[1.25/1] items-center justify-center rounded-2xl bg-blue-200/50 backdrop-blur-sm p-4 transition-transform duration-200 hover:scale-[1.05] hover:bg-blue-500/30"
                 >
                   <Image
                     src={sponsor.logo}
