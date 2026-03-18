@@ -95,6 +95,21 @@ export default function ImpactPage() {
         </div>
       </section>
 
+        {/* map section */}
+        <section className="mx-auto mt-24 max-w-5xl px-6 text-center">
+          <h2 className="text-3xl font-bold text-black sm:text-4xl">
+            Site Map
+          </h2>
+
+          <div className="mt-10 w-full h-[550px] rounded-3xl overflow-hidden shadow-lg relative">
+            <iframe
+              src="https://www.google.com/maps/d/embed?mid=1Qzbe4x-UQFOikRDVd1Vjn_0t7Jlx2cY&ehbc=2E312F"
+              className="absolute top-[-60px] left-0 w-full h-[calc(100%+100px)] border-0"
+              loading="lazy"
+            />
+          </div>
+        </section>
+
       {/* bottom padding */}
       <div className="pb-24" />
     </div>
