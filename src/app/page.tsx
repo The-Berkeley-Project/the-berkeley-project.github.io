@@ -179,7 +179,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-black ml-3">Meeting Location</h3>
               </div>
               <p className="text-gray-700 text-sm">
-                Upper Sproul Plaza at 8:00 AM SHARP. Stay the whole day.
+                Lower Sproul Plaza at 8:00 AM SHARP. Stay the whole day.
               </p>
             </div>
             
