@@ -36,8 +36,8 @@ export default function ImpactPage() {
   const options = {
     plugins: {
       legend: {
-        position: "right",
-      }
+        position: "top" as const,
+      },
     },
   };
 
