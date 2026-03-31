@@ -1,8 +1,46 @@
+"use client";
+
 import Image from "next/image";
 import SusSiteCard from "@/components/sussitecard";
 import { Leaf, Package, School } from "lucide-react";
 
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Pie } from "react-chartjs-2";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+
 export default function ImpactPage() {
+  // Pie chart data
+  const data = {
+    labels: ["Gardening (46.7%)", "Landscaping (23.3%)", "Cleaning (20.0%)", "Litter/Trash Pickup (10.0%)"],
+    datasets: [
+      {
+        label: " Types of Service",
+        data: [21, 11, 9, 5],
+        backgroundColor: [
+          "#5BC0DE",
+          "#9AA3AF",
+          "#6495ED",
+          "#1D4ED8",
+        ],
+        borderWidth: 2,
+      },
+    ],
+  };
+
+  const options = {
+    plugins: {
+      legend: {
+        position: "right",
+      }
+    },
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#E3F9FF] to-white text-gray-900">
       {/* padding before title */}
@@ -40,15 +78,21 @@ export default function ImpactPage() {
           <div className="grid gap-10 text-center sm:grid-cols-3">
             <div>
               <h2 className="text-5xl font-extrabold">298</h2>
-              <p className="mt-2 text-lg uppercase tracking-wide">Sustained Sites</p>
+              <p className="mt-2 text-lg uppercase tracking-wide">
+                Sustained Sites
+              </p>
             </div>
             <div>
               <h2 className="text-5xl font-extrabold">1,741</h2>
-              <p className="mt-2 text-lg uppercase tracking-wide">Current Volunteers</p>
+              <p className="mt-2 text-lg uppercase tracking-wide">
+                Current Volunteers
+              </p>
             </div>
             <div>
               <h2 className="text-5xl font-extrabold">36</h2>
-              <p className="mt-2 text-lg uppercase tracking-wide">Semesters</p>
+              <p className="mt-2 text-lg uppercase tracking-wide">
+                Semesters
+              </p>
             </div>
           </div>
         </div>
@@ -92,6 +136,26 @@ export default function ImpactPage() {
             description="Students came together to restore the site by painting and sanding benches, as well as trimming overgrown bushes along the roads!"
             Icon={School}
           />
+        </div>
+      </section>
+
+      {/* types of service */}
+      <section className="mx-auto mt-24 max-w-5xl px-6 text-center">
+        <h2 className="text-4xl font-bold text-black sm:text-5xl">
+          Types of Service
+        </h2>
+
+        <p className="mt-8 max-w-3xl mx-auto text-sm text-gray-700 leading-relaxed">
+          Our volunteers contribute across a wide range of service areas, from
+          environmental stewardship to neighborhood cleanup efforts. Each
+          category reflects our commitment to supporting and uplifting the local
+          community.
+        </p>
+
+        <div className="mt-0 flex justify-center">
+          <div className="w-full max-w-xl">
+            <Pie data={data} options={options} />
+          </div>
         </div>
       </section>
 
