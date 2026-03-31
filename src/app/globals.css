@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka+One:wght@400&family=Patrick+Hand:wght@400&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -75,4 +76,47 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Comic strip font for headings */
+.comic-font {
+  font-family: 'Patrick Hand', 'Bangers', 'Fredoka One', 'Comic Sans MS', 'Marker Felt', cursive;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.15);
+}
+
+/* CSS-only infinite scrolling carousel */
+.carousel-scroll {
+  will-change: transform;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.carousel-group {
+  will-change: transform;
+  animation: scrolling 50s linear infinite;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.carousel-group img {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#carousel-container:hover .carousel-group {
+  animation-play-state: paused;
 }
