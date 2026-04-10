@@ -147,7 +147,7 @@ export default function ImpactPage() {
         <div className="mt-10 w-full h-[550px] rounded-3xl overflow-hidden shadow-lg relative">
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1Qzbe4x-UQFOikRDVd1Vjn_0t7Jlx2cY&ehbc=2E312F&noprof=1"
-          className="absolute top-[-50px] left-0 w-full h-[calc(100%+50px)] border-0"
+          className="absolute top-[-80px] left-0 w-full h-[calc(100%+50px)] border-0"
           loading="lazy"
         />
       </div>
