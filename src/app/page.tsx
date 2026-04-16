@@ -23,7 +23,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-12">
           
           {/* LEFT SIDE TEXT */}
-          <div className="text-left">
+          <div className="text-left order-2 md:order-1">
             
             {/* Gradient Title */}
             <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl">
@@ -60,7 +60,7 @@ export default function Home() {
           </div> {/* CLOSE LEFT SIDE TEXT DIV */}
 
           {/* RIGHT SIDE IMAGE */}
-          <div className="flex justify-center md:justify-end">
+          <div className="flex justify-center md:justify-end order-1 md:order-2">
             <div className="relative h-56 w-56 sm:h-72 sm:w-72 md:h-[420px] md:w-[420px]">
               <img
                 src="/Mascot.png"
