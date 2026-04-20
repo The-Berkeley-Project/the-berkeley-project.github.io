@@ -90,7 +90,7 @@ export default function CommitteesPage() {
       id: 6,
       title: "Web",
       description:
-        "Web is responsible for updating and maintaining the berkeleyproject.org website and sorting volunteer/site leader applications. We communicate with other committees to provide important updates to the Berkeley Project community! This committee is a creative and diverse space open for students to take on individual projects (i.e. bot for tabling sign-ups) or expansion projects (i.e. redesign graphics, new subpages).",
+        "Web is responsible for updating and maintaining the berkeleyproject.org website. We communicate with other committees to provide important updates to the Berkeley Project community and help automate their tasks! This committee is a creative and diverse space open for students to take on individual projects (i.e. bot for tabling sign-ups) or expansion projects (i.e. redesign graphics, new subpages).",
       color: "#E9E6FA",
       members: [
         { name: "Mindy Phan (she/her)", image: "/core/mindy.png" },
