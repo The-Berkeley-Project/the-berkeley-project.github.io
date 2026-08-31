@@ -19,17 +19,77 @@ const FramedCard: React.FC<Props> = ({
   bottomText,
   bgColor = "#FAEACB", // default soft ochre
   borderColor,
-  width = "300px", 
+  width = "300px",
   height = "420px",
 }) => {
-  // Helper function to darken color for border
   const getBorderColor = () => {
     if (borderColor) return borderColor;
-    // Default pastel pink if no border color specified
-    return '#FFB6C1';
+    return "#FFB6C1";
   };
+
   const titleFontSize = title && title.length > 24 ? "text-[10px]" : "text-[12px]";
-  const bottomTextFontSize = bottomText && bottomText.length > 24 ? "text-[14px]" : "text-[16px]";
+  const titleTextClass = frameUrl ? "text-[12px]" : "text-[11px] md:text-[12px]";
+  const bottomTextFontSize = bottomText && bottomText.length > 24 ? "text-[13px]" : "text-[15px]";
+
+  if (!frameUrl) {
+    return (
+      <div
+        className="relative overflow-hidden rounded-lg bg-white"
+        style={{
+          backgroundColor: bgColor,
+          fontFamily:
+            "'Essentiarum', 'Gill Sans', 'Futura', 'Avenir', 'Banschrift', 'Helvetica Neue', sans-serif",
+          width,
+          height,
+          border: `4px solid ${getBorderColor()}`,
+          boxShadow: `0 4px 0 ${getBorderColor()}40, 0 8px 16px rgba(0,0,0,0.1)`,
+        }}
+      >
+        <div className="flex h-full flex-col p-3">
+          {title && (
+            <div
+              className={`${titleTextClass} font-semibold text-black text-center leading-tight px-1 pt-1 ${title.length > 20 ? "tracking-tight" : "tracking-wide"}`}
+              style={{
+                textRendering: "optimizeLegibility",
+                textShadow: "1px 1px 2px rgba(255,255,255,0.8)",
+              }}
+            >
+              {title}
+            </div>
+          )}
+
+          {imageUrl && (
+            <div
+              className="relative mt-2 w-full flex-1 overflow-hidden rounded-md"
+              style={{ minHeight: title ? "190px" : "220px" }}
+            >
+              <Image
+                src={imageUrl}
+                fill
+                loading="eager"
+                alt="Main content"
+                className="object-cover"
+                sizes="(max-width: 768px) 230px, 220px"
+              />
+            </div>
+          )}
+
+          {bottomText && (
+            <div
+              className={`${bottomTextFontSize} mt-2 font-semibold text-black text-center px-2 leading-snug`}
+              style={{
+                textShadow: "1px 1px 2px rgba(255,255,255,0.8)",
+                letterSpacing: "0.01em",
+                wordBreak: "break-word",
+              }}
+            >
+              {bottomText}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -40,21 +100,19 @@ const FramedCard: React.FC<Props> = ({
           "'Essentiarum', 'Gill Sans', 'Futura', 'Avenir', 'Banschrift', 'Helvetica Neue', sans-serif",
         width,
         height,
-        border: frameUrl ? 'none' : `4px solid ${getBorderColor()}`,
-        boxShadow: frameUrl ? '0 8px 16px rgba(0,0,0,0.2)' : `0 4px 0 ${getBorderColor()}40, 0 8px 16px rgba(0,0,0,0.1)`,
+        border: "none",
+        boxShadow: "0 8px 16px rgba(0,0,0,0.2)",
       }}
     >
-
-      {/* Main image inside the frame */}
       {imageUrl && (
         <div
-          className={`absolute z-30 overflow-hidden ${frameUrl ? 'rounded-sm border-2 border-black' : 'rounded-lg border-2 border-black'}`}
+          className="absolute z-30 overflow-hidden rounded-sm border-2 border-black"
           style={{
-            top: frameUrl ? "49px" : "20px",
+            top: "49px",
             left: "50%",
             transform: "translateX(-50%)",
-            width: frameUrl ? "83%" : "85%",
-            height: frameUrl ? "calc(100% - 180px)" : "calc(100% - 120px)",
+            width: "83%",
+            height: "calc(100% - 180px)",
           }}
         >
           <Image
@@ -68,11 +126,8 @@ const FramedCard: React.FC<Props> = ({
         </div>
       )}
 
-      {/* PNG frame overlay (Snoopy border) - touching edges */}
       {frameUrl && (
-        <div 
-          className="absolute inset-0 z-10 pointer-events-none"
-        >
+        <div className="absolute inset-0 z-10 pointer-events-none">
           <Image
             src={frameUrl}
             fill
@@ -84,33 +139,31 @@ const FramedCard: React.FC<Props> = ({
         </div>
       )}
 
-      {/* Top banner title */}
       {title && frameUrl && (
         <div
-          className={`absolute top-[28px] left-1/2 -translate-x-1/2 w-[240px] ${titleFontSize} font-semibold text-black text-center whitespace-nowrap overflow-hidden text-ellipsis z-40`}
+          className={`absolute top-[28px] left-1/2 -translate-x-1/2 w-[240px] ${titleFontSize} font-semibold text-black text-center whitespace-normal overflow-hidden z-40 px-2`}
           style={{
             lineHeight: "1.25",
             textRendering: "optimizeLegibility",
             letterSpacing: "0.02em",
-            textShadow: '1px 1px 2px rgba(255,255,255,0.8)',
+            textShadow: "1px 1px 2px rgba(255,255,255,0.8)",
           }}
         >
           {title}
         </div>
       )}
 
-      {/* Bottom text */}
       {bottomText && (
         <div
-          className={`absolute ${frameUrl ? 'bottom-[65px]' : 'bottom-[16px]'} left-1/2 -translate-x-1/2 ${bottomTextFontSize} font-semibold text-black text-center z-50 px-2`}
+          className={`absolute ${frameUrl ? "bottom-[65px]" : "bottom-[16px]"} left-1/2 -translate-x-1/2 ${bottomTextFontSize} font-semibold text-black text-center z-50 px-2`}
           style={{
-            textShadow: '1px 1px 2px rgba(255,255,255,0.8)',
-            letterSpacing: '0.01em',
-            maxWidth: '85%',
-            wordWrap: 'normal',
-            overflowWrap: 'break-word',
-            whiteSpace: 'normal',
-            lineHeight: '1.4',
+            textShadow: "1px 1px 2px rgba(255,255,255,0.8)",
+            letterSpacing: "0.01em",
+            maxWidth: "85%",
+            wordWrap: "normal",
+            overflowWrap: "break-word",
+            whiteSpace: "normal",
+            lineHeight: "1.4",
           }}
         >
           {bottomText}
