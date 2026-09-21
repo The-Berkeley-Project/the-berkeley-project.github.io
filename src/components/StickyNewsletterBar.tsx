@@ -22,7 +22,7 @@ export default function StickyNewsletterBar() {
             <Button
               as={Link}
               color="primary"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSeRAxBgF2D0hR7vx9aoeLNkEQD3yIk_i_eoZX0DGVdnTm1r4A/viewform"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSc2wcMlG-AFWcFTg2hshBfXUDiRKN1-2DqFvr_hNN5e-kiNFw/viewform"
               variant="solid"
               className="font-medium bg-[#61AFFC] rounded-lg w-full"
               isExternal
