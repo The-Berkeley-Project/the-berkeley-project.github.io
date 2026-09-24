@@ -43,10 +43,10 @@ export default function Home() {
             {/* Buttons */}
             <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:gap-6">
               <Button
-                href="https://forms.gle/2ZQZeNPQEBo8iZBM6"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSc2wcMlG-AFWcFTg2hshBfXUDiRKN1-2DqFvr_hNN5e-kiNFw/viewform"
                 className="w-full text-center text-lg font-bold sm:w-auto sm:px-10 sm:py-4 text-lg"
               >
-                Apply Now
+                Join Us!
               </Button>
 
               <Button
