@@ -150,11 +150,11 @@ export default function Home() {
             Berkeley Project Day Countdown!
           </h2>
           <p className="mt-2 text-sm text-white/80 sm:text-base">
-            April 11th, 2026 • Applications for Volunteers/Site leaders due March 2nd, 2026. 
+            November 14th, 2026 • Applications for Volunteers/Site leaders due October 9th, 2026. 
           </p>
           <div className="mt-6 sm:mt-8">
             <Countdown
-              targetDate={new Date('2026-04-11T08:00:00')}
+              targetDate={new Date('2026-11-14T08:00:00')}
               format="long"
             />
           </div>
