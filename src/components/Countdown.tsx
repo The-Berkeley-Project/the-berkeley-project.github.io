@@ -12,6 +12,8 @@ export interface CountdownProps {
   showSeconds?: boolean;
   format?: "short" | "long";
   separator?: string;
+  valueClassName?: string;
+  labelClassName?: string;
 }
 
 interface TimeLeft {
@@ -31,6 +33,8 @@ export function Countdown({
   showSeconds = true,
   format = "short",
   separator = ":",
+  valueClassName = "text-4xl sm:text-5xl md:text-6xl text-white",
+  labelClassName = "text-sm sm:text-base md:text-lg text-white",
 }: CountdownProps) {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
@@ -101,25 +105,25 @@ export function Countdown({
 
   if (isComplete) {
     return (
-      <div className={`countdown complete flex items-center justify-center ${className}`}>
-        <span className="text-white">Countdown Complete</span>
+      <div className={`countdown complete ${className}`}>
+        <span className={labelClassName}>{format === "long" ? "Today’s the day" : "Done"}</span>
       </div>
     );
   }
 
   return (
-    <div className={`countdown relative flex flex-wrap items-center justify-center gap-3 sm:flex-nowrap sm:gap-4 ${className}`}>
-      {timeUnits.map((unit, index) => (
-        <React.Fragment key={unit.label}>
-          <div className="countdown-unit flex w-1/2 items-baseline justify-center gap-1 px-1 sm:w-auto sm:justify-start sm:px-0 sm:gap-2">
-            <span className="countdown-value text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
+    <div className={`countdown grid grid-cols-2 gap-x-6 gap-y-2 sm:flex sm:items-baseline sm:gap-6 ${className}`}>
+      {timeUnits.map((unit) => (
+        <div key={unit.label} className="countdown-unit flex items-baseline gap-1 sm:gap-2">
+          <span className={`countdown-value inline-block overflow-hidden font-bold tabular-nums ${valueClassName}`}>
+            <span key={unit.value} className="animate-tick">
               {formatNumber(unit.value)}
             </span>
-            <span className="countdown-label text-sm font-normal capitalize text-white sm:text-base md:text-xl lg:text-2xl">
-              {unit.label}
-            </span>
-          </div>
-        </React.Fragment>
+          </span>
+          <span className={`countdown-label font-normal ${labelClassName}`}>
+            {unit.label}
+          </span>
+        </div>
       ))}
     </div>
   );
