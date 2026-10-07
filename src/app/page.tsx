@@ -63,7 +63,7 @@ export default function Home() {
           <div className="flex justify-center md:justify-end order-1 md:order-2">
             <div className="relative h-56 w-56 sm:h-72 sm:w-72 md:h-[420px] md:w-[420px]">
               <img
-                src="/Mascot.png"
+                src="/KungFuPanda.png"
                 className="w-full h-full object-contain"
               />
             </div>
