@@ -4,7 +4,9 @@ import { CountUp } from "@/components/CountUp";
 import { Tape } from "@/components/Scrapbook";
 import { SiteMap } from "@/components/SiteMap";
 import { brand } from "@/config/brand";
+import { impactSource, partnerQuotes } from "@/config/press";
 import { semester } from "@/config/semester";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { sites } from "@/config/sites";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -98,6 +100,18 @@ export default function ImpactPage() {
               </div>
             ))}
           </dl>
+          <p className="mt-12 text-sm text-white/70">
+            Hours and labor savings as cited in the{" "}
+            <a
+              href={impactSource.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-white/40 underline-offset-4 transition-colors duration-300 ease-bp hover:text-white hover:decoration-bp-gold"
+            >
+              {impactSource.label}
+            </a>{" "}
+            in {impactSource.outlet}.
+          </p>
         </div>
       </section>
 
@@ -141,6 +155,53 @@ export default function ImpactPage() {
       </section>
 
       <section className="bg-bp-cream bg-dots px-4 py-24 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <h2 data-reveal className="text-3xl font-bold tracking-tight text-bp-navy md:text-4xl">
+            From our partners
+          </h2>
+          <p data-reveal className="mt-6 max-w-2xl text-lg text-bp-muted">
+            What the community organizations we work with have written about
+            Berkeley Project Day.
+          </p>
+
+          <ul className="mt-14 grid items-start gap-12 md:grid-cols-2 md:gap-10">
+            {partnerQuotes.map((item, i) => (
+              <li
+                key={item.org}
+                data-reveal
+                className={`relative rounded-2xl bg-white p-8 shadow-bp transition-[rotate] duration-700 ease-bp hover:rotate-0 ${
+                  i % 2 ? "rotate-1" : "-rotate-1"
+                }`}
+                style={{ "--reveal-delay": `${i * 120}ms` } as React.CSSProperties}
+              >
+                <Tape className={`-top-3 left-8 ${i % 2 ? "rotate-3" : "-rotate-3"}`} tone={i % 2 ? "accent" : "gold"} />
+                <figure>
+                  <blockquote className="text-xl font-medium leading-relaxed text-bp-ink md:text-2xl">
+                    <span aria-hidden className="mr-1 font-bold text-bp-gold">“</span>
+                    {item.quote}
+                  </blockquote>
+                  <figcaption className="mt-6 border-t border-bp-line pt-4">
+                    <p className="text-base font-semibold text-bp-navy">{item.org}</p>
+                    <p className="mt-1 text-sm text-bp-muted">{item.context}</p>
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-bp-navy underline decoration-bp-navy/30 underline-offset-4 transition-colors duration-300 ease-bp hover:decoration-bp-navy"
+                    >
+                      Read their post
+                      <ArrowUpRight size={16} weight="bold" aria-hidden />
+                      <span className="sr-only">(opens in a new tab)</span>
+                    </a>
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="bg-bp-paper px-4 py-24 sm:px-6">
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:gap-16">
           <div data-reveal>
             <h2 className="text-3xl font-bold tracking-tight text-bp-navy md:text-4xl">
@@ -177,7 +238,7 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      <section className="bg-bp-paper px-4 py-24 sm:px-6">
+      <section className="bg-bp-cream bg-dots px-4 py-24 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <h2 data-reveal className="text-3xl font-bold tracking-tight text-bp-navy md:text-4xl">
             Where we volunteer
