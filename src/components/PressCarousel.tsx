@@ -1,5 +1,6 @@
 "use client";
 
+import { OutletLogo } from "@/components/OutletLogo";
 import { Tape } from "@/components/Scrapbook";
 import type { PressItem } from "@/config/press";
 import { ArrowUpRight, CaretLeft, CaretRight } from "@phosphor-icons/react";
@@ -65,8 +66,10 @@ export function PressCarousel({ items }: { items: PressItem[] }) {
               }`}
             >
               <Tape className={`-top-3 left-1/2 -ml-12 ${i % 2 ? "rotate-3" : "-rotate-3"}`} tone={i % 3 === 2 ? "accent" : "gold"} />
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-bp-navy">{item.outlet}</p>
-              <p className="mt-1 text-sm text-bp-muted">{item.date}</p>
+              <div className="flex h-8 items-center">
+                <OutletLogo outlet={item.outlet} area={2700} />
+              </div>
+              <p className="mt-2 text-sm text-bp-muted">{item.date}</p>
               <blockquote className="mt-5 flex-1 text-lg leading-relaxed text-bp-ink">
                 <span aria-hidden className="mr-1 text-2xl font-bold leading-none text-bp-gold">
                   “

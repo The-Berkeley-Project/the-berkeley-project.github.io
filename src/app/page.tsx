@@ -10,6 +10,7 @@ import { brand } from "@/config/brand";
 import { faq } from "@/config/faq";
 import { impactSource, press } from "@/config/press";
 import { semester } from "@/config/semester";
+import { OutletLogo } from "@/components/OutletLogo";
 import { PressCarousel } from "@/components/PressCarousel";
 import {
   ArrowRight,
@@ -56,7 +57,7 @@ const stats = [
 ];
 
 const pressOutlets = press.filter(
-  (item, i) => press.findIndex((other) => other.outlet === item.outlet) === i,
+  (item, i) => press.findIndex((other) => other.outlet.name === item.outlet.name) === i,
 );
 
 export default function Home() {
@@ -300,16 +301,16 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-bp-navy md:text-4xl">
               In the news
             </h2>
-            <ul className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3" aria-label="Outlets that have covered us">
+            <ul className="mt-8 flex flex-wrap items-center gap-x-12 gap-y-6" aria-label="Outlets that have covered us">
               {pressOutlets.map((item) => (
-                <li key={item.outlet}>
+                <li key={item.outlet.name}>
                   <a
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-lg font-extrabold tracking-tight text-bp-navy/60 transition-colors duration-300 ease-bp hover:text-bp-navy md:text-xl"
+                    className="block rounded transition-[translate] duration-300 ease-bp hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bp-navy focus-visible:ring-offset-4"
                   >
-                    {item.outlet}
+                    <OutletLogo outlet={item.outlet} area={5700} />
                   </a>
                 </li>
               ))}
