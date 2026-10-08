@@ -8,7 +8,10 @@ import { StatementReveal } from "@/components/StatementReveal";
 import StickyApplyBar from "@/components/StickyApplyBar";
 import { brand } from "@/config/brand";
 import { faq } from "@/config/faq";
+import { impactSource, press } from "@/config/press";
 import { semester } from "@/config/semester";
+import { OutletLogo } from "@/components/OutletLogo";
+import { PressCarousel } from "@/components/PressCarousel";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -52,6 +55,10 @@ const stats = [
   { value: impact.organizations, label: "partner organizations around the Bay Area" },
   { value: impact.semesters, label: "semesters of Berkeley Project Day" },
 ];
+
+const pressOutlets = press.filter(
+  (item, i) => press.findIndex((other) => other.outlet.name === item.outlet.name) === i,
+);
 
 export default function Home() {
   return (
@@ -254,9 +261,22 @@ export default function Home() {
             ))}
           </dl>
 
+          <p className="mt-10 text-sm text-white/70">
+            Hours and labor savings as cited in the{" "}
+            <a
+              href={impactSource.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-white/40 underline-offset-4 transition-colors duration-300 ease-bp hover:text-white hover:decoration-bp-gold"
+            >
+              {impactSource.label}
+            </a>{" "}
+            in {impactSource.outlet}.
+          </p>
+
           <Link
             href={links.impact}
-            className="mt-12 inline-flex items-center gap-2 rounded-full text-base font-semibold text-white underline decoration-white/40 underline-offset-4 transition-colors duration-300 ease-bp hover:decoration-bp-gold"
+            className="mt-6 inline-flex items-center gap-2 rounded-full text-base font-semibold text-white underline decoration-white/40 underline-offset-4 transition-colors duration-300 ease-bp hover:decoration-bp-gold"
           >
             See our full impact
             <ArrowUpRight size={18} weight="bold" aria-hidden />
@@ -270,6 +290,35 @@ export default function Home() {
           <StatementReveal
             text="Since 2006, our goal has been to change the relationship between UC Berkeley students and the people of Berkeley through hands on service."
           />
+        </div>
+      </section>
+
+      {/* In the news */}
+      <section className="bg-bp-cream bg-dots px-4 py-24 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <div data-reveal>
+            <p className="text-sm font-bold uppercase tracking-[0.14em] text-bp-muted">Featured in</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-bp-navy md:text-4xl">
+              In the news
+            </h2>
+            <ul className="mt-8 flex flex-wrap items-center gap-x-12 gap-y-6" aria-label="Outlets that have covered us">
+              {pressOutlets.map((item) => (
+                <li key={item.outlet.name}>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded transition-[translate] duration-300 ease-bp hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bp-navy focus-visible:ring-offset-4"
+                  >
+                    <OutletLogo outlet={item.outlet} area={5700} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div data-reveal className="mt-10" style={{ "--reveal-delay": "150ms" } as React.CSSProperties}>
+            <PressCarousel items={press} />
+          </div>
         </div>
       </section>
 
