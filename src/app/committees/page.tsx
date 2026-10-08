@@ -1,176 +1,232 @@
-import React from "react";
-import FramedCard from "@/components/FramedCard";
-import LongCard from "@/components/longCard";
+import { ApplyBand } from "@/components/ApplyBand";
+import { PageHeader } from "@/components/PageHeader";
+import Button from "@/components/button";
+import { Tape } from "@/components/Scrapbook";
+import { brand } from "@/config/brand";
+import { semester } from "@/config/semester";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import type { Metadata } from "next";
+import Image from "next/image";
 
-const getBorderColor = (bgColor: string): string => {
-  const colorMap: Record<string, string> = {
-    "#F3E8C8": "#D4B896",
-    "#EDF8E2": "#B8D4A0",
-    "#E9F2FA": "#A8C5E0",
-    "#ECECEC": "#C0C0C0",
-    "#FFF7DA": "#E6D4A0",
-    "#E9E6FA": "#C4B8E0",
-  };
-  return colorMap[bgColor] || "#FFB6C1";
+export const metadata: Metadata = {
+  title: `Committees | ${brand.name}`,
+  description:
+    "Meet the executive board and the six student committees that organize Berkeley Project Day.",
 };
 
-export default function CommitteesPage() {
-  const execBoard = [
-    { name: "Sophia Bazini-Barakat", role: "External President", image: "/core/sophia.jpg" },
-    { name: "Jordan Cheng", role: "Internal President", image: "/core/jordan.jpg" },
-    { name: "Kelly Cheng", role: "Outreach President", image: "/core/kelly.jpg" },
-    { name: "Amber Cui", role: "Operations President", image: "/core/amber.jpg" },
-    { name: "Arshul Garg", role: "Community President", image: "/core/arshul.jpg" },
-  ];
+const { committeeApplications } = semester;
 
-  const committeesIntro = [
-    {
-      id: 1,
-      imageUrl: "/core/Core.png",
-      description:
-        "Each semester, Berkeley Project Day is organized by our six core committees: external affairs, finance, marketing, site planning, volunteer, and web. Together, we make sure BP Day runs smoothly and successfully. Our committee members are dedicated, service-oriented individuals who each play a critical role in BP.",
-    },
-  ];
+const execBoard = [
+  { name: "Sophia Bazini-Barakat", role: "External President", image: "/core/sophia.jpg" },
+  { name: "Jordan Cheng", role: "Internal President", image: "/core/jordan.jpg" },
+  { name: "Kelly Cheng", role: "Outreach President", image: "/core/kelly.jpg" },
+  { name: "Amber Cui", role: "Operations President", image: "/core/amber.jpg" },
+  { name: "Arshul Garg", role: "Community President", image: "/core/arshul.jpg" },
+];
 
-  const committees = [
-    {
-      id: 1,
-      title: "External Affairs",
-      description:
-        "External Affairs organizes the logistics of Berkeley Project Day, helps fundraise, plans the BP Day before/after event, reaches out to campus organizations, and helps strategize the BP Day theme all while getting to interact a little with every other team. Our goal is to help coordinate the logistics of BP Day to bring together students and the community through volunteering.",
-      color: "#F3E8C8",
-      members: [
-        { name: "Joon Chang", image: "/core/joon.jpg" },
-        { name: "Vivianna Tang", image: "/core/vivianna.jpg" },
-      ],
-    },
-    {
-      id: 2,
-      title: "Finance",
-      description:
-        "Finance team feeds and provides supplies for volunteers by fundraising, applying to grants, and reaching out to local corporations and other on-campus organizations. The team manages reimbursements and allocates funding to other committees to ensure all cash flows are accounted for. Our work ensures that volunteers are engaged and supported in the days leading up to and including Berkeley Project Day.",
-      color: "#EDF8E2",
-      members: [
-        { name: "Chenfei Wang", image: "/core/chenfei.jpg" },
-        { name: "Clarisse Nikaido", image: "/core/clarisse.jpg" },
-      ],
-    },
-    {
-      id: 3,
-      title: "Marketing",
-      description:
-        "Marketing is in charge of all the promotional content and the branding for Berkeley Project. Marketing co-directors and committee members create all the flyers, bookmarks, social media events and promotional posts, to attract as many volunteers as possible. On BP Day, we run around to all the different sites to take cute, candid pictures of our volunteers and site leaders hard at work to capture the memories and impact they have on the Berkeley community.",
-      color: "#E9F2FA",
-      members: [
-        { name: "Evie Nguyen", image: "/core/evie.jpg" },
-        { name: "Caitlyn Lee", image: "/core/caitlyn.jpg" },
-      ],
-    },
-    {
-      id: 4,
-      title: "Site Planning",
-      description:
-        "Site Planning is in charge of acquiring the site logistics for all BP Days. Using lists of past sites compiled from previous years and new sites from individual research and network, Site Planning co-directors and committee members have the task of contacting community organizers and city workers regarding projects for BP Days. We gather this information via phone calls and e-mails, and neatly record it in a Google document that is shared with all BP Core Members.",
-      color: "#ECECEC",
-      members: [
-        { name: "Christina Lu", image: "/core/christina.jpg" },
-        { name: "Rohan Sinha", image: "/core/rohan.jpg" },
-      ],
-    },
-    {
-      id: 5,
-      title: "Volunteer",
-      description:
-        "Volunteer is responsible for creating the Site Leader/Volunteer application and selecting Site Leaders. From here, we plan and train Site Leaders to be effective points of contact and organizers of their respective volunteers. Ultimately, we are responsible for every Site Leader and Volunteer on BP Day (roughly 2,000 people) to ensure the event runs smoothly! :)",
-      color: "#FFF7DA",
-      members: [
-        { name: "Nicole Li", image: "/core/nicole.jpg" },
-        { name: "Marrissa Kwok", image: "/core/marrissa.jpg" },
-      ],
-    },
-    {
-      id: 6,
-      title: "Web",
-      description:
-        "Web is responsible for updating and maintaining the berkeleyproject.org website. We communicate with other committees to provide important updates to the Berkeley Project community and help automate their tasks! This committee is a creative and diverse space open for students to take on individual projects (i.e. bot for tabling sign-ups) or expansion projects (i.e. redesign graphics, new subpages).",
-      color: "#E9E6FA",
-      members: [
-        { name: "Tiger Shi", image: "/core/tiger.jpg" },
-        { name: "Nick Choy", image: "/core/nick.jpg" },
-      ],
-    },
-  ];
+const committees = [
+  {
+    title: "External Affairs",
+    description:
+      "External Affairs organizes the logistics of Berkeley Project Day, helps fundraise, plans the BP Day before and after events, reaches out to campus organizations, and helps choose the BP Day theme, working a little with every other team along the way.",
+    members: [
+      { name: "Joon Chang", image: "/core/joon.jpg" },
+      { name: "Vivianna Tang", image: "/core/vivianna.jpg" },
+    ],
+  },
+  {
+    title: "Finance",
+    description:
+      "Finance feeds volunteers and pays for supplies by fundraising, applying to grants, and reaching out to local businesses and campus organizations. The team manages reimbursements and allocates funding to the other committees so every dollar is accounted for.",
+    members: [
+      { name: "Chenfei Wang", image: "/core/chenfei.jpg" },
+      { name: "Clarisse Nikaido", image: "/core/clarisse.jpg" },
+    ],
+  },
+  {
+    title: "Marketing",
+    description:
+      "Marketing runs promotion and branding for The Berkeley Project: flyers, bookmarks, social media events, and posts. On BP Day, the team travels between sites to photograph volunteers and site leaders at work.",
+    members: [
+      { name: "Evie Nguyen", image: "/core/evie.jpg" },
+      { name: "Caitlyn Lee", image: "/core/caitlyn.jpg" },
+    ],
+  },
+  {
+    title: "Site Planning",
+    description:
+      "Site Planning finds and sets up every BP Day site. Using past site lists and new research, the team contacts community organizers and city workers about projects, then records the details for the rest of the core team.",
+    members: [
+      { name: "Christina Lu", image: "/core/christina.jpg" },
+      { name: "Rohan Sinha", image: "/core/rohan.jpg" },
+    ],
+  },
+  {
+    title: "Volunteer",
+    description:
+      "Volunteer builds the site leader and volunteer applications, selects and trains site leaders, and is responsible for every site leader and volunteer on BP Day, roughly 2,000 people.",
+    members: [
+      { name: "Nicole Li", image: "/core/nicole.jpg" },
+      { name: "Marrissa Kwok", image: "/core/marrissa.jpg" },
+    ],
+  },
+  {
+    title: "Web",
+    description:
+      "Web updates and maintains berkeleyproject.org, shares updates with the BP community, and builds tools that automate work for other committees. Members can take on their own projects, like a tabling sign up bot or a page redesign.",
+    members: [
+      { name: "Tiger Shi", image: "/core/tiger.jpg" },
+      { name: "Nick Choy", image: "/core/nick.jpg" },
+    ],
+  },
+];
 
+function Portrait({
+  src,
+  name,
+  role,
+  sizes,
+}: {
+  src: string;
+  name: string;
+  role?: string;
+  sizes: string;
+}) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#E3F9FF] to-white text-gray-900">
-      <main className="mx-auto max-w-5xl px-6 pt-40 pb-16 ">
+    <div className="group rounded-2xl bg-white p-2.5 pb-4 shadow-bp">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-bp-cream">
+        <Image
+          src={src}
+          alt={name}
+          fill
+          sizes={sizes}
+          className="object-cover transition-transform duration-700 ease-bp group-hover:scale-[1.05]"
+        />
+      </div>
+      <p className="mt-3 px-1 text-sm font-semibold text-bp-ink">{name}</p>
+      {role && <p className="px-1 text-sm text-bp-muted">{role}</p>}
+    </div>
+  );
+}
 
-        {/* OUR EXEC BOARD */}
-        <section className="text-center space-y-10 mb-16">
-          <h1 className="text-3xl font-bold text-[#0875DF]">Our Exec Board</h1>
-          <div className="flex flex-wrap justify-center gap-5">
-            {execBoard.map((member) => (
-              <div key={member.name} className="flex flex-col items-center gap-2">
-                <FramedCard
-                  frameUrl={undefined}
-                  imageUrl={member.image}
-                  bgColor="#E9F2FA"
-                  borderColor={getBorderColor("#E9F2FA")}
-                  title={member.role}
-                  bottomText={member.name}
-                  width="210px"
-                  height="300px"
-                />
-              </div>
-            ))}
+export default function CommitteesPage() {
+  return (
+    <>
+      <PageHeader
+        title="The students who run Berkeley Project Day"
+        highlight="students"
+        media={
+          <div className="relative aspect-[4/3]">
+            <Image
+              src="/core/core-fa26.jpg"
+              alt="The Berkeley Project core team in matching shirts on the Sproul Hall steps"
+              fill
+              priority
+              sizes="(min-width: 1152px) 1152px, 100vw"
+              className="object-cover"
+            />
           </div>
-        </section>
+        }
+      >
+        <p>
+          Each semester, Berkeley Project Day is organized by six core committees:
+          External Affairs, Finance, Marketing, Site Planning, Volunteer, and Web.
+          Every member is a UC Berkeley student.
+        </p>
+      </PageHeader>
 
-        {/* COMMITTEES */}
-        <section className="space-y-20 mt-16">
-          <h2 className="text-3xl font-bold text-[#0875DF] text-center mb-10">
-            Organizing Committees 
+      <section className="bg-bp-paper px-4 py-24 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <h2 data-reveal className="text-3xl font-bold tracking-tight text-bp-navy md:text-4xl">
+            Executive board
           </h2>
-          {committeesIntro.map((card) => (
-            <LongCard key={card.id} card={card} />
-          ))}
-
-          <div className="flex flex-col space-y-12">
-            {committees.map((committee) => (
-              <div
-                key={committee.id}
-                className="space-y-6 md:grid md:grid-cols-[minmax(0,45%)_minmax(0,55%)] md:items-center md:gap-10 md:space-y-0"
+          <ul className="scrap-tilt mt-12 grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-3 md:grid-cols-5">
+            {execBoard.map((member, i) => (
+              <li
+                key={member.name}
+                data-reveal
+                style={{ "--reveal-delay": `${i * 90}ms` } as React.CSSProperties}
               >
-                <div className="space-y-3 text-left md:space-y-4">
-                  <h3 className="text-xl font-bold text-[#0875DF]">
-                    {committee.title}
-                  </h3>
-                  <p className="text-[15px] leading-relaxed text-gray-700">
+                <Portrait
+                  src={member.image}
+                  name={member.name}
+                  role={member.role}
+                  sizes="(min-width: 768px) 20vw, (min-width: 640px) 33vw, 50vw"
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="bg-bp-cream bg-dots px-4 py-24 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <h2 data-reveal className="text-3xl font-bold tracking-tight text-bp-navy md:text-4xl">
+            Committees
+          </h2>
+          <ul className="mt-8 divide-y divide-bp-line border-y border-bp-line">
+            {committees.map((committee) => (
+              <li
+                key={committee.title}
+                data-reveal
+                className="grid gap-8 py-12 md:grid-cols-[1fr_auto] md:items-center md:gap-16"
+              >
+                <div>
+                  <h3 className="text-2xl font-semibold text-bp-ink">{committee.title}</h3>
+                  <p className="mt-3 max-w-xl text-base text-bp-muted">
                     {committee.description}
                   </p>
                 </div>
-
-                <div className="w-full">
-                  <div className="flex flex-row items-center justify-start gap-5 max-[767px]:flex-col max-[767px]:items-center max-[767px]:justify-center">
-                    {committee.members.map((member) => (
-                      <FramedCard
-                        key={member.name}
-                        frameUrl={undefined}
-                        imageUrl={member.image}
-                        bgColor={committee.color}
-                        borderColor={getBorderColor(committee.color)}
-                        bottomText={member.name}
-                        width="220px"
-                        height="320px"
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
+                <ul className="scrap-tilt grid grid-cols-2 gap-4 sm:w-80">
+                  {committee.members.map((member) => (
+                    <li key={member.name}>
+                      <Portrait src={member.image} name={member.name} sizes="160px" />
+                    </li>
+                  ))}
+                </ul>
+              </li>
             ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="bg-bp-paper px-4 py-24 sm:px-6">
+        <div data-reveal className="relative mx-auto grid max-w-6xl gap-8 rounded-2xl border border-bp-line bg-white p-8 shadow-bp md:grid-cols-[1fr_auto] md:items-center md:p-12">
+          <Tape className="-top-3 left-10 -rotate-3" />
+          <Tape className="-top-3 right-10 rotate-2" />
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight text-bp-navy md:text-4xl">
+              Join a committee
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg text-bp-muted">
+              Committee members plan Berkeley Project Day all semester, from finding
+              sites to training site leaders.{" "}
+              {committeeApplications.open
+                ? `Applications for ${semester.label} are open now.`
+                : `Committee applications for ${semester.label} are now closed. Follow @theberkeleyproject on Instagram to hear when they open next semester.`}
+            </p>
+            {!committeeApplications.open && (
+              <p className="mt-4 text-base text-bp-muted">
+                You can still volunteer at {semester.event.name} on{" "}
+                {semester.event.weekdayDate}. Volunteer applications close{" "}
+                {semester.event.deadline}.
+              </p>
+            )}
           </div>
-        </section>
-      </main>
-    </div>
+          {committeeApplications.open && committeeApplications.link ? (
+            <Button href={committeeApplications.link}>
+              Apply to a committee
+              <ArrowRight size={18} weight="bold" aria-hidden />
+            </Button>
+          ) : (
+            <span className="inline-flex -rotate-6 items-center justify-center self-start rounded-lg border-[3px] border-double border-bp-navy/70 px-5 py-2 text-lg font-bold uppercase tracking-widest text-bp-navy/80 md:self-center">
+              Applications closed
+            </span>
+          )}
+        </div>
+      </section>
+
+      <ApplyBand />
+    </>
   );
 }

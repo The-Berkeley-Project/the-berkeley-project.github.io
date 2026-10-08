@@ -1,180 +1,199 @@
-"use client";
-
+import { ApplyBand } from "@/components/ApplyBand";
+import { PageHeader } from "@/components/PageHeader";
+import { CountUp } from "@/components/CountUp";
+import { Tape } from "@/components/Scrapbook";
+import { SiteMap } from "@/components/SiteMap";
+import { brand } from "@/config/brand";
+import { semester } from "@/config/semester";
+import { sites } from "@/config/sites";
+import type { Metadata } from "next";
 import Image from "next/image";
-import SusSiteCard from "@/components/sussitecard";
-import { Leaf, Package, School } from "lucide-react";
 
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import { Pie } from "react-chartjs-2";
+export const metadata: Metadata = {
+  title: `Our impact | ${brand.name}`,
+  description: `${semester.impact.hoursPerYear} volunteer hours and ${semester.impact.laborSaved} in labor saved every year across ${semester.impact.organizations} partner organizations.`,
+};
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+const { impact } = semester;
+
+const stats = [
+  { value: String(sites.length), label: "sites on our map across Berkeley" },
+  { value: "1,741", label: "current volunteers" },
+  { value: impact.semesters, label: "semesters of Berkeley Project Day" },
+  { value: impact.hoursPerYear, label: "volunteer hours every year" },
+  { value: impact.laborSaved, label: "in labor costs saved every year" },
+  { value: impact.organizations, label: "partner organizations around the Bay Area" },
+];
+
+const sustainedSites = [
+  {
+    src: "/bproads.JPEG",
+    title: "Berkeley Roads",
+    body: "About 50 Cal students and local residents came together, rain or shine, to paint new roads.",
+  },
+  {
+    src: "/bpwheelbarrow.JPEG",
+    title: "North Hills Demonstration Garden",
+    body: "About 20 UC Berkeley volunteers weeded the Demonstration Garden on Old Tunnel Road with the North Hills Community Association garden committee, led by Celine Gyger.",
+  },
+  {
+    src: "/bpschoolhouse.JPEG",
+    title: "Schoolhouse Creek",
+    body: "Students restored the site by painting and sanding benches and trimming overgrown bushes along the roads.",
+  },
+];
+
+const serviceTypes = [
+  { label: "Gardening", percent: 46.7 },
+  { label: "Landscaping", percent: 23.3 },
+  { label: "Cleaning", percent: 20.0 },
+  { label: "Litter and trash pickup", percent: 10.0 },
+];
 
 export default function ImpactPage() {
-  // Pie chart data
-  const data = {
-    labels: ["Gardening (46.7%)", "Landscaping (23.3%)", "Cleaning (20.0%)", "Litter/Trash Pickup (10.0%)"],
-    datasets: [
-      {
-        label: " Types of Service",
-        data: [21, 11, 9, 5],
-        backgroundColor: [
-          "#5BC0DE",
-          "#9AA3AF",
-          "#6495ED",
-          "#1D4ED8",
-        ],
-        borderWidth: 2,
-      },
-    ],
-  };
-
-  const options = {
-    plugins: {
-      legend: {
-        position: "top" as const,
-      },
-    },
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#E3F9FF] to-white text-gray-900">
-      {/* padding before title */}
-      <section className="mx-auto max-w-5xl px-6 pt-32 text-center">
-        <h1 className="text-4xl font-bold text-[#003262] sm:text-5xl">
-          Our Impact
-        </h1>
-      </section>
-
-      {/* impact picture + caption */}
-      <section className="mx-auto mt-10 max-w-5xl px-6 text-center">
-        <div className="relative w-full h-[400px] sm:h-[500px] rounded-3xl overflow-hidden shadow-lg">
-          <Image
-            src="/impactpic.png"
-            alt="The Berkeley Project Team"
-            fill
-            className="object-cover"
-            loading="eager"
-          />
-        </div>
-
-        <p className="mt-8 max-w-3xl mx-auto text-sm text-gray-700 leading-relaxed">
-          Built on the collective drive to improve our community, The Berkeley
-          Project has worked with over 100 organizations around the Bay Area.
-          Each year, we devote a total of <strong>12,000+ hours</strong> saving
-          over <strong>$400,000</strong> in labor costs. More importantly, we
-          connect the students of Berkeley to members of the city creating a
-          more tight-knit space to live and learn.
+    <>
+      <PageHeader
+        title="Our impact"
+        highlight="impact"
+        media={
+          <div className="relative aspect-[4/3] sm:aspect-[21/9]">
+            <Image
+              src="/impactpic.png"
+              alt="Berkeley Project volunteers making heart shapes with their hands on Lower Sproul Plaza"
+              fill
+              priority
+              sizes="(min-width: 1152px) 1152px, 100vw"
+              className="object-cover"
+            />
+          </div>
+        }
+      >
+        <p>
+          {brand.name} has worked with {impact.organizations} organizations around
+          the Bay Area. Each year our volunteers give{" "}
+          {impact.hoursPerYear} hours of service, saving over {impact.laborSaved}{" "}
+          in labor costs, and connect Berkeley students with the people who live
+          in the city.
         </p>
+      </PageHeader>
+
+      <section className="torn-top bg-bp-navy px-4 py-24 text-white sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <h2 data-reveal className="text-3xl font-bold tracking-tight md:text-4xl">
+            By the numbers
+          </h2>
+          <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-3">
+            {stats.map((stat, i) => (
+              <div
+                key={stat.label}
+                data-reveal
+                className="flex flex-col-reverse justify-end gap-2"
+                style={{ "--reveal-delay": `${(i % 3) * 100}ms` } as React.CSSProperties}
+              >
+                <dt className="text-base text-white/75">{stat.label}</dt>
+                <dd className="text-4xl font-bold tracking-tight text-bp-gold md:text-5xl">
+                  <CountUp value={stat.value} />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </section>
 
-      {/* blue banner with big numbers */}
-      <section className="mt-16">
-        <div className="w-full rounded-t-[3rem] bg-blue-400 px-6 py-12 text-white shadow-md">
-          <div className="grid gap-10 text-center sm:grid-cols-3">
-            <div>
-              <h2 className="text-5xl font-extrabold">298</h2>
-              <p className="mt-2 text-lg uppercase tracking-wide">
-                Sustained Sites
-              </p>
-            </div>
-            <div>
-              <h2 className="text-5xl font-extrabold">1,741</h2>
-              <p className="mt-2 text-lg uppercase tracking-wide">
-                Current Volunteers
-              </p>
-            </div>
-            <div>
-              <h2 className="text-5xl font-extrabold">36</h2>
-              <p className="mt-2 text-lg uppercase tracking-wide">
-                Semesters
-              </p>
-            </div>
+      <section className="bg-bp-paper px-4 py-24 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <h2 data-reveal className="text-3xl font-bold tracking-tight text-bp-navy md:text-4xl">
+            Sustained sites
+          </h2>
+          <p data-reveal className="mt-6 max-w-2xl text-lg text-bp-muted">
+            Between Berkeley Project Days, committee members volunteer at sustained
+            sites throughout the semester. It keeps us working alongside the same
+            community partners all year.
+          </p>
+
+          <ul className="scrap-tilt mt-14 grid items-start gap-12 md:grid-cols-3 md:gap-8">
+            {sustainedSites.map((site, i) => (
+              <li
+                key={site.title}
+                data-reveal
+                className="group relative rounded-2xl bg-white p-3 pb-6 shadow-bp"
+                style={{ "--reveal-delay": `${i * 120}ms` } as React.CSSProperties}
+              >
+                <Tape className={`-top-3 left-1/2 -ml-12 ${i % 2 ? "rotate-3" : "-rotate-3"}`} />
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-bp-cream">
+                  <Image
+                    src={site.src}
+                    alt={`Volunteers at ${site.title}`}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover transition-transform duration-700 ease-bp group-hover:scale-[1.04]"
+                  />
+                </div>
+                <div className="px-2">
+                  <h3 className="mt-5 text-xl font-semibold text-bp-ink">{site.title}</h3>
+                  <p className="mt-2 text-base text-bp-muted">{site.body}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="bg-bp-cream bg-dots px-4 py-24 sm:px-6">
+        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:gap-16">
+          <div data-reveal>
+            <h2 className="text-3xl font-bold tracking-tight text-bp-navy md:text-4xl">
+              Types of service
+            </h2>
+            <p className="mt-6 text-lg text-bp-muted">
+              Most of our work is outdoors, from environmental restoration to
+              neighborhood cleanups. This is how our service time breaks down.
+            </p>
+          </div>
+
+          <dl className="space-y-6">
+            {serviceTypes.map((type, i) => (
+              <div
+                key={type.label}
+                data-reveal
+                style={{ "--reveal-delay": `${i * 100}ms` } as React.CSSProperties}
+              >
+                <div className="flex items-baseline justify-between gap-4">
+                  <dt className="text-base font-semibold text-bp-ink">{type.label}</dt>
+                  <dd className="text-base font-semibold tabular-nums text-bp-navy">
+                    {type.percent.toFixed(1)}%
+                  </dd>
+                </div>
+                <div className="mt-2 h-3 overflow-hidden rounded-full bg-bp-line" aria-hidden>
+                  <div
+                    className="reveal-bar h-full rounded-full bg-bp-navy"
+                    style={{ width: `${type.percent}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      <section className="bg-bp-paper px-4 py-24 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <h2 data-reveal className="text-3xl font-bold tracking-tight text-bp-navy md:text-4xl">
+            Where we volunteer
+          </h2>
+          <p data-reveal className="mt-6 max-w-2xl text-lg text-bp-muted">
+            {sites.length} schools, gardens, creeks, and community organizations
+            across Berkeley that our teams have worked with. Pick a site to find
+            it on the map.
+          </p>
+          <div className="mt-10">
+            <SiteMap />
           </div>
         </div>
       </section>
 
-      {/* sustained sites */}
-      <section className="mx-auto mt-24 max-w-5xl px-6 text-center">
-        <h2 className="text-4xl font-bold text-black sm:text-5xl">
-          Sustained Sites
-        </h2>
-
-        <p className="mt-8 max-w-3xl mx-auto text-sm text-gray-700 leading-relaxed">
-          While planning Berkeley Project Day is the main objective, committee
-          members build lasting relationships with community leaders by
-          volunteering at sustained sites throughout the semester. These sites
-          give us the opportunity to engage in community service just as our
-          volunteers do during Berkeley Project Day.
-        </p>
-
-        <div className="mt-16 grid gap-12 sm:grid-cols-3">
-          <SusSiteCard
-            imageSrc="/bproads.JPEG"
-            alt="Berkeley Roads"
-            title="Berkeley Roads"
-            description="Rain or shine, Berkeley Bears are always down to volunteer! A group of 50 Cal students and local residents came together to paint new roads!"
-            Icon={Leaf}
-          />
-
-          <SusSiteCard
-            imageSrc="/bpwheelbarrow.JPEG"
-            alt="Berkeley Bowl Distribution"
-            title="Berkeley Bowl Distribution"
-            description="On a beautiful sunny day, Saturday, March 12, about 20 UC Berkeley volunteers helped with weeding in the Demonstration Garden on Old Tunnel Road. The North Hills community Association garden committee, led by Celine Gyger, organized the event."
-            Icon={Package}
-          />
-
-          <SusSiteCard
-            imageSrc="/bpschoolhouse.JPEG"
-            alt="Schoolhouse Creek"
-            title="Schoolhouse Creek"
-            description="Students came together to restore the site by painting and sanding benches, as well as trimming overgrown bushes along the roads!"
-            Icon={School}
-          />
-        </div>
-      </section>
-
-        {/* map section */}
-      <section className="mx-auto mt-24 max-w-5xl px-6 text-center">
-        <h2 className="text-3xl font-bold text-black sm:text-4xl">
-          Site Map
-        </h2>
-        <div className="mt-10 w-full h-[550px] rounded-3xl overflow-hidden shadow-lg relative">
-        <iframe
-          src="https://www.google.com/maps/d/embed?mid=1Qzbe4x-UQFOikRDVd1Vjn_0t7Jlx2cY&ehbc=2E312F&noprof=1"
-          className="absolute top-[-80px] left-0 w-full h-[calc(100%+50px)] border-0"
-          loading="lazy"
-        />
-      </div>
-      </section>
-
-      {/* types of service */}
-      <section className="mx-auto mt-24 max-w-5xl px-6 text-center">
-        <h2 className="text-4xl font-bold text-black sm:text-5xl">
-          Types of Service
-        </h2>
-
-        <p className="mt-8 max-w-3xl mx-auto text-sm text-gray-700 leading-relaxed">
-          Our volunteers contribute across a wide range of service areas, from
-          environmental stewardship to neighborhood cleanup efforts. Each
-          category reflects our commitment to supporting and uplifting the local
-          community.
-        </p>
-
-        <div className="mt-0 flex justify-center">
-          <div className="w-full max-w-xl">
-            <Pie data={data} options={options} />
-          </div>
-        </div>
-      </section>
-
-      {/* bottom padding */}
-      <div className="pb-24" />
-    </div>
+      <ApplyBand />
+    </>
   );
 }
