@@ -4,14 +4,14 @@ import LongCard from "@/components/longCard";
 
 const getBorderColor = (bgColor: string): string => {
   const colorMap: Record<string, string> = {
-    "#F3E8C8": "#D4B896",
-    "#EDF8E2": "#B8D4A0",
-    "#E9F2FA": "#A8C5E0",
-    "#ECECEC": "#C0C0C0",
-    "#FFF7DA": "#E6D4A0",
-    "#E9E6FA": "#C4B8E0",
+    "#FFF0C2": "#E8C978",
+    "#DCEEFF": "#A9C9E8",
+    "#E5F2FF": "#B5D2ED",
+    "#F1EDE3": "#D8CEBB",
+    "#FFE4AD": "#E8C078",
+    "#E7E5F4": "#C5BFDF",
   };
-  return colorMap[bgColor] || "#FFB6C1";
+  return colorMap[bgColor] || "#A9C9E8";
 };
 
 export default function CommitteesPage() {
@@ -102,20 +102,22 @@ export default function CommitteesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#E3F9FF] to-white text-gray-900">
+    <div className="min-h-screen bg-[#FFF4D6] text-[#1F3557]">
       <main className="mx-auto max-w-5xl px-6 pt-40 pb-16 ">
 
         {/* OUR EXEC BOARD */}
         <section className="text-center space-y-10 mb-16">
-          <h1 className="text-3xl font-bold text-[#0875DF]">Our Exec Board</h1>
+          <h1 className="font-serif text-4xl font-bold text-[#1F3557] sm:text-5xl">
+            Our Exec Board
+          </h1>
           <div className="flex flex-wrap justify-center gap-5">
             {execBoard.map((member) => (
               <div key={member.name} className="flex flex-col items-center gap-2">
                 <FramedCard
                   frameUrl={undefined}
                   imageUrl={member.image}
-                  bgColor="#E9F2FA"
-                  borderColor={getBorderColor("#E9F2FA")}
+                  bgColor="#DCEEFF"
+                  borderColor={getBorderColor("#DCEEFF")}
                   title={member.role}
                   bottomText={member.name}
                   width="210px"
@@ -128,8 +130,8 @@ export default function CommitteesPage() {
 
         {/* COMMITTEES */}
         <section className="space-y-20 mt-16">
-          <h2 className="text-3xl font-bold text-[#0875DF] text-center mb-10">
-            Organizing Committees 
+          <h2 className="mb-10 text-center font-serif text-4xl font-bold text-[#1F3557] sm:text-5xl">
+            Organizing Committees
           </h2>
           {committeesIntro.map((card) => (
             <LongCard key={card.id} card={card} />
@@ -142,10 +144,10 @@ export default function CommitteesPage() {
                 className="space-y-6 md:grid md:grid-cols-[minmax(0,45%)_minmax(0,55%)] md:items-center md:gap-10 md:space-y-0"
               >
                 <div className="space-y-3 text-left md:space-y-4">
-                  <h3 className="text-xl font-bold text-[#0875DF]">
+                  <h3 className="font-serif text-2xl font-bold text-[#1F3557]">
                     {committee.title}
                   </h3>
-                  <p className="text-[15px] leading-relaxed text-gray-700">
+                  <p className="text-base leading-relaxed text-[#344563]">
                     {committee.description}
                   </p>
                 </div>

@@ -22,11 +22,11 @@ export default function ImpactPage() {
       {
         label: " Types of Service",
         data: [21, 11, 9, 5],
-        backgroundColor: [
-          "#5BC0DE",
-          "#9AA3AF",
-          "#6495ED",
-          "#1D4ED8",
+        backgroundColor:[
+        "#60A5FA",
+        "#2F5D8C",
+        "#FFCB69",
+        "#A9D6F5",
         ],
         borderWidth: 2,
       },
@@ -42,10 +42,10 @@ export default function ImpactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#E3F9FF] to-white text-gray-900">
+    <div className="min-h-screen bg-[#FFF4D6] text-[#1F3557]">
       {/* padding before title */}
       <section className="mx-auto max-w-5xl px-6 pt-32 text-center">
-        <h1 className="text-4xl font-bold text-[#003262] sm:text-5xl">
+        <h1 className="font-serif text-4xl font-bold text-[#1F3557] sm:text-5xl">
           Our Impact
         </h1>
       </section>
@@ -74,7 +74,7 @@ export default function ImpactPage() {
 
       {/* blue banner with big numbers */}
       <section className="mt-16">
-        <div className="w-full rounded-t-[3rem] bg-blue-400 px-6 py-12 text-white shadow-md">
+        <div className="w-full rounded-t-[3rem] bg-[#2F5D8C] px-6 py-12 text-white shadow-md">
           <div className="grid gap-10 text-center sm:grid-cols-3">
             <div>
               <h2 className="text-5xl font-extrabold">298</h2>
@@ -100,7 +100,7 @@ export default function ImpactPage() {
 
       {/* sustained sites */}
       <section className="mx-auto mt-24 max-w-5xl px-6 text-center">
-        <h2 className="text-4xl font-bold text-black sm:text-5xl">
+        <h2 className="font-serif text-3xl font-bold text-[#1F3557] sm:text-4xl">
           Sustained Sites
         </h2>
 
@@ -141,7 +141,7 @@ export default function ImpactPage() {
 
         {/* map section */}
       <section className="mx-auto mt-24 max-w-5xl px-6 text-center">
-        <h2 className="text-3xl font-bold text-black sm:text-4xl">
+        <h2 className="font-serif text-3xl font-bold text-[#1F3557] sm:text-4xl">
           Site Map
         </h2>
         <div className="mt-10 w-full h-[550px] rounded-3xl overflow-hidden shadow-lg relative">
@@ -155,11 +155,11 @@ export default function ImpactPage() {
 
       {/* types of service */}
       <section className="mx-auto mt-24 max-w-5xl px-6 text-center">
-        <h2 className="text-4xl font-bold text-black sm:text-5xl">
+        <h2 className="font-serif text-3xl font-bold text-[#1F3557] sm:text-4xl">
           Types of Service
         </h2>
 
-        <p className="mt-8 max-w-3xl mx-auto text-sm text-gray-700 leading-relaxed">
+        <p className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-[#344563]">
           Our volunteers contribute across a wide range of service areas, from
           environmental stewardship to neighborhood cleanup efforts. Each
           category reflects our commitment to supporting and uplifting the local

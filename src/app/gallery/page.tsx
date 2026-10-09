@@ -172,7 +172,7 @@ export default function GalleryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#E3F9FF] to-white flex flex-col items-center pt-36 pb-24 font-sans">
+    <div className="min-h-screen bg-[#FFF4D6] text-[#1F3557] flex flex-col items-center pt-36 pb-24">
       <AnimatePresence initial={false} mode="wait">
         {selectedGallery && openGallery && (
           <motion.section
@@ -183,15 +183,15 @@ export default function GalleryPage() {
             exit={{ opacity: 0, y: -18 }}
             transition={{ duration: 0.26, ease: "easeInOut" }}
           >
-            <div className="rounded-xl shadow-[0_12px_30px_rgba(0,0,0,0.15)] p-6 md:p-8 bg-gradient-to-b from-[#e0f2ff] to-white">
-              <h3 className="text-2xl md:text-3xl font-medium tracking-wide text-center mb-6 text-[#003262]">
+            <div className="rounded-2xl bg-[#DCEEFF] p-6 shadow-md md:p-8">
+              <h3 className="mb-6 text-center font-serif text-3xl font-bold text-[#1F3557] md:text-4xl">
                 {toTitleCase(selectedGallery.title)} {openGallery.year}
               </h3>
 
               <div className="max-h-[19.5rem] sm:max-h-[25.5rem] md:max-h-[28.5rem] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
                 {selectedGallery.gallery.length === 0 ? (
                   <motion.p
-                    className="text-2xl text-gray-800 font-medium py-20 tracking-wide text-center"
+                    className="py-20 text-center font-serif text-2xl font-bold text-[#1F3557]"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.12, duration: 0.35 }}
@@ -221,7 +221,7 @@ export default function GalleryPage() {
                 key={`${album.year}-${album.index}`}
                 className="flex-none w-[13.5rem] sm:w-[15.5rem] md:w-[17.5rem]"
               >
-                <p className="text-base sm:text-lg font-semibold text-[#003262] mb-3 text-center">
+                <p className="mb-3 text-center font-serif text-lg font-bold text-[#1F3557] sm:text-xl">
                   {album.label}
                 </p>
                 <button

@@ -15,7 +15,7 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const classes =
-    "inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors";
+    "inline-flex items-center justify-center px-4 py-2 bg-[#2F5D8C] text-white rounded-lg hover:bg-[#264D75] transition-colors";
 
   // If href exists → link
   if (href) {
